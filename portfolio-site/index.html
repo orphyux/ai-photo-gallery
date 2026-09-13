@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jennifer L. DeVries — Photo Galleries</title>
+<meta name="description" content="A collection of photo galleries by Jennifer L. DeVries." />
+
+<!-- Social share preview tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Jennifer L. DeVries — Photo Galleries" />
+<meta property="og:description" content="A collection of photo galleries by Jennifer L. DeVries." />
+<meta property="og:image" content="https://www.jenniferldevries.com/seal-cove-cover.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+  /* This page is intentionally dependency-free: plain HTML + CSS, no
+     JavaScript, no CDN scripts, no build step. It will never show a blank
+     page from a blocked network request, because it doesn't make any. */
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #171717;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; height: auto; }
+
+  .wrap {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  header {
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
+    border-bottom: 1px solid #404040;
+  }
+  header p.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    color: #fcd34d;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+  }
+  header h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2rem;
+    margin: 0 0 0.75rem;
+  }
+  header p.tagline {
+    color: #a3a3a3;
+    font-size: 1rem;
+    margin: 0;
+    max-width: 34rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  main {
+    padding: 3rem 0 5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .card {
+    display: block;
+    background: #262626;
+    border: 1px solid #404040;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    border-color: #fbbf24;
+    transform: translateY(-2px);
+  }
+  .card .cover {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #171717;
+  }
+  .card .card-body {
+    padding: 1.25rem;
+  }
+  .card .card-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    color: #fcd34d;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+  }
+  .card h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+  }
+  .card p.desc {
+    color: #d4d4d4;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0 0 0.75rem;
+  }
+  .card .meta {
+    color: #737373;
+    font-size: 0.75rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  /* A placeholder tile for galleries not yet added, so the grid always
+     signals "more coming" rather than looking finished/empty. */
+  .card.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    border-style: dashed;
+    color: #525252;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem;
+    cursor: default;
+  }
+  .card.placeholder:hover {
+    border-color: #404040;
+    transform: none;
+  }
+
+  footer {
+    text-align: center;
+    color: #737373;
+    font-size: 0.75rem;
+    padding: 2rem 1.5rem 3rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Photo Galleries</p>
+  <h1>Jennifer L. DeVries</h1>
+  <p class="tagline">
+    A growing collection of photo essays — places visited, things collected,
+    and stories worth a closer look.
+  </p>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+
+    <!-- ===================================================================
+         GALLERY LIST
+         To add a new gallery: copy one <a class="card"> block, update the
+         href, cover image path, title, description, and photo count/date.
+         Then upload the new gallery's folder alongside this file.
+         =================================================================== -->
+
+    <a class="card" href="/seal-cove-auto-museum/">
+      <img class="cover" src="seal-cove-cover.jpg" alt="1910 Pierce-Arrow at Seal Cove Auto Museum" />
+      <div class="card-body">
+        <p class="card-eyebrow">The Brass Era</p>
+        <h2>Brass, Chrome &amp; Quiet Machines</h2>
+        <p class="desc">
+          Seal Cove Auto Museum, Mount Desert Island, Maine — 71 photos,
+          real museum placards, and the story of a lifelong collection.
+        </p>
+        <div class="meta">
+          <span>71 photos</span>
+          <span>Maine</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="card placeholder">
+      More galleries coming soon
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © Jennifer L. DeVries
+</footer>
+
+</body>
+</html>
