@@ -522,6 +522,200 @@ const GALLERY_DATA = [
     ],
     "data": "images/america250-42.jpg"
   },
+  {
+    "id": "IMG_43",
+    "title": "USS Farragut, a Closer Pass",
+    "category": "Warships",
+    "group": "USS Farragut (DDG-99)",
+    "desc": "A tighter view of USS Farragut (DDG-99) underway on the Hudson, her hull number visible at the bow, a Coast Guard small boat running escort alongside as the Hudson Yards towers rise behind her.",
+    "placard": null,
+    "hotspots": [
+      { id: "flag", top: "40%", left: "58%", title: "Colors at the Mast", text: "A single American flag flies from Farragut's mast — the position ships fly their national ensign underway, as distinct from the strings of signal flags used for \"dressing ship\" in port." }
+    ],
+    "data": "images/america250-43.jpg"
+  },
+  {
+    "id": "IMG_44",
+    "title": "Blue Angels Diamond, Full Formation",
+    "category": "Aerial Review",
+    "group": "Blue Angels",
+    "desc": "The Blue Angels hold their tight diamond formation high over the Hudson Yards skyline, four contrails streaming behind them against a clear blue sky.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-44.jpg"
+  },
+  {
+    "id": "IMG_45",
+    "title": "Blue Angels Over Midtown",
+    "category": "Aerial Review",
+    "group": "Blue Angels",
+    "desc": "A wider view of the same diamond formation banking across the Manhattan skyline, contrails cutting a long white line above the rooftops.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-45.jpg"
+  },
+  {
+    "id": "IMG_46",
+    "title": "Aerobatic Team, Trailing Red, White, and Blue",
+    "category": "Aerial Review",
+    "group": "Aerobatic Display Team",
+    "desc": "An aerobatic display team descends in echelon over One World Trade Center, seven aircraft laying down red, white, and blue smoke in parallel lines.",
+    "placard": null,
+    "hotspots": [
+      { id: "wtc", top: "80%", left: "68%", title: "One World Trade Center", text: "The smoke trails converge directly over the spire of One World Trade Center, the tallest building in the Western Hemisphere and a fixture of the Lower Manhattan skyline." }
+    ],
+    "data": "images/america250-46.jpg"
+  },
+  {
+    "id": "IMG_47",
+    "title": "Smoke Trails Toward the Spire",
+    "category": "Aerial Review",
+    "group": "Aerobatic Display Team",
+    "desc": "A wider frame of the same descending formation, its red-white-and-blue smoke stretching the length of the Lower Manhattan skyline.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-47.jpg"
+  },
+  {
+    "id": "IMG_48",
+    "title": "\"FIFI\" Banking Overhead",
+    "category": "Aerial Review",
+    "group": "B-29 Superfortress \"FIFI\"",
+    "desc": "A second view of the World War II-era B-29 Superfortress FIFI, banking to show her full wingspan and the four radial engines that power one of the last flying examples of the type.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-48.jpg"
+  },
+  {
+    "id": "IMG_49",
+    "title": "KC-130 Hercules Pair, Crossing Paths",
+    "category": "Aerial Review",
+    "group": "Marine Corps KC-130 Hercules",
+    "desc": "Two U.S. Marine Corps KC-130 Hercules cross paths overhead, \"MARINES\" lettered along their fuselages.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-49.jpg"
+  },
+  {
+    "id": "IMG_50",
+    "title": "Fireboat Salute, Hazy Afternoon",
+    "category": "Fireboats & Harbor Vessels",
+    "group": "FDNY Fireboat Three Forty Three",
+    "desc": "An FDNY fireboat throws its water salute into a hazy, overcast sky over the Hudson.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-50.jpg"
+  },
+  {
+    "id": "IMG_51",
+    "title": "Three Forty Three, Full Arcs Against a Clear Sky",
+    "category": "Fireboats & Harbor Vessels",
+    "group": "FDNY Fireboat Three Forty Three",
+    "desc": "FDNY fireboat Three Forty Three throws a wide double arc of water beneath a clear blue sky, with the Empire State Building and the Chrysler Building's spire rising behind her in Midtown.",
+    "placard": null,
+    "hotspots": [
+      { id: "esb", top: "18%", left: "45%", title: "The Empire State Building", text: "Completed in 1931, the Empire State Building was the world's tallest building for nearly forty years and remains one of Midtown Manhattan's most recognizable landmarks." }
+    ],
+    "data": "images/america250-51.jpg"
+  },
+  {
+    "id": "IMG_52",
+    "title": "Three Forty Three at Golden Hour",
+    "category": "Fireboats & Harbor Vessels",
+    "group": "FDNY Fireboat Three Forty Three",
+    "desc": "The same fireboat's salute catches the warm light of late afternoon, the Empire State Building and Chrysler Building glowing gold above the Manhattan waterfront crowds.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-52.jpg"
+  },
+  {
+    "id": "IMG_53",
+    "title": "Oosterschelde, a Closer View",
+    "category": "Tall Ships",
+    "group": "Oosterschelde (Netherlands)",
+    "desc": "A tighter view of the Dutch schooner Oosterschelde under sail, her name lettered on the bow and the Netherlands' flag flying from her rigging against a backdrop of glass towers.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-53.jpg"
+  },
+  {
+    "id": "IMG_54",
+    "title": "Air Force Tanker and Fighters, Silhouetted",
+    "category": "Aerial Review",
+    "group": "Air Force Tanker & Fighter Escort",
+    "desc": "A second view of the U.S. Air Force KC-135 Stratotanker and its four-fighter escort, all five aircraft reduced to dark silhouettes against the sky.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-54.jpg"
+  },
+  {
+    "id": "IMG_55",
+    "title": "The Maryland Schooner, Under Full Sail",
+    "category": "Tall Ships",
+    "group": "Maryland Topsail Schooner",
+    "desc": "The black-hulled Maryland topsail schooner beats upriver alone, her raked masts and full press of sail set against the hazy Manhattan skyline.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-55.jpg"
+  },
+  {
+    "id": "IMG_56",
+    "title": "Nine-Ship Formation, Closer View",
+    "category": "Aerial Review",
+    "group": "Nine-Ship Aerobatic Formation",
+    "desc": "A closer view of the nine-aircraft aerobatic team, each jet trailing its own red, white, or blue smoke line in tight echelon formation.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-56.jpg"
+  },
+  {
+    "id": "IMG_57",
+    "title": "Eagle, a Schooner, and a Warship Share the River",
+    "category": "Tall Ships",
+    "group": "Fleet & Multi-Ship Views",
+    "desc": "USCGC Eagle under sail with the Stars and Stripes flying large, a fireboat's spray beside her, and the Maryland topsail schooner passing close on the right — with a gray-hulled naval vessel moored at a Lower Manhattan pier in the distance.",
+    "placard": null,
+    "hotspots": [
+      { id: "carrier", top: "78%", left: "88%", title: "A Warship at the Pier", text: "The flat-decked gray vessel moored at the pier in the distance is a naval ship taking part in the harbor's Seventh International Naval Review, docked for public tours the same week as the sail parade." }
+    ],
+    "data": "images/america250-57.jpg"
+  },
+  {
+    "id": "IMG_58",
+    "title": "A Foreign Frigate Near the Verrazzano Bridge",
+    "category": "Warships",
+    "group": "Foreign Navy Frigate & Support Ship",
+    "desc": "A gray-hulled foreign navy frigate, dressed overall with signal flags, passes the Verrazzano-Narrows Bridge alongside a larger support vessel, with a V-22 Osprey and a helicopter crossing overhead.",
+    "placard": null,
+    "hotspots": [
+      { id: "osprey", top: "22%", left: "62%", title: "A V-22 Osprey Overhead", text: "The tiltrotor aircraft crossing the sky above the ships can take off and land like a helicopter, then rotate its engines forward to fly like a fixed-wing airplane — a design flown by both the U.S. Navy and Marine Corps." },
+      { id: "dressed", top: "68%", left: "35%", title: "Dressed for a Naval Review", text: "The garland of signal flags strung from bow to mast to stern is the traditional \"dressing ship\" display, put on by visiting naval vessels taking part in the harbor's International Naval Review alongside the tall-ship parade." }
+    ],
+    "data": "images/america250-58.jpg"
+  },
+  {
+    "id": "IMG_59",
+    "title": "Frigate and Support Ship, a Closer View",
+    "category": "Warships",
+    "group": "Foreign Navy Frigate & Support Ship",
+    "desc": "A closer view of the same foreign frigate and its accompanying support ship anchored near the bridge, with Staten Island's shoreline in the haze behind them.",
+    "placard": null,
+    "hotspots": [],
+    "data": "images/america250-59.jpg"
+  },
+  {
+    "id": "IMG_60",
+    "title": "USCGC Eagle Before the Empire State Building",
+    "category": "Tall Ships",
+    "group": "USCGC Eagle (USA)",
+    "desc": "Eagle under a full press of sail, the American flag streaming from her stern, lines up almost perfectly with the Empire State Building rising directly behind her in the Midtown skyline.",
+    "placard": null,
+    "hotspots": [
+      { id: "esb", top: "10%", left: "40%", title: "A Manhattan Backdrop", text: "The Empire State Building was the world's tallest building for nearly forty years after its 1931 completion, and remains one of the most recognizable landmarks on the Manhattan skyline — a fitting backdrop for America's own tall ship." },
+      { id: "sails", top: "55%", left: "50%", title: "A Full Press of Sail", text: "Eagle carries more than 20,000 square feet of sail across her masts when fully rigged, making moments like this — every sail set at once in the middle of a crowded harbor — a rare sight for photographers on the shore." }
+    ],
+    "data": "images/america250-60.jpg"
+  },
 ];
 const CATEGORIES = ["All", "Tall Ships", "Warships", "Aerial Review", "Fireboats & Harbor Vessels"];
 const US_GROUP_NAMES = ["USS Farragut (DDG-99)", "USCGC Eagle (USA)"];
@@ -736,10 +930,10 @@ function Gallery() {
 
   const groups = useMemo(() => {
     const map = new Map();
-    filtered.forEach((photo, idx) => {
+    filtered.forEach((photo) => {
       const key = photo.group || photo.title;
       if (!map.has(key)) map.set(key, []);
-      map.get(key).push({ photo, idx });
+      map.get(key).push(photo);
     });
     return Array.from(map.entries()).map(([name, items]) => ({ name, items }));
   }, [filtered]);
@@ -753,12 +947,29 @@ function Gallery() {
     [groups]
   );
 
-  const openAt = (idx) => { setSelected(idx); setActiveHotspot(null); };
-  const close = () => { stop(); setSelected(null); setActiveHotspot(null); };
-  const next = () => { stop(); setActiveHotspot(null); setSelected((i) => (i === null ? null : (i + 1) % filtered.length)); };
-  const prev = () => { stop(); setActiveHotspot(null); setSelected((i) => (i === null ? null : (i - 1 + filtered.length) % filtered.length)); };
+  // The order photos actually appear on the page: American ships first, then
+  // everything else, group by group. The lightbox (open/next/prev, and the "X
+  // of Y" counter) walks THIS order, not the raw data order — otherwise
+  // stepping past the last photo in a section jumps to whatever happens to
+  // sit next in GALLERY_DATA, which can be a completely different country's
+  // ship with no visual connection to where you were.
+  const displayOrder = useMemo(() => {
+    const list = [];
+    usGroups.forEach((g) => g.items.forEach((p) => list.push(p)));
+    otherGroups.forEach((g) => g.items.forEach((p) => list.push(p)));
+    return list;
+  }, [usGroups, otherGroups]);
 
-  const current = selected !== null ? filtered[selected] : null;
+  const openAt = (photoId) => {
+    const idx = displayOrder.findIndex((p) => p.id === photoId);
+    setSelected(idx >= 0 ? idx : null);
+    setActiveHotspot(null);
+  };
+  const close = () => { stop(); setSelected(null); setActiveHotspot(null); };
+  const next = () => { stop(); setActiveHotspot(null); setSelected((i) => (i === null ? null : (i + 1) % displayOrder.length)); };
+  const prev = () => { stop(); setActiveHotspot(null); setSelected((i) => (i === null ? null : (i - 1 + displayOrder.length) % displayOrder.length)); };
+
+  const current = selected !== null ? displayOrder[selected] : null;
   const hotspots = current?.hotspots || [];
   const hotspotIndex = hotspots.findIndex((h) => h.id === activeHotspot);
   const currentHotspot = hotspotIndex >= 0 ? hotspots[hotspotIndex] : null;
@@ -787,7 +998,7 @@ function Gallery() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [selected, filtered.length]);
+  }, [selected, displayOrder.length]);
 
   return (
     <div className="min-h-screen w-full bg-neutral-900 text-white pb-16">
@@ -833,8 +1044,8 @@ function Gallery() {
                         <span className="ship-group-count">{items.length} photo{items.length === 1 ? "" : "s"}</span>
                       </div>
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                        {items.map(({ photo, idx }) => (
-                          <button key={photo.id} onClick={() => openAt(idx)}
+                        {items.map((photo) => (
+                          <button key={photo.id} onClick={() => openAt(photo.id)}
                             className="group relative rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700 hover:border-amber-400 transition-colors aspect-square">
                             <img src={photo.data} alt={photo.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
@@ -870,8 +1081,8 @@ function Gallery() {
                   <span className="ship-group-count">{items.length} photo{items.length === 1 ? "" : "s"}</span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                  {items.map(({ photo, idx }) => (
-                    <button key={photo.id} onClick={() => openAt(idx)}
+                  {items.map((photo) => (
+                    <button key={photo.id} onClick={() => openAt(photo.id)}
                       className="group relative rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700 hover:border-amber-400 transition-colors aspect-square">
                       <img src={photo.data} alt={photo.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
@@ -973,7 +1184,7 @@ function Gallery() {
               </div>
             )}
 
-            <p className="text-xs text-neutral-500 mt-6">{selected + 1} of {filtered.length}</p>
+            <p className="text-xs text-neutral-500 mt-6">{selected + 1} of {displayOrder.length}</p>
           </div>
         </div>
       )}
