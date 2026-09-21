@@ -524,6 +524,7 @@ const GALLERY_DATA = [
   },
 ];
 const CATEGORIES = ["All", "Tall Ships", "Warships", "Aerial Review", "Fireboats & Harbor Vessels"];
+const US_GROUP_NAMES = ["USS Farragut (DDG-99)", "USCGC Eagle (USA)"];
 
 function useSpeech() {
   const [speaking, setSpeaking] = useState(false);
@@ -743,6 +744,15 @@ function Gallery() {
     return Array.from(map.entries()).map(([name, items]) => ({ name, items }));
   }, [filtered]);
 
+  const usGroups = useMemo(
+    () => groups.filter((g) => US_GROUP_NAMES.includes(g.name)),
+    [groups]
+  );
+  const otherGroups = useMemo(
+    () => groups.filter((g) => !US_GROUP_NAMES.includes(g.name)),
+    [groups]
+  );
+
   const openAt = (idx) => { setSelected(idx); setActiveHotspot(null); };
   const close = () => { stop(); setSelected(null); setActiveHotspot(null); };
   const next = () => { stop(); setActiveHotspot(null); setSelected((i) => (i === null ? null : (i + 1) % filtered.length)); };
@@ -808,7 +818,51 @@ function Gallery() {
           </div>
         ) : (
           <div className="space-y-10">
-            {groups.map(({ name, items }) => (
+            {usGroups.length > 0 && (
+              <div className="us-fleet-section">
+                <div className="us-fleet-label">
+                  <span className="us-fleet-flag" aria-hidden="true">🇺🇸</span>
+                  Flying America's Colors
+                </div>
+                <div className="space-y-8">
+                  {usGroups.map(({ name, items }) => (
+                    <div key={name}>
+                      <div className="ship-group-heading us-ship-heading">
+                        <Anchor size={14} className="us-ship-icon shrink-0" />
+                        <h3>{name}</h3>
+                        <span className="ship-group-count">{items.length} photo{items.length === 1 ? "" : "s"}</span>
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                        {items.map(({ photo, idx }) => (
+                          <button key={photo.id} onClick={() => openAt(idx)}
+                            className="group relative rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700 hover:border-amber-400 transition-colors aspect-square">
+                            <img src={photo.data} alt={photo.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                            <div className="absolute top-1.5 left-1.5 right-1.5 flex justify-between">
+                              {photo.placard && (
+                                <span className="bg-emerald-500 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1">
+                                  <ScrollText size={10} /> placard
+                                </span>
+                              )}
+                              {photo.hotspots && photo.hotspots.length > 0 && (
+                                <span className="bg-amber-400 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-auto">
+                                  tap-to-explore
+                                </span>
+                              )}
+                            </div>
+                            <div className="absolute inset-x-0 bottom-0 bg-black bg-opacity-70 px-2 py-1.5">
+                              <p className="text-xs font-medium text-white truncate text-left">{photo.title}</p>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {otherGroups.map(({ name, items }) => (
               <div key={name}>
                 <div className="ship-group-heading">
                   <Anchor size={14} className="section-star shrink-0" />

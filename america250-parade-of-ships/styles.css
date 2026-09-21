@@ -318,6 +318,59 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
+.us-fleet-section {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1.5rem 1.25rem 0.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(160deg, rgba(185,28,28,0.14), rgba(23,23,23,0) 40%),
+              linear-gradient(200deg, rgba(30,58,138,0.16), rgba(23,23,23,0) 45%),
+              rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.us-fleet-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 1rem 1rem 0 0;
+  background: repeating-linear-gradient(
+    90deg,
+    #b91c1c 0, #b91c1c 8%,
+    #ffffff 8%, #ffffff 16%,
+    #1e3a8a 16%, #1e3a8a 24%,
+    #ffffff 24%, #ffffff 32%,
+    #b91c1c 32%, #b91c1c 40%
+  );
+  background-size: 40% 100%;
+}
+.us-fleet-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fefce8;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, #ef4444, #ffffff, #3b82f6) 1;
+}
+.us-fleet-flag {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.us-ship-heading {
+  border-bottom-color: rgba(59,130,246,0.4);
+}
+.us-ship-icon {
+  color: #93c5fd;
+  filter: drop-shadow(0 0 4px rgba(239,68,68,0.5));
+}
+
 /* ---------- responsive: sm (min-width 640px) ---------- */
 @media (min-width: 640px) {
   .sm\:col-span-2 { grid-column: span 2 / span 2; }

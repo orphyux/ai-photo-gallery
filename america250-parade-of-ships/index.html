@@ -609,6 +609,7 @@ const GALLERY_DATA = [
     },
 ];
 const CATEGORIES = ["All", "Tall Ships", "Warships", "Aerial Review", "Fireboats & Harbor Vessels"];
+const US_GROUP_NAMES = ["USS Farragut (DDG-99)", "USCGC Eagle (USA)"];
 function useSpeech() {
     const [speaking, setSpeaking] = useState(false);
     const speak = (text) => {
@@ -732,6 +733,8 @@ function Gallery() {
         });
         return Array.from(map.entries()).map(([name, items]) => ({ name, items }));
     }, [filtered]);
+    const usGroups = useMemo(() => groups.filter((g) => US_GROUP_NAMES.includes(g.name)), [groups]);
+    const otherGroups = useMemo(() => groups.filter((g) => !US_GROUP_NAMES.includes(g.name)), [groups]);
     const openAt = (idx) => { setSelected(idx); setActiveHotspot(null); };
     const close = () => { stop(); setSelected(null); setActiveHotspot(null); };
     const next = () => { stop(); setActiveHotspot(null); setSelected((i) => (i === null ? null : (i + 1) % filtered.length)); };
@@ -784,23 +787,45 @@ function Gallery() {
                 : "bg-neutral-800 border-neutral-700 text-neutral-300 hover:border-neutral-500 hover:text-white"}` }, cat)))),
         React.createElement("div", { className: "max-w-6xl mx-auto px-4 sm:px-6" }, filtered.length === 0 ? (React.createElement("div", { className: "text-center text-neutral-400 py-16 flex flex-col items-center gap-2" },
             React.createElement(LayoutGrid, { size: 28 }),
-            " No photos in this category yet.")) : (React.createElement("div", { className: "space-y-10" }, groups.map(({ name, items }) => (React.createElement("div", { key: name },
-            React.createElement("div", { className: "ship-group-heading" },
-                React.createElement(Anchor, { size: 14, className: "section-star shrink-0" }),
-                React.createElement("h3", null, name),
-                React.createElement("span", { className: "ship-group-count" },
-                    items.length,
-                    " photo",
-                    items.length === 1 ? "" : "s")),
-            React.createElement("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" }, items.map(({ photo, idx }) => (React.createElement("button", { key: photo.id, onClick: () => openAt(idx), className: "group relative rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700 hover:border-amber-400 transition-colors aspect-square" },
-                React.createElement("img", { src: photo.data, alt: photo.title, className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-300", loading: "lazy" }),
-                React.createElement("div", { className: "absolute top-1.5 left-1.5 right-1.5 flex justify-between" },
-                    photo.placard && (React.createElement("span", { className: "bg-emerald-500 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1" },
-                        React.createElement(ScrollText, { size: 10 }),
-                        " placard")),
-                    photo.hotspots && photo.hotspots.length > 0 && (React.createElement("span", { className: "bg-amber-400 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-auto" }, "tap-to-explore"))),
-                React.createElement("div", { className: "absolute inset-x-0 bottom-0 bg-black bg-opacity-70 px-2 py-1.5" },
-                    React.createElement("p", { className: "text-xs font-medium text-white truncate text-left" }, photo.title)))))))))))),
+            " No photos in this category yet.")) : (React.createElement("div", { className: "space-y-10" },
+            usGroups.length > 0 && (React.createElement("div", { className: "us-fleet-section" },
+                React.createElement("div", { className: "us-fleet-label" },
+                    React.createElement("span", { className: "us-fleet-flag", "aria-hidden": "true" }, "\uD83C\uDDFA\uD83C\uDDF8"),
+                    "Flying America's Colors"),
+                React.createElement("div", { className: "space-y-8" }, usGroups.map(({ name, items }) => (React.createElement("div", { key: name },
+                    React.createElement("div", { className: "ship-group-heading us-ship-heading" },
+                        React.createElement(Anchor, { size: 14, className: "us-ship-icon shrink-0" }),
+                        React.createElement("h3", null, name),
+                        React.createElement("span", { className: "ship-group-count" },
+                            items.length,
+                            " photo",
+                            items.length === 1 ? "" : "s")),
+                    React.createElement("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" }, items.map(({ photo, idx }) => (React.createElement("button", { key: photo.id, onClick: () => openAt(idx), className: "group relative rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700 hover:border-amber-400 transition-colors aspect-square" },
+                        React.createElement("img", { src: photo.data, alt: photo.title, className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-300", loading: "lazy" }),
+                        React.createElement("div", { className: "absolute top-1.5 left-1.5 right-1.5 flex justify-between" },
+                            photo.placard && (React.createElement("span", { className: "bg-emerald-500 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1" },
+                                React.createElement(ScrollText, { size: 10 }),
+                                " placard")),
+                            photo.hotspots && photo.hotspots.length > 0 && (React.createElement("span", { className: "bg-amber-400 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-auto" }, "tap-to-explore"))),
+                        React.createElement("div", { className: "absolute inset-x-0 bottom-0 bg-black bg-opacity-70 px-2 py-1.5" },
+                            React.createElement("p", { className: "text-xs font-medium text-white truncate text-left" }, photo.title)))))))))))),
+            otherGroups.map(({ name, items }) => (React.createElement("div", { key: name },
+                React.createElement("div", { className: "ship-group-heading" },
+                    React.createElement(Anchor, { size: 14, className: "section-star shrink-0" }),
+                    React.createElement("h3", null, name),
+                    React.createElement("span", { className: "ship-group-count" },
+                        items.length,
+                        " photo",
+                        items.length === 1 ? "" : "s")),
+                React.createElement("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" }, items.map(({ photo, idx }) => (React.createElement("button", { key: photo.id, onClick: () => openAt(idx), className: "group relative rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700 hover:border-amber-400 transition-colors aspect-square" },
+                    React.createElement("img", { src: photo.data, alt: photo.title, className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-300", loading: "lazy" }),
+                    React.createElement("div", { className: "absolute top-1.5 left-1.5 right-1.5 flex justify-between" },
+                        photo.placard && (React.createElement("span", { className: "bg-emerald-500 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1" },
+                            React.createElement(ScrollText, { size: 10 }),
+                            " placard")),
+                        photo.hotspots && photo.hotspots.length > 0 && (React.createElement("span", { className: "bg-amber-400 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-auto" }, "tap-to-explore"))),
+                    React.createElement("div", { className: "absolute inset-x-0 bottom-0 bg-black bg-opacity-70 px-2 py-1.5" },
+                        React.createElement("p", { className: "text-xs font-medium text-white truncate text-left" }, photo.title)))))))))))),
         current && (React.createElement("div", { className: "fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col items-center justify-center p-4 sm:p-8 overflow-y-auto" },
             React.createElement("button", { onClick: close, className: "fixed top-4 right-4 sm:top-6 sm:right-6 bg-neutral-800 hover:bg-neutral-700 rounded-full p-2 text-white z-10", "aria-label": "Close" },
                 React.createElement(XIcon, { size: 20 })),
