@@ -341,14 +341,13 @@ const GALLERY_DATA = [
   },
   {
     "id": "IMG_27",
-    "title": "Amerigo Vespucci's Nameplate",
+    "title": "Poland's Dar Mlodziezy, a Closer View",
     "category": "Tall Ships",
-    "group": "Amerigo Vespucci (Italy)",
-    "desc": "A close pass reveals the gilded transom lettering \"...RICO VESPUCCI\" and the Italian Navy's ensign \u2014 green, white, and red with the naval crest at center \u2014 flying from her rigging.",
+    "group": "Dar Mlodziezy (Poland)",
+    "desc": "A closer pass of the Polish sail training ship, her name and home port \u2014 \"Dar Mlodziezy, Odynia\" \u2014 lettered plainly along her white hull.",
     "placard": null,
     "hotspots": [
-      { id: "ensign", top: "35%", left: "35%", title: "The Italian Naval Ensign", text: "Unlike Italy's plain civil tricolor, the naval ensign carries a crowned shield at center bearing the coats of arms of Genoa, Venice, Pisa, and Amalfi \u2014 the four historic maritime republics." },
-      { id: "transom", top: "75%", left: "25%", title: "Gilded Stern Carving", text: "The elaborately scrolled gold work along the stern is hand-carved and repainted regularly \u2014 part of what has earned Vespucci the nickname \"the most beautiful ship in the world.\"" }
+      { id: "name", top: "75%", left: "25%", title: "Gift of Youth", text: "\"Dar Mlodziezy\" translates to \"Gift of Youth\" \u2014 she has trained cadets for the Polish naval academy since 1982 and was the lead ship of a class of near-identical tall ships built for Soviet-bloc navies, several of which sailed in this parade." }
     ],
     "data": "images/america250-27.jpg"
   },
@@ -378,13 +377,13 @@ const GALLERY_DATA = [
   },
   {
     "id": "IMG_31",
-    "title": "Poland's Dar Mlodziezy",
+    "title": "Gorch Fock, With an Overhead Escort",
     "category": "Tall Ships",
-    "group": "Dar Mlodziezy (Poland)",
-    "desc": "A gray-hulled, full-rigged ship with her name and home port \u2014 \"Dar Mlodziezy, Odynia\" \u2014 lettered on her stern. The name means \"Gift of Youth\" in Polish.",
+    "group": "Gorch Fock (Germany)",
+    "desc": "The German Navy's Gorch Fock under way, her black-red-gold ensign streaming from the mizzen as a helicopter passes overhead \u2014 identified by that flag rather than the stern lettering, which isn't visible from this angle.",
     "placard": null,
     "hotspots": [
-      { id: "stern", top: "80%", left: "20%", title: "Gift of Youth", text: "Dar Mlodziezy has served as the Polish naval academy's sail training ship since 1982 and was the lead vessel of a class of six near-identical tall ships built for Soviet-bloc navies." }
+      { id: "flag", top: "30%", left: "78%", title: "Germany's Naval Ensign", text: "The black-red-gold tricolor with the federal eagle is Germany's state ensign, flown by naval and other government vessels." }
     ],
     "data": "images/america250-31.jpg"
   },
@@ -487,13 +486,14 @@ const GALLERY_DATA = [
   },
   {
     "id": "IMG_40",
-    "title": "USCGC Eagle, a Moment Later",
+    "title": "Amerigo Vespucci's Nameplate",
     "category": "Tall Ships",
-    "group": "USCGC Eagle (USA)",
-    "desc": "Another frame of Eagle's close pass, her full dressing of signal flags and the Stars and Stripes streaming in the harbor breeze.",
+    "group": "Amerigo Vespucci (Italy)",
+    "desc": "A close pass reveals the gilded transom lettering \"...RICO VESPUCCI\" and the Italian Navy's ensign — green, white, and red with the naval crest at center — flying from her rigging.",
     "placard": null,
     "hotspots": [
-      { id: "hull", top: "70%", left: "55%", title: "America's Tall Ship", text: "Built in Germany in 1936 and taken by the United States as war reparations after World War II, Eagle has served as the Coast Guard Academy's training ship since 1946." }
+      { id: "ensign", top: "35%", left: "35%", title: "The Italian Naval Ensign", text: "Unlike Italy's plain civil tricolor, the naval ensign carries a crowned shield at center bearing the coats of arms of Genoa, Venice, Pisa, and Amalfi — the four historic maritime republics." },
+      { id: "transom", top: "75%", left: "25%", title: "Gilded Stern Carving", text: "The elaborately scrolled gold work along the stern is hand-carved and repainted regularly — part of what has earned Vespucci the nickname \"the most beautiful ship in the world.\"" }
     ],
     "data": "images/america250-40.jpg"
   },
