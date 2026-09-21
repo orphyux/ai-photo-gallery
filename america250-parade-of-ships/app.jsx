@@ -35,6 +35,7 @@ const GALLERY_DATA = [
     "id": "IMG_01",
     "title": "USS Farragut Steams Up the Hudson",
     "category": "Warships",
+    "group": "USS Farragut (DDG-99)",
     "desc": "The Arleigh Burke-class guided-missile destroyer USS Farragut (DDG-99), dressed in red-white-and-blue bunting, passes the Hudson Yards skyline with a harbor patrol boat running alongside.",
     "placard": null,
     "hotspots": [
@@ -48,6 +49,7 @@ const GALLERY_DATA = [
     "id": "IMG_02",
     "title": "Blue Angels Over Hudson Yards",
     "category": "Aerial Review",
+    "group": "Blue Angels",
     "desc": "The U.S. Navy's Blue Angels hold a tight diamond formation above the glass towers of Hudson Yards, four white smoke trails cutting across a clear morning sky.",
     "placard": null,
     "hotspots": [
@@ -59,6 +61,7 @@ const GALLERY_DATA = [
     "id": "IMG_03",
     "title": "Diamond Formation, Wide View",
     "category": "Aerial Review",
+    "group": "Blue Angels",
     "desc": "The same diamond formation banks past the Hudson Yards spire, with the Empire State Building visible in the haze to the right.",
     "placard": null,
     "hotspots": [],
@@ -68,6 +71,7 @@ const GALLERY_DATA = [
     "id": "IMG_04",
     "title": "Red, White, and Blue Overhead",
     "category": "Aerial Review",
+    "group": "Aerobatic Display Team",
     "desc": "An aerobatic display team streaks over Lower Manhattan, laying down red, white, and blue smoke that stretches the length of the Hudson waterfront.",
     "placard": null,
     "hotspots": [
@@ -79,6 +83,7 @@ const GALLERY_DATA = [
     "id": "IMG_05",
     "title": "Smoke Trail Toward One World Trade",
     "category": "Aerial Review",
+    "group": "Aerobatic Display Team",
     "desc": "The same formation banks lower, its colored smoke trailing directly toward the spire of One World Trade Center.",
     "placard": null,
     "hotspots": [],
@@ -88,6 +93,7 @@ const GALLERY_DATA = [
     "id": "IMG_06",
     "title": "\"FIFI\" the B-29 Superfortress",
     "category": "Aerial Review",
+    "group": "B-29 Superfortress \"FIFI\"",
     "desc": "A World War II-era Boeing B-29 Superfortress named FIFI banks against a bank of clouds \u2014 one of the rarest aircraft still flying on the airshow circuit today.",
     "placard": null,
     "hotspots": [
@@ -100,6 +106,7 @@ const GALLERY_DATA = [
     "id": "IMG_07",
     "title": "Marine Corps KC-130 Hercules Pair",
     "category": "Aerial Review",
+    "group": "Marine Corps KC-130 Hercules",
     "desc": "Two U.S. Marine Corps KC-130 Hercules aerial refuelers cross paths overhead, four turboprop engines apiece throttled back for the low pass.",
     "placard": null,
     "hotspots": [
@@ -111,6 +118,7 @@ const GALLERY_DATA = [
     "id": "IMG_08",
     "title": "Fireboat Salute, Distant View",
     "category": "Fireboats & Harbor Vessels",
+    "group": "FDNY Fireboat Three Forty Three",
     "desc": "An FDNY fireboat throws high arcs of harbor water into the afternoon haze \u2014 the traditional salute given to visiting ships on the Hudson.",
     "placard": null,
     "hotspots": [],
@@ -120,6 +128,7 @@ const GALLERY_DATA = [
     "id": "IMG_09",
     "title": "Fireboat Three Forty Three and the Empire State Building",
     "category": "Fireboats & Harbor Vessels",
+    "group": "FDNY Fireboat Three Forty Three",
     "desc": "FDNY fireboat Three Forty Three fans a wall of water across the river with the Chrysler Building and the Empire State Building rising behind it.",
     "placard": null,
     "hotspots": [
@@ -132,6 +141,7 @@ const GALLERY_DATA = [
     "id": "IMG_10",
     "title": "Three Forty Three, Closer Pass",
     "category": "Fireboats & Harbor Vessels",
+    "group": "FDNY Fireboat Three Forty Three",
     "desc": "The same FDNY fireboat cuts closer past the pier crowds, its twin plumes catching the late-afternoon light beneath the Empire State Building.",
     "placard": null,
     "hotspots": [
@@ -143,6 +153,7 @@ const GALLERY_DATA = [
     "id": "IMG_11",
     "title": "Oosterschelde Under Full Sail",
     "category": "Tall Ships",
+    "group": "Oosterschelde (Netherlands)",
     "desc": "The Dutch schooner Oosterschelde, a restored 1918 cargo vessel, glides past the glass towers of a Manhattan marina under a full spread of canvas.",
     "placard": null,
     "hotspots": [
@@ -155,6 +166,7 @@ const GALLERY_DATA = [
     "id": "IMG_12",
     "title": "Air Force Tanker and Fighter Escort",
     "category": "Aerial Review",
+    "group": "Air Force Tanker & Fighter Escort",
     "desc": "A U.S. Air Force KC-135 Stratotanker holds center formation with four fighter jets, all four aircraft reduced to silhouettes against the afternoon sky.",
     "placard": null,
     "hotspots": [
@@ -166,6 +178,7 @@ const GALLERY_DATA = [
     "id": "IMG_13",
     "title": "A Baltimore Schooner Under Sail",
     "category": "Tall Ships",
+    "group": "Maryland Topsail Schooner",
     "desc": "A black-hulled topsail schooner flying Maryland's flag beats past Midtown, rigged in the fast, raked-mast style associated with the 19th-century Baltimore clippers.",
     "placard": null,
     "hotspots": [
@@ -177,6 +190,7 @@ const GALLERY_DATA = [
     "id": "IMG_14",
     "title": "Nine-Ship Smoke Formation",
     "category": "Aerial Review",
+    "group": "Nine-Ship Aerobatic Formation",
     "desc": "A nine-aircraft aerobatic team holds a wide echelon, each jet trailing its own red, white, or blue smoke line across the sky.",
     "placard": null,
     "hotspots": [],
@@ -186,6 +200,7 @@ const GALLERY_DATA = [
     "id": "IMG_15",
     "title": "Three Tall Ships Converge",
     "category": "Tall Ships",
+    "group": "Fleet & Multi-Ship Views",
     "desc": "A full-rigged training ship under square sails meets the Baltimore schooner and a distant topsail schooner as a fireboat sprays behind them and a gray-hulled Navy vessel waits at the pier on the right.",
     "placard": null,
     "hotspots": [
@@ -199,6 +214,7 @@ const GALLERY_DATA = [
     "id": "IMG_16",
     "title": "Dressed Ship Under Full Sail",
     "category": "Tall Ships",
+    "group": "A Dressed Sail Training Ship",
     "desc": "A square-rigged sail training ship, dressed overall with signal flags strung from bow to stern, carries a full set of sails past the Empire State Building.",
     "placard": null,
     "hotspots": [
@@ -210,6 +226,7 @@ const GALLERY_DATA = [
     "id": "IMG_17",
     "title": "A Second Topsail Schooner",
     "category": "Tall Ships",
+    "group": "A Second Topsail Schooner",
     "desc": "A black-hulled, gaff-rigged schooner flying the American flag beats upriver, her sails cut in the same working style as the fishing and cargo schooners that once worked this coast.",
     "placard": null,
     "hotspots": [],
@@ -219,6 +236,7 @@ const GALLERY_DATA = [
     "id": "IMG_18",
     "title": "Esmeralda, Chile's Tall Ship",
     "category": "Tall Ships",
+    "group": "Esmeralda (Chile)",
     "desc": "A four-masted barquentine flying the Chilean flag carries a striking spread of sail \u2014 very likely the Chilean Navy's training ship Esmeralda, one of the largest and most recognizable vessels in the international fleet.",
     "placard": null,
     "hotspots": [
@@ -231,6 +249,7 @@ const GALLERY_DATA = [
     "id": "IMG_19",
     "title": "The Fleet Converges Near the Pier",
     "category": "Tall Ships",
+    "group": "Fleet & Multi-Ship Views",
     "desc": "Several tall ships close ranks near a Manhattan pier as a fireboat throws its salute between them \u2014 a wide view of just how many nations' vessels shared this stretch of the Hudson at once.",
     "placard": null,
     "hotspots": [],
@@ -240,6 +259,7 @@ const GALLERY_DATA = [
     "id": "IMG_20",
     "title": "Colombia's Sail Training Ship",
     "category": "Tall Ships",
+    "group": "ARC Gloria (Colombia)",
     "desc": "A white-hulled barque flying Colombia's yellow, blue, and red flag sails past the Manhattan waterfront \u2014 very likely the Colombian Navy's ARC Gloria.",
     "placard": null,
     "hotspots": [
@@ -251,6 +271,7 @@ const GALLERY_DATA = [
     "id": "IMG_21",
     "title": "A Dominican Republic Sail Training Ship",
     "category": "Tall Ships",
+    "group": "Almirante Cambiaso (Dominican Republic)",
     "desc": "A white-hulled schooner flying the flag of the Dominican Republic, her sails marked with the national coat of arms, passes close along the Manhattan shore.",
     "placard": null,
     "hotspots": [
@@ -262,6 +283,7 @@ const GALLERY_DATA = [
     "id": "IMG_22",
     "title": "Ecuador's Guayas",
     "category": "Tall Ships",
+    "group": "Guayas (Ecuador)",
     "desc": "A three-masted barque flying Ecuador's yellow, blue, and red flag carries a full press of sail \u2014 very likely the Ecuadorian Navy's training ship Guayas.",
     "placard": null,
     "hotspots": [
@@ -273,6 +295,7 @@ const GALLERY_DATA = [
     "id": "IMG_23",
     "title": "India's Tarangini",
     "category": "Tall Ships",
+    "group": "Tarangini (India)",
     "desc": "A white-hulled, three-masted barque flying India's saffron, white, and green flag sails past the Manhattan skyline \u2014 very likely the Indian Navy's sail training ship Tarangini.",
     "placard": null,
     "hotspots": [
@@ -284,6 +307,7 @@ const GALLERY_DATA = [
     "id": "IMG_24",
     "title": "Amerigo Vespucci, Italy's Tall Ship",
     "category": "Tall Ships",
+    "group": "Amerigo Vespucci (Italy)",
     "desc": "A gleaming white full-rigged ship flying the Italian flag sails past Midtown \u2014 very likely the Italian Navy's Amerigo Vespucci, often called the most beautiful ship in the world.",
     "placard": null,
     "hotspots": [
@@ -295,6 +319,7 @@ const GALLERY_DATA = [
     "id": "IMG_25",
     "title": "Amerigo Vespucci, Broadside",
     "category": "Tall Ships",
+    "group": "Amerigo Vespucci (Italy)",
     "desc": "The Italian Navy's Amerigo Vespucci under way, her black hull banded in white and her ochre upper works catching the sun \u2014 confirmed by her name lettered across the stern.",
     "placard": null,
     "hotspots": [
@@ -306,6 +331,7 @@ const GALLERY_DATA = [
     "id": "IMG_26",
     "title": "Amerigo Vespucci, Under Sail",
     "category": "Tall Ships",
+    "group": "Amerigo Vespucci (Italy)",
     "desc": "A second view of Amerigo Vespucci, her three towering masts and web of standing rigging silhouetted against the harbor sky.",
     "placard": null,
     "hotspots": [
@@ -317,6 +343,7 @@ const GALLERY_DATA = [
     "id": "IMG_27",
     "title": "Amerigo Vespucci's Nameplate",
     "category": "Tall Ships",
+    "group": "Amerigo Vespucci (Italy)",
     "desc": "A close pass reveals the gilded transom lettering \"...RICO VESPUCCI\" and the Italian Navy's ensign \u2014 green, white, and red with the naval crest at center \u2014 flying from her rigging.",
     "placard": null,
     "hotspots": [
@@ -326,20 +353,10 @@ const GALLERY_DATA = [
     "data": "images/america250-27.jpg"
   },
   {
-    "id": "IMG_28",
-    "title": "A Front-Row Seat to the Parade",
-    "category": "Tall Ships",
-    "desc": "A spectator aboard a small boat gets a close pass from Amerigo Vespucci, the ship's rigging and Italian ensign filling the background.",
-    "placard": null,
-    "hotspots": [
-      { id: "ship", top: "40%", left: "70%", title: "Following the Fleet", text: "Spectator boats were allowed to shadow the tall ships at a distance along much of the parade route, giving harborside viewers an up-close look impossible from shore." }
-    ],
-    "data": "images/america250-28.jpg"
-  },
-  {
     "id": "IMG_29",
     "title": "Germany's Gorch Fock",
     "category": "Tall Ships",
+    "group": "Gorch Fock (Germany)",
     "desc": "A white-hulled barque flying Germany's black-red-gold flag \u2014 very likely the German Navy's sail training ship Gorch Fock, a fixture of tall-ship gatherings worldwide.",
     "placard": null,
     "hotspots": [
@@ -351,6 +368,7 @@ const GALLERY_DATA = [
     "id": "IMG_30",
     "title": "Gorch Fock, With an Escort Overhead",
     "category": "Tall Ships",
+    "group": "Gorch Fock (Germany)",
     "desc": "The same German barque under sail, with a military helicopter passing in the distance \u2014 a reminder that the aerial review shared the same harbor airspace as the tall ships below.",
     "placard": null,
     "hotspots": [
@@ -362,6 +380,7 @@ const GALLERY_DATA = [
     "id": "IMG_31",
     "title": "Poland's Dar Mlodziezy",
     "category": "Tall Ships",
+    "group": "Dar Mlodziezy (Poland)",
     "desc": "A gray-hulled, full-rigged ship with her name and home port \u2014 \"Dar Mlodziezy, Odynia\" \u2014 lettered on her stern. The name means \"Gift of Youth\" in Polish.",
     "placard": null,
     "hotspots": [
@@ -373,6 +392,7 @@ const GALLERY_DATA = [
     "id": "IMG_32",
     "title": "India's Sudarshini",
     "category": "Tall Ships",
+    "group": "Sudarshini (India)",
     "desc": "A dark-hulled, three-masted barquentine flying India's tricolor, her name \"Sudarshini\" painted on the bow \u2014 a separate Indian Navy sail training ship from the Tarangini seen earlier in this gallery.",
     "placard": null,
     "hotspots": [
@@ -384,6 +404,7 @@ const GALLERY_DATA = [
     "id": "IMG_33",
     "title": "Ecuador's Guayas, Under Way",
     "category": "Tall Ships",
+    "group": "Guayas (Ecuador)",
     "desc": "A white, three-masted barque flying Ecuador's flag, her rigging fully manned by sailors \u2014 very likely BAE Guayas, seen here from a closer vantage than earlier in the gallery.",
     "placard": null,
     "hotspots": [
@@ -395,6 +416,7 @@ const GALLERY_DATA = [
     "id": "IMG_34",
     "title": "Peru's BAP Union",
     "category": "Tall Ships",
+    "group": "BAP Union (Peru)",
     "desc": "A gleaming white, four-masted barque flying a red flag with a white field \u2014 very likely the Peruvian Navy's BAP Union, one of the newest and largest tall ships in the world fleet.",
     "placard": null,
     "hotspots": [
@@ -406,6 +428,7 @@ const GALLERY_DATA = [
     "id": "IMG_35",
     "title": "Uruguay's Capitan Miranda",
     "category": "Tall Ships",
+    "group": "Capitan Miranda (Uruguay)",
     "desc": "A dark-hulled, three-masted schooner flying Uruguay's flag \u2014 very likely the Uruguayan Navy's Capitan Miranda, one of the oldest active sail training ships in South America.",
     "placard": null,
     "hotspots": [
@@ -417,6 +440,7 @@ const GALLERY_DATA = [
     "id": "IMG_36",
     "title": "Capitan Miranda, Seen From Afar",
     "category": "Tall Ships",
+    "group": "Capitan Miranda (Uruguay)",
     "desc": "A hazier, more distant view of the same Uruguayan schooner, with the spectator boat \"Dark Horse\" and the Manhattan skyline visible in the haze beyond.",
     "placard": null,
     "hotspots": [
@@ -428,6 +452,7 @@ const GALLERY_DATA = [
     "id": "IMG_37",
     "title": "Dominican Republic's Almirante Cambiaso",
     "category": "Tall Ships",
+    "group": "Almirante Cambiaso (Dominican Republic)",
     "desc": "A dark-hulled schooner dressed with signal flags stem to stern, her name \"Cambiaso\" lettered on the transom \u2014 the Dominican Navy's training ship Almirante Juan Bautista Cambiaso, the country's first tall ship.",
     "placard": null,
     "hotspots": [
@@ -439,6 +464,7 @@ const GALLERY_DATA = [
     "id": "IMG_38",
     "title": "USCGC Eagle, in the Haze",
     "category": "Tall Ships",
+    "group": "USCGC Eagle (USA)",
     "desc": "A distant, sun-hazed view of a large white barque crowded with small spectator boats \u2014 the U.S. Coast Guard's training ship Eagle, America's own tall ship and a fixture of the parade.",
     "placard": null,
     "hotspots": [
@@ -450,6 +476,7 @@ const GALLERY_DATA = [
     "id": "IMG_39",
     "title": "USCGC Eagle, Close Aboard",
     "category": "Tall Ships",
+    "group": "USCGC Eagle (USA)",
     "desc": "Eagle passes close by, \"U.S. COAST GUARD\" lettered along her white hull, the American flag flying large from her foremast and a sailor perched high on the rigging.",
     "placard": null,
     "hotspots": [
@@ -462,6 +489,7 @@ const GALLERY_DATA = [
     "id": "IMG_40",
     "title": "USCGC Eagle, a Moment Later",
     "category": "Tall Ships",
+    "group": "USCGC Eagle (USA)",
     "desc": "Another frame of Eagle's close pass, her full dressing of signal flags and the Stars and Stripes streaming in the harbor breeze.",
     "placard": null,
     "hotspots": [
@@ -473,6 +501,7 @@ const GALLERY_DATA = [
     "id": "IMG_41",
     "title": "USCGC Eagle, Surrounded",
     "category": "Tall Ships",
+    "group": "USCGC Eagle (USA)",
     "desc": "Eagle threads through a crowd of small boats, several flying their own American flags in a show of Independence Day spirit.",
     "placard": null,
     "hotspots": [
@@ -484,6 +513,7 @@ const GALLERY_DATA = [
     "id": "IMG_42",
     "title": "Argentina's Libertad, Under Full Sail",
     "category": "Tall Ships",
+    "group": "Libertad (Argentina)",
     "desc": "A dramatic bow-on view of a ship under full sail, her name \"Libertad\" lettered on the bow and Argentina's light-blue-and-white flag and signal flags streaming from the rigging — the Argentine Navy's tall ship, one of the largest in the fleet.",
     "placard": null,
     "hotspots": [
@@ -703,6 +733,16 @@ function Gallery() {
     [filter]
   );
 
+  const groups = useMemo(() => {
+    const map = new Map();
+    filtered.forEach((photo, idx) => {
+      const key = photo.group || photo.title;
+      if (!map.has(key)) map.set(key, []);
+      map.get(key).push({ photo, idx });
+    });
+    return Array.from(map.entries()).map(([name, items]) => ({ name, items }));
+  }, [filtered]);
+
   const openAt = (idx) => { setSelected(idx); setActiveHotspot(null); };
   const close = () => { stop(); setSelected(null); setActiveHotspot(null); };
   const next = () => { stop(); setActiveHotspot(null); setSelected((i) => (i === null ? null : (i + 1) % filtered.length)); };
@@ -767,28 +807,39 @@ function Gallery() {
             <LayoutGrid size={28} /> No photos in this category yet.
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            {filtered.map((photo, idx) => (
-              <button key={photo.id} onClick={() => openAt(idx)}
-                className="group relative rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700 hover:border-amber-400 transition-colors aspect-square">
-                <img src={photo.data} alt={photo.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                <div className="absolute top-1.5 left-1.5 right-1.5 flex justify-between">
-                  {photo.placard && (
-                    <span className="bg-emerald-500 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1">
-                      <ScrollText size={10} /> placard
-                    </span>
-                  )}
-                  {photo.hotspots && photo.hotspots.length > 0 && (
-                    <span className="bg-amber-400 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-auto">
-                      tap-to-explore
-                    </span>
-                  )}
+          <div className="space-y-10">
+            {groups.map(({ name, items }) => (
+              <div key={name}>
+                <div className="ship-group-heading">
+                  <Anchor size={14} className="section-star shrink-0" />
+                  <h3>{name}</h3>
+                  <span className="ship-group-count">{items.length} photo{items.length === 1 ? "" : "s"}</span>
                 </div>
-                <div className="absolute inset-x-0 bottom-0 bg-black bg-opacity-70 px-2 py-1.5">
-                  <p className="text-xs font-medium text-white truncate text-left">{photo.title}</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                  {items.map(({ photo, idx }) => (
+                    <button key={photo.id} onClick={() => openAt(idx)}
+                      className="group relative rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700 hover:border-amber-400 transition-colors aspect-square">
+                      <img src={photo.data} alt={photo.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                      <div className="absolute top-1.5 left-1.5 right-1.5 flex justify-between">
+                        {photo.placard && (
+                          <span className="bg-emerald-500 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1">
+                            <ScrollText size={10} /> placard
+                          </span>
+                        )}
+                        {photo.hotspots && photo.hotspots.length > 0 && (
+                          <span className="bg-amber-400 text-neutral-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-auto">
+                            tap-to-explore
+                          </span>
+                        )}
+                      </div>
+                      <div className="absolute inset-x-0 bottom-0 bg-black bg-opacity-70 px-2 py-1.5">
+                        <p className="text-xs font-medium text-white truncate text-left">{photo.title}</p>
+                      </div>
+                    </button>
+                  ))}
                 </div>
-              </button>
+              </div>
             ))}
           </div>
         )}

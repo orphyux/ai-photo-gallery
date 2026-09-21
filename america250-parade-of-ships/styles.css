@@ -297,6 +297,27 @@ a { color: inherit; }
   filter: drop-shadow(0 0 4px rgba(252,211,77,0.5));
 }
 
+.ship-group-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(115,115,115,0.4);
+}
+.ship-group-heading h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  color: #fde68a;
+  margin: 0;
+}
+.ship-group-count {
+  color: #a3a3a3;
+  font-size: 0.75rem;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
 /* ---------- responsive: sm (min-width 640px) ---------- */
 @media (min-width: 640px) {
   .sm\:col-span-2 { grid-column: span 2 / span 2; }
