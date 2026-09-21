@@ -3,26 +3,31 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jennifer L. DeVries — Photo Galleries</title>
-<meta name="description" content="A collection of photo galleries by Jennifer L. DeVries." />
+<title>Jennifer L. DeVries — Photo Essays, Reimagined</title>
+<meta name="description" content="Interactive photo essays by Jennifer L. DeVries — where an AI research eye meets the classic art of photography, with every image ready to be tapped, explored, and heard." />
 
 <!-- Social share preview tags -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Jennifer L. DeVries — Photo Galleries" />
-<meta property="og:description" content="A collection of photo galleries by Jennifer L. DeVries." />
+<meta property="og:title" content="Jennifer L. DeVries — Photo Essays, Reimagined" />
+<meta property="og:description" content="Interactive photo essays where the age of AI meets the classic art of the photo essay — tap any photo to explore its story." />
 <meta property="og:image" content="https://www.jenniferldevries.com/seal-cove-cover.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <style>
   /* This page is intentionally dependency-free: plain HTML + CSS, no
      JavaScript, no CDN scripts, no build step. It will never show a blank
-     page from a blocked network request, because it doesn't make any. */
+     page from a blocked network request, because it doesn't make any.
+     Animation is decorative only and respects prefers-reduced-motion. */
 
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #171717;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 0%, rgba(236,72,153,0.16), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 85% 10%, rgba(34,211,238,0.14), transparent 60%),
+      radial-gradient(ellipse 70% 60% at 50% 100%, rgba(167,139,250,0.12), transparent 60%),
+      #0d0b1a;
     color: #ffffff;
     -webkit-font-smoothing: antialiased;
   }
@@ -35,37 +40,121 @@
     padding: 0 1.5rem;
   }
 
+  /* ---------- header ---------- */
   header {
+    position: relative;
     text-align: center;
-    padding: 4rem 1.5rem 3rem;
-    border-bottom: 1px solid #404040;
+    padding: 5rem 1.5rem 3.5rem;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  header p.eyebrow {
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(236,72,153,0.10), rgba(251,191,36,0.08) 35%, rgba(34,211,238,0.10) 70%, rgba(167,139,250,0.10));
+    background-size: 300% 300%;
+    animation: driftGradient 18s ease-in-out infinite;
+    z-index: 0;
+  }
+  @keyframes driftGradient {
+    0%   { background-position: 0% 40%; }
+    50%  { background-position: 100% 60%; }
+    100% { background-position: 0% 40%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    header::before { animation: none; }
+  }
+  header > * { position: relative; z-index: 1; }
+
+  .eyebrow-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, rgba(236,72,153,0.9), rgba(251,191,36,0.85), rgba(34,211,238,0.9));
+    color: #0d0b1a;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.75rem;
-    color: #fcd34d;
-    font-weight: 600;
-    margin: 0 0 0.75rem;
-  }
-  header h1 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 2rem;
-    margin: 0 0 0.75rem;
-  }
-  header p.tagline {
-    color: #a3a3a3;
-    font-size: 1rem;
-    margin: 0;
-    max-width: 34rem;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 18px rgba(236,72,153,0.25);
   }
 
-  main {
-    padding: 3rem 0 5rem;
+  header h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.5rem;
+    margin: 0 0 0.9rem;
+    background: linear-gradient(90deg, #f9a8d4, #fde68a 45%, #67e8f9 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
+  header p.tagline {
+    color: #d4d4d8;
+    font-size: 1.05rem;
+    margin: 0 auto;
+    max-width: 38rem;
+    line-height: 1.7;
+  }
+  header p.tagline strong {
+    color: #fde68a;
+    font-weight: 600;
+  }
+
+  /* ---------- feature strip: what makes these different ---------- */
+  .features {
+    padding: 3rem 0 0.5rem;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+  .feature {
+    padding: 1.25rem 1.1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    text-align: left;
+  }
+  .feature .feature-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .feature h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+    color: #fff;
+  }
+  .feature p {
+    color: #a1a1aa;
+    font-size: 0.825rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .feature.pink .feature-icon { color: #f472b6; }
+  .feature.gold .feature-icon { color: #fbbf24; }
+  .feature.teal .feature-icon { color: #22d3ee; }
+  .feature.violet .feature-icon { color: #a78bfa; }
+
+  /* ---------- gallery grid ---------- */
+  main { padding: 3.5rem 0 5rem; }
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 1.75rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.35rem;
+    color: #fff;
+  }
+  .section-heading svg { color: #f9a8d4; flex-shrink: 0; }
 
   .grid {
     display: grid;
@@ -74,16 +163,25 @@
   }
 
   .card {
+    position: relative;
     display: block;
-    background: #262626;
-    border: 1px solid #404040;
-    border-radius: 0.75rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 1rem;
     overflow: hidden;
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
+  .card .accent-bar {
+    height: 4px;
+    width: 100%;
+  }
+  .card.theme-brass .accent-bar { background: linear-gradient(90deg, #f59e0b, #fbbf24, #fde68a); }
+  .card.theme-patriot .accent-bar { background: linear-gradient(90deg, #ec4899, #a78bfa, #22d3ee); }
+
   .card:hover {
-    border-color: #fbbf24;
-    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
   }
   .card .cover {
     width: 100%;
@@ -91,17 +189,17 @@
     object-fit: cover;
     background: #171717;
   }
-  .card .card-body {
-    padding: 1.25rem;
-  }
+  .card .card-body { padding: 1.25rem; }
   .card .card-eyebrow {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.7rem;
-    color: #fcd34d;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0 0 0.4rem;
   }
+  .card.theme-brass .card-eyebrow { color: #fbbf24; }
+  .card.theme-patriot .card-eyebrow { color: #f9a8d4; }
+
   .card h2 {
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 1.25rem;
@@ -111,64 +209,140 @@
     color: #d4d4d4;
     font-size: 0.875rem;
     line-height: 1.5;
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.85rem;
   }
   .card .meta {
-    color: #737373;
+    color: #a1a1aa;
     font-size: 0.75rem;
     display: flex;
     gap: 1rem;
+    margin-bottom: 0.6rem;
   }
+  .card .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .card.theme-brass .cta { color: #fde68a; }
+  .card.theme-patriot .cta { color: #67e8f9; }
+  .card:hover .cta svg { transform: translateX(3px); }
+  .card .cta svg { transition: transform 0.2s ease; }
 
   /* A placeholder tile for galleries not yet added, so the grid always
      signals "more coming" rather than looking finished/empty. */
   .card.placeholder {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100%;
     border-style: dashed;
-    color: #525252;
+    color: #71717a;
     font-size: 0.875rem;
     text-align: center;
     padding: 2rem;
     cursor: default;
+    gap: 0.6rem;
   }
   .card.placeholder:hover {
-    border-color: #404040;
+    border-color: rgba(255,255,255,0.09);
     transform: none;
+    box-shadow: none;
   }
+  .card.placeholder svg { color: #52525b; }
 
   footer {
     text-align: center;
-    color: #737373;
+    color: #71717a;
     font-size: 0.75rem;
-    padding: 2rem 1.5rem 3rem;
+    padding: 2.5rem 1.5rem 3rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  footer .footer-flourish {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.9rem;
+    color: #a1a1aa;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="eyebrow">Photo Galleries</p>
+  <span class="eyebrow-chip">
+    <!-- sparkle -->
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 3.6 2.4 5.4 6 6-3.6.6-5.4 2.4-6 6-.6-3.6-2.4-5.4-6-6 3.6-.6 5.4-2.4 6-6Z"/></svg>
+    Photo Essays, Reimagined for the AI Age
+  </span>
   <h1>Jennifer L. DeVries</h1>
   <p class="tagline">
-    A growing collection of photo essays — places visited, things collected,
-    and stories worth a closer look.
+    A photographer's journey from <strong>ordinary gallery</strong> to
+    <strong>living photo essay</strong> — where every image is a doorway.
+    Tap a photo and an AI research partner surfaces the story behind it;
+    listen, and the whole essay is read aloud. This is photography, art,
+    music, and a bit of algorithmic magic, all telling one story together.
   </p>
 </header>
 
+<div class="wrap features">
+  <div class="features-grid">
+    <div class="feature pink">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 9c0-2.5-1.5-4-3-4s-2 1.5-1 3 2.5 1.5 4 1Z"/>
+        <path d="M15 12c2.5 0 4-1.5 4-3s-1.5-2-3-1-1.5 2.5-1 4Z"/>
+        <path d="M12 15c0 2.5 1.5 4 3 4s2-1.5 1-3-2.5-1.5-4-1Z"/>
+        <path d="M9 12c-2.5 0-4 1.5-4 3s1.5 2 3 1 1.5-2.5 1-4Z"/>
+      </svg>
+      <h3>Every Photo, a Bloom</h3>
+      <p>Tap into hotspots hidden in each photograph — small discoveries that unfold like petals into the fuller story.</p>
+    </div>
+    <div class="feature gold">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="12" r="1"/><circle cx="6" cy="16" r="1"/><circle cx="14" cy="17" r="1"/>
+        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10a1 1 0 0 0 0-2 1 1 0 0 1 0-2h1a3 3 0 0 0 3-3v-.5A1.5 1.5 0 0 1 17.5 13H18a4 4 0 0 0 4-4c0-3.9-4.5-7-10-7Z"/>
+      </svg>
+      <h3>Art Meets Algorithm</h3>
+      <p>An AI research partner digs up the history and context behind what the camera caught — the human eye still frames every shot.</p>
+    </div>
+    <div class="feature teal">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+      </svg>
+      <h3>Narrated Like Music</h3>
+      <p>Every gallery has a voice. Press play and let the story of each collection be read to you, start to finish.</p>
+    </div>
+    <div class="feature violet">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3.2"/>
+      </svg>
+      <h3>The Photo Essay, Reborn</h3>
+      <p>Not a slideshow — a story with a beginning, a middle, and standout moments worth lingering on.</p>
+    </div>
+  </div>
+</div>
+
 <main class="wrap">
+  <h2 class="section-heading">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+    Explore the Galleries
+  </h2>
   <div class="grid">
 
     <!-- ===================================================================
          GALLERY LIST
          To add a new gallery: copy one <a class="card"> block, update the
-         href, cover image path, title, description, and photo count/date.
-         Then upload the new gallery's folder alongside this file.
+         href, cover image path, title, description, photo count/date, and
+         theme class (theme-brass / theme-patriot, or add a new accent
+         combo). Then upload the new gallery's folder alongside this file.
          =================================================================== -->
 
-    <a class="card" href="/seal-cove-auto-museum/">
+    <a class="card theme-brass" href="/seal-cove-auto-museum/">
+      <div class="accent-bar"></div>
       <img class="cover" src="seal-cove-cover.jpg" alt="1910 Pierce-Arrow at Seal Cove Auto Museum" />
       <div class="card-body">
         <p class="card-eyebrow">The Brass Era</p>
@@ -181,26 +355,37 @@
           <span>71 photos</span>
           <span>Maine</span>
         </div>
+        <span class="cta">
+          Step inside
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
       </div>
     </a>
 
-    <a class="card" href="/america250-parade-of-ships/">
+    <a class="card theme-patriot" href="/america250-parade-of-ships/">
+      <div class="accent-bar"></div>
       <img class="cover" src="america250-parade-of-ships-cover.jpg" alt="Three tall ships and a fireboat on the Hudson River with the Manhattan skyline behind them" />
       <div class="card-body">
         <p class="card-eyebrow">Sail4th 250 · July 4, 2026</p>
         <h2>America 250 — Parade of Ships</h2>
         <p class="desc">
-          Tall ships, warships, and an aerial review of Blue Angels and vintage
-          warbirds on the Hudson River for America's 250th anniversary.
+          48 tall ships from 30 nations, 50+ warships, and a sky full of jets —
+          the largest tall-ship gathering since the 1976 Bicentennial, told
+          ship by ship.
         </p>
         <div class="meta">
-          <span>15 photos</span>
+          <span>42 photos</span>
           <span>New York Harbor</span>
         </div>
+        <span class="cta">
+          Sail the harbor
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
       </div>
     </a>
 
     <div class="card placeholder">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c.6 3.6 2.4 5.4 6 6-3.6.6-5.4 2.4-6 6-.6-3.6-2.4-5.4-6-6 3.6-.6 5.4-2.4 6-6Z"/></svg>
       More galleries coming soon
     </div>
 
@@ -208,6 +393,11 @@
 </main>
 
 <footer>
+  <div class="footer-flourish">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9c0-2.5-1.5-4-3-4s-2 1.5-1 3 2.5 1.5 4 1Z"/><path d="M15 12c2.5 0 4-1.5 4-3s-1.5-2-3-1-1.5 2.5-1 4Z"/><path d="M12 15c0 2.5 1.5 4 3 4s2-1.5 1-3-2.5-1.5-4-1Z"/><path d="M9 12c-2.5 0-4 1.5-4 3s1.5 2 3 1 1.5-2.5 1-4Z"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3.2"/></svg>
+  </div>
   © Jennifer L. DeVries
 </footer>
 

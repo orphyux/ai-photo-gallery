@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>America 250 — Parade of Ships | New York Harbor</title>
-<meta name="description" content="Tall ships, warships, and an aerial review of Blue Angels and vintage warbirds on the Hudson River for America's 250th anniversary, July 4, 2026." />
+<title>America Turns 250 — Parade of Ships | New York Harbor</title>
+<meta name="description" content="48 tall ships from 30 nations, 50+ warships, and 120+ aircraft over the Hudson: photos and stories from Sail4th 250, the largest tall-ship gathering since the 1976 Bicentennial." />
 
 <!-- ===== Social share preview tags =====
      Replace REPLACE_WITH_YOUR_SITE_URL with your real, published site URL
      once hosted. og-image.jpg must sit in the same folder as this file. -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="America 250 — Parade of Ships" />
-<meta property="og:description" content="Tall ships, warships, and an aerial review over New York Harbor for America's 250th anniversary, July 4, 2026." />
+<meta property="og:title" content="America Turns 250 — Parade of Ships" />
+<meta property="og:description" content="48 tall ships, 30 nations, 50+ warships, and a sky full of jets: the largest tall-ship gathering since 1976, photographed ship by ship." />
 <meta property="og:image" content="https://jenniferldevries.com/america250-parade-of-ships/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://jenniferldevries.com/america250-parade-of-ships/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="America 250 — Parade of Ships" />
-<meta name="twitter:description" content="Tall ships, warships, and an aerial review over New York Harbor, July 4, 2026." />
+<meta name="twitter:title" content="America Turns 250 — Parade of Ships" />
+<meta name="twitter:description" content="48 tall ships, 30 nations, and a sky full of jets — the largest tall-ship gathering since 1976." />
 <meta name="twitter:image" content="https://jenniferldevries.com/america250-parade-of-ships/og-image.jpg" />
 <!-- ===== end social share preview tags ===== -->
 
@@ -59,38 +59,6 @@
   </div>
 </div>
 
-<script>
-  // Vanilla-JS safety net: if the React app hasn't replaced the loading
-  // placeholder within a few seconds, something failed to load (offline,
-  // CDN blocked, preview mode without JS, etc). Give a clear message
-  // instead of a silent blank page.
-  window.__appMounted = false;
-  setTimeout(function () {
-    if (!window.__appMounted) {
-      var el = document.getElementById("fallback-message");
-      if (el) {
-        el.innerHTML =
-          "This page couldn't finish loading. If you're offline, connect to the " +
-          "internet and reload — this page loads React from unpkg.com. If a " +
-          "content-blocker or ad-blocker extension is active, try disabling it for " +
-          "this site and reloading. If you're viewing this via a file preview (like " +
-          "tapping the file in iOS Files), open it in a real Safari or Chrome tab " +
-          "instead.";
-        el.style.color = "#fca5a5";
-      }
-    }
-  }, 8000);
-</script>
-
-
-<!-- ===================================================================
-     COMPILED APP GOES HERE
-     Paste the full contents of your compiled app.compiled.js (produced by
-     running scripts/compile_jsx.js on your edited app.template.jsx) as a
-     plain <script> block, right here — replacing this comment entirely.
-     Do NOT use type="text/babel" and do NOT add a Babel <script> tag —
-     see references/technical-build-notes.md for why.
-     =================================================================== -->
 <script>
 "use strict";
 const { useState, useMemo, useEffect } = React;
@@ -136,6 +104,16 @@ const Users = (p) => React.createElement(Icon, { ...p },
     React.createElement("path", { d: "M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" }));
 const Wrench = (p) => React.createElement(Icon, { ...p },
     React.createElement("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" }));
+const Star = (p) => React.createElement(Icon, { ...p, fill: "currentColor", stroke: "none" },
+    React.createElement("path", { d: "m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z" }));
+const Anchor = (p) => React.createElement(Icon, { ...p },
+    React.createElement("circle", { cx: "12", cy: "5", r: "3" }),
+    React.createElement("path", { d: "M12 22V8M5 12H2a10 10 0 0 0 20 0h-3" }));
+const Globe = (p) => React.createElement(Icon, { ...p },
+    React.createElement("circle", { cx: "12", cy: "12", r: "10" }),
+    React.createElement("path", { d: "M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z" }));
+const Plane = (p) => React.createElement(Icon, { ...p },
+    React.createElement("path", { d: "M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1 0-1.3.4l-.7.7a1 1 0 0 0 .3 1.6l5.9 2.5-3 3-2.4-.5a1 1 0 0 0-.9.3l-.4.4a1 1 0 0 0 .1 1.5l3.1 2 .1 3.1a1 1 0 0 0 1.5.1l.4-.4a1 1 0 0 0 .3-.9l-.5-2.4 3-3 2.5 5.9a1 1 0 0 0 1.6.3l.7-.7c.4-.3.5-.8.4-1.3Z" }));
 /* ---------- gallery data ---------- */
 const GALLERY_DATA = [
     {
@@ -302,6 +280,303 @@ const GALLERY_DATA = [
         ],
         "data": "images/america250-15.jpg"
     },
+    {
+        "id": "IMG_16",
+        "title": "Dressed Ship Under Full Sail",
+        "category": "Tall Ships",
+        "desc": "A square-rigged sail training ship, dressed overall with signal flags strung from bow to stern, carries a full set of sails past the Empire State Building.",
+        "placard": null,
+        "hotspots": [
+            { id: "dressed", top: "30%", left: "45%", title: "Signal Flags, Not Just Decoration", text: "The string of small international maritime signal flags running along the rigging is called 'dressing ship' \u2014 traditionally spelling out a message or simply marking a special occasion, as it does here." }
+        ],
+        "data": "images/america250-16.jpg"
+    },
+    {
+        "id": "IMG_17",
+        "title": "A Second Topsail Schooner",
+        "category": "Tall Ships",
+        "desc": "A black-hulled, gaff-rigged schooner flying the American flag beats upriver, her sails cut in the same working style as the fishing and cargo schooners that once worked this coast.",
+        "placard": null,
+        "hotspots": [],
+        "data": "images/america250-17.jpg"
+    },
+    {
+        "id": "IMG_18",
+        "title": "Esmeralda, Chile's Tall Ship",
+        "category": "Tall Ships",
+        "desc": "A four-masted barquentine flying the Chilean flag carries a striking spread of sail \u2014 very likely the Chilean Navy's training ship Esmeralda, one of the largest and most recognizable vessels in the international fleet.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "25%", left: "88%", title: "Flying Chile's Colors", text: "The white star on blue and red field is Chile's national flag. The Chilean Navy's sail training ship Esmeralda is a four-masted barquentine \u2014 square sails forward, fore-and-aft sails aft \u2014 and one of the tallest ships in any Class A tall-ship fleet." },
+            { id: "masts", top: "45%", left: "50%", title: "Four Masts", text: "Most tall ships in the parade carried two or three masts; a four-masted rig like this one marks Esmeralda as one of the largest vessels sailing that day." }
+        ],
+        "data": "images/america250-18.jpg"
+    },
+    {
+        "id": "IMG_19",
+        "title": "The Fleet Converges Near the Pier",
+        "category": "Tall Ships",
+        "desc": "Several tall ships close ranks near a Manhattan pier as a fireboat throws its salute between them \u2014 a wide view of just how many nations' vessels shared this stretch of the Hudson at once.",
+        "placard": null,
+        "hotspots": [],
+        "data": "images/america250-19.jpg"
+    },
+    {
+        "id": "IMG_20",
+        "title": "Colombia's Sail Training Ship",
+        "category": "Tall Ships",
+        "desc": "A white-hulled barque flying Colombia's yellow, blue, and red flag sails past the Manhattan waterfront \u2014 very likely the Colombian Navy's ARC Gloria.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "20%", left: "82%", title: "Flying Colombia's Colors", text: "ARC Gloria is one of a family of nearly identical three-masted barques \u2014 sister ships to Ecuador's Guayas and Venezuela's Sim\u00f3n Bol\u00edvar \u2014 all built at the same Spanish shipyard and still used to train naval cadets under sail." }
+        ],
+        "data": "images/america250-20.jpg"
+    },
+    {
+        "id": "IMG_21",
+        "title": "A Dominican Republic Sail Training Ship",
+        "category": "Tall Ships",
+        "desc": "A white-hulled schooner flying the flag of the Dominican Republic, her sails marked with the national coat of arms, passes close along the Manhattan shore.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "55%", left: "88%", title: "Flying the Dominican Republic's Colors", text: "The quartered blue-and-red flag with a white cross and central coat of arms belongs to the Dominican Republic, whose training vessel carried that same coat of arms painted large on her sail." }
+        ],
+        "data": "images/america250-21.jpg"
+    },
+    {
+        "id": "IMG_22",
+        "title": "Ecuador's Guayas",
+        "category": "Tall Ships",
+        "desc": "A three-masted barque flying Ecuador's yellow, blue, and red flag carries a full press of sail \u2014 very likely the Ecuadorian Navy's training ship Guayas.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "60%", left: "85%", title: "Flying Ecuador's Colors", text: "BAE Guayas belongs to the same family of Spanish-built sail training barques as Colombia's Gloria \u2014 near-identical sisters that regularly cross paths at tall-ship gatherings like this one." }
+        ],
+        "data": "images/america250-22.jpg"
+    },
+    {
+        "id": "IMG_23",
+        "title": "India's Tarangini",
+        "category": "Tall Ships",
+        "desc": "A white-hulled, three-masted barque flying India's saffron, white, and green flag sails past the Manhattan skyline \u2014 very likely the Indian Navy's sail training ship Tarangini.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "70%", left: "80%", title: "Flying India's Colors", text: "INS Tarangini is one of the Indian Navy's sail training vessels, built to give cadets the same kind of open-ocean, square-rig experience that older navies have relied on for centuries." }
+        ],
+        "data": "images/america250-23.jpg"
+    },
+    {
+        "id": "IMG_24",
+        "title": "Amerigo Vespucci, Italy's Tall Ship",
+        "category": "Tall Ships",
+        "desc": "A gleaming white full-rigged ship flying the Italian flag sails past Midtown \u2014 very likely the Italian Navy's Amerigo Vespucci, often called the most beautiful ship in the world.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "65%", left: "78%", title: "Flying Italy's Colors", text: "Amerigo Vespucci has served as the Italian Navy's sail training ship since 1931. Her elaborately decorated hull and full set of square sails on all three masts have made her one of the most photographed tall ships afloat." }
+        ],
+        "data": "images/america250-24.jpg"
+    },
+    {
+        "id": "IMG_25",
+        "title": "Amerigo Vespucci, Broadside",
+        "category": "Tall Ships",
+        "desc": "The Italian Navy's Amerigo Vespucci under way, her black hull banded in white and her ochre upper works catching the sun \u2014 confirmed by her name lettered across the stern.",
+        "placard": null,
+        "hotspots": [
+            { id: "hull", top: "60%", left: "45%", title: "A 1931 Design Still Sailing", text: "Amerigo Vespucci was launched in 1931 and remains the Italian Navy's flagship sail training vessel, ferrying naval cadets on open-ocean voyages for nearly a century." }
+        ],
+        "data": "images/america250-25.jpg"
+    },
+    {
+        "id": "IMG_26",
+        "title": "Amerigo Vespucci, Under Sail",
+        "category": "Tall Ships",
+        "desc": "A second view of Amerigo Vespucci, her three towering masts and web of standing rigging silhouetted against the harbor sky.",
+        "placard": null,
+        "hotspots": [
+            { id: "rig", top: "30%", left: "50%", title: "A Full-Rigged Ship", text: "All three masts carry square sails, making Vespucci a true full-rigged ship \u2014 the most complex and labor-intensive sail plan still used by any active naval vessel." }
+        ],
+        "data": "images/america250-26.jpg"
+    },
+    {
+        "id": "IMG_27",
+        "title": "Amerigo Vespucci's Nameplate",
+        "category": "Tall Ships",
+        "desc": "A close pass reveals the gilded transom lettering \"...RICO VESPUCCI\" and the Italian Navy's ensign \u2014 green, white, and red with the naval crest at center \u2014 flying from her rigging.",
+        "placard": null,
+        "hotspots": [
+            { id: "ensign", top: "35%", left: "35%", title: "The Italian Naval Ensign", text: "Unlike Italy's plain civil tricolor, the naval ensign carries a crowned shield at center bearing the coats of arms of Genoa, Venice, Pisa, and Amalfi \u2014 the four historic maritime republics." },
+            { id: "transom", top: "75%", left: "25%", title: "Gilded Stern Carving", text: "The elaborately scrolled gold work along the stern is hand-carved and repainted regularly \u2014 part of what has earned Vespucci the nickname \"the most beautiful ship in the world.\"" }
+        ],
+        "data": "images/america250-27.jpg"
+    },
+    {
+        "id": "IMG_28",
+        "title": "A Front-Row Seat to the Parade",
+        "category": "Tall Ships",
+        "desc": "A spectator aboard a small boat gets a close pass from Amerigo Vespucci, the ship's rigging and Italian ensign filling the background.",
+        "placard": null,
+        "hotspots": [
+            { id: "ship", top: "40%", left: "70%", title: "Following the Fleet", text: "Spectator boats were allowed to shadow the tall ships at a distance along much of the parade route, giving harborside viewers an up-close look impossible from shore." }
+        ],
+        "data": "images/america250-28.jpg"
+    },
+    {
+        "id": "IMG_29",
+        "title": "Germany's Gorch Fock",
+        "category": "Tall Ships",
+        "desc": "A white-hulled barque flying Germany's black-red-gold flag \u2014 very likely the German Navy's sail training ship Gorch Fock, a fixture of tall-ship gatherings worldwide.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "45%", left: "78%", title: "Flying Germany's Colors", text: "Gorch Fock has trained German Navy cadets since 1958 and is named for the pen name of a German writer who died at the 1916 Battle of Jutland." }
+        ],
+        "data": "images/america250-29.jpg"
+    },
+    {
+        "id": "IMG_30",
+        "title": "Gorch Fock, With an Escort Overhead",
+        "category": "Tall Ships",
+        "desc": "The same German barque under sail, with a military helicopter passing in the distance \u2014 a reminder that the aerial review shared the same harbor airspace as the tall ships below.",
+        "placard": null,
+        "hotspots": [
+            { id: "heli", top: "10%", left: "10%", title: "Aircraft Over the Harbor", text: "Helicopters and fixed-wing aircraft supporting the day's events routinely crossed paths with the tall-ship parade taking place on the water below." }
+        ],
+        "data": "images/america250-30.jpg"
+    },
+    {
+        "id": "IMG_31",
+        "title": "Poland's Dar Mlodziezy",
+        "category": "Tall Ships",
+        "desc": "A gray-hulled, full-rigged ship with her name and home port \u2014 \"Dar Mlodziezy, Odynia\" \u2014 lettered on her stern. The name means \"Gift of Youth\" in Polish.",
+        "placard": null,
+        "hotspots": [
+            { id: "stern", top: "80%", left: "20%", title: "Gift of Youth", text: "Dar Mlodziezy has served as the Polish naval academy's sail training ship since 1982 and was the lead vessel of a class of six near-identical tall ships built for Soviet-bloc navies." }
+        ],
+        "data": "images/america250-31.jpg"
+    },
+    {
+        "id": "IMG_32",
+        "title": "India's Sudarshini",
+        "category": "Tall Ships",
+        "desc": "A dark-hulled, three-masted barquentine flying India's tricolor, her name \"Sudarshini\" painted on the bow \u2014 a separate Indian Navy sail training ship from the Tarangini seen earlier in this gallery.",
+        "placard": null,
+        "hotspots": [
+            { id: "name", top: "88%", left: "10%", title: "A Sister to Tarangini", text: "TS Sudarshini and INS Tarangini are both Indian Navy sail training vessels built to the same general design, giving India two active tall ships \u2014 both of which made the trip to New York." }
+        ],
+        "data": "images/america250-32.jpg"
+    },
+    {
+        "id": "IMG_33",
+        "title": "Ecuador's Guayas, Under Way",
+        "category": "Tall Ships",
+        "desc": "A white, three-masted barque flying Ecuador's flag, her rigging fully manned by sailors \u2014 very likely BAE Guayas, seen here from a closer vantage than earlier in the gallery.",
+        "placard": null,
+        "hotspots": [
+            { id: "crew", top: "60%", left: "50%", title: "Manning the Rail", text: "Sailors lining the deck and yards in dress formation \u2014 called \"manning the rail\" or \"manning the yards\" \u2014 is a traditional naval salute performed when passing in review." }
+        ],
+        "data": "images/america250-33.jpg"
+    },
+    {
+        "id": "IMG_34",
+        "title": "Peru's BAP Union",
+        "category": "Tall Ships",
+        "desc": "A gleaming white, four-masted barque flying a red flag with a white field \u2014 very likely the Peruvian Navy's BAP Union, one of the newest and largest tall ships in the world fleet.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "35%", left: "35%", title: "One of the Newest Tall Ships Afloat", text: "BAP Union entered service in 2016, making her one of the youngest large sail training ships in any navy \u2014 a modern vessel built in a centuries-old tradition." }
+        ],
+        "data": "images/america250-34.jpg"
+    },
+    {
+        "id": "IMG_35",
+        "title": "Uruguay's Capitan Miranda",
+        "category": "Tall Ships",
+        "desc": "A dark-hulled, three-masted schooner flying Uruguay's flag \u2014 very likely the Uruguayan Navy's Capitan Miranda, one of the oldest active sail training ships in South America.",
+        "placard": null,
+        "hotspots": [
+            { id: "flag", top: "60%", left: "12%", title: "Flying Uruguay's Colors", text: "Capitan Miranda has served as Uruguay's naval training ship since 1930, regularly crossing the Atlantic on cadet training cruises to Europe." }
+        ],
+        "data": "images/america250-35.jpg"
+    },
+    {
+        "id": "IMG_36",
+        "title": "Capitan Miranda, Seen From Afar",
+        "category": "Tall Ships",
+        "desc": "A hazier, more distant view of the same Uruguayan schooner, with the spectator boat \"Dark Horse\" and the Manhattan skyline visible in the haze beyond.",
+        "placard": null,
+        "hotspots": [
+            { id: "spectator", top: "75%", left: "12%", title: "A Grandstand on the Water", text: "Chartered spectator boats like the one named \"Dark Horse\" in the foreground lined the parade route all day, giving hundreds of harborgoers a floating grandstand view." }
+        ],
+        "data": "images/america250-36.jpg"
+    },
+    {
+        "id": "IMG_37",
+        "title": "Dominican Republic's Almirante Cambiaso",
+        "category": "Tall Ships",
+        "desc": "A dark-hulled schooner dressed with signal flags stem to stern, her name \"Cambiaso\" lettered on the transom \u2014 the Dominican Navy's training ship Almirante Juan Bautista Cambiaso, the country's first tall ship.",
+        "placard": null,
+        "hotspots": [
+            { id: "namesake", top: "70%", left: "80%", title: "Named for a Naval Hero", text: "The ship is named for Juan Bautista Cambiaso, a 19th-century admiral considered the founder of the Dominican Republic's navy; the vessel entered service as the country's first dedicated training ship." }
+        ],
+        "data": "images/america250-37.jpg"
+    },
+    {
+        "id": "IMG_38",
+        "title": "USCGC Eagle, in the Haze",
+        "category": "Tall Ships",
+        "desc": "A distant, sun-hazed view of a large white barque crowded with small spectator boats \u2014 the U.S. Coast Guard's training ship Eagle, America's own tall ship and a fixture of the parade.",
+        "placard": null,
+        "hotspots": [
+            { id: "boats", top: "70%", left: "40%", title: "Escorted by the Fleet", text: "Eagle drew some of the largest crowds of small boats in the parade all day, a reflection of her status as the only active military sailing vessel in the U.S. fleet." }
+        ],
+        "data": "images/america250-38.jpg"
+    },
+    {
+        "id": "IMG_39",
+        "title": "USCGC Eagle, Close Aboard",
+        "category": "Tall Ships",
+        "desc": "Eagle passes close by, \"U.S. COAST GUARD\" lettered along her white hull, the American flag flying large from her foremast and a sailor perched high on the rigging.",
+        "placard": null,
+        "hotspots": [
+            { id: "aloft", top: "18%", left: "48%", title: "A Sailor Aloft", text: "A crew member stands on the footropes of the upper yard \u2014 a routine but striking sight on a square-rigged ship, where sails are still set and furled by hand from high in the rigging." },
+            { id: "signals", top: "35%", left: "88%", title: "Dressed in Signal Flags", text: "The string of colorful international maritime signal flags running fore-to-aft is called \"dressing ship,\" a traditional display for ceremonial occasions like this one." }
+        ],
+        "data": "images/america250-39.jpg"
+    },
+    {
+        "id": "IMG_40",
+        "title": "USCGC Eagle, a Moment Later",
+        "category": "Tall Ships",
+        "desc": "Another frame of Eagle's close pass, her full dressing of signal flags and the Stars and Stripes streaming in the harbor breeze.",
+        "placard": null,
+        "hotspots": [
+            { id: "hull", top: "70%", left: "55%", title: "America's Tall Ship", text: "Built in Germany in 1936 and taken by the United States as war reparations after World War II, Eagle has served as the Coast Guard Academy's training ship since 1946." }
+        ],
+        "data": "images/america250-40.jpg"
+    },
+    {
+        "id": "IMG_41",
+        "title": "USCGC Eagle, Surrounded",
+        "category": "Tall Ships",
+        "desc": "Eagle threads through a crowd of small boats, several flying their own American flags in a show of Independence Day spirit.",
+        "placard": null,
+        "hotspots": [
+            { id: "crowd", top: "70%", left: "20%", title: "The Harbor Turns Out", text: "Thousands of private boats joined the parade route from the water on July 4th, 2026, making the surrounding fleet almost as much a part of the scene as the tall ships themselves." }
+        ],
+        "data": "images/america250-41.jpg"
+    },
+    {
+        "id": "IMG_42",
+        "title": "Argentina's Libertad, Under Full Sail",
+        "category": "Tall Ships",
+        "desc": "A dramatic bow-on view of a ship under full sail, her name \"Libertad\" lettered on the bow and Argentina's light-blue-and-white flag and signal flags streaming from the rigging — the Argentine Navy's tall ship, one of the largest in the fleet.",
+        "placard": null,
+        "hotspots": [
+            { id: "sails", top: "20%", left: "35%", title: "Every Sail Set", text: "Libertad is shown here with her full set of square sails set and drawing — a rarer sight in a harbor parade, where ships more often motor past under bare poles." },
+            { id: "name", top: "78%", "left": "62%", "title": "A Name and a Story", "text": "ARA Libertad has served as Argentina's naval sail training ship since 1963 and remains one of the fastest and largest tall ships still in active naval service." }
+        ],
+        "data": "images/america250-42.jpg"
+    },
 ];
 const CATEGORIES = ["All", "Tall Ships", "Warships", "Aerial Review", "Fireboats & Harbor Vessels"];
 function useSpeech() {
@@ -332,7 +607,7 @@ function useSpeech() {
 function Intro() {
     const [open, setOpen] = useState(true);
     const { speaking, speak, stop } = useSpeech();
-    const introText = "America 250, Parade of Ships. On July 4th, 2026, New York Harbor hosted Sail4th 250, the maritime centerpiece of the United States' 250th birthday. Roughly four dozen tall ships from thirty nations sailed up the Hudson River from the Verrazzano Narrows Bridge to the George Washington Bridge, sharing the water with more than fifty U.S. and international warships taking part in the Seventh International Naval Review. Overhead, the Navy's Blue Angels led an aerial review of more than one hundred and twenty aircraft, from vintage World War Two warbirds to modern fighters and tankers. This gallery is a photographer's afternoon on the waterfront watching all three centuries of American seafaring and flight pass by at once.";
+    const introText = "America Turns 250, Parade of Ships. On July 4th, 2026, New York Harbor hosted Sail4th 250, the largest gathering of tall ships since the original Bicentennial celebration fifty years earlier, and the latest chapter in a tradition of Operation Sail events stretching back to 1964. Roughly four dozen tall ships from thirty nations sailed up the Hudson River from the Verrazzano Narrows Bridge to the George Washington Bridge, sharing the water with more than fifty U.S. and international warships taking part in the Seventh International Naval Review. Overhead, the Navy's Blue Angels led an aerial review of more than one hundred and twenty aircraft, from vintage World War Two warbirds to modern fighters and tankers. This gallery is a photographer's afternoon on the waterfront watching all three centuries of American seafaring and flight pass by at once.";
     const handleNarrate = () => {
         if (speaking)
             stop();
@@ -340,17 +615,45 @@ function Intro() {
             speak(introText);
     };
     return (React.createElement("section", { className: "border-b border-neutral-700" },
+        React.createElement("div", { className: "old-glory-bar" }),
         React.createElement("div", { className: "relative" },
             React.createElement("img", { src: "images/america250-15.jpg", alt: "Three tall ships converge on the Hudson River near a fireboat spraying water, with Manhattan in the background", className: "w-full h-72 sm:h-96 object-cover" }),
             React.createElement("div", { className: "hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center px-4" },
-                React.createElement("p", { className: "uppercase tracking-widest text-xs text-amber-300 font-semibold mb-2" }, "Sail4th 250 \u00B7 July 4, 2026"),
-                React.createElement("h1", { className: "text-3xl sm:text-5xl font-serif text-white mb-3 drop-shadow" }, "America 250 \u2014 Parade of Ships"),
-                React.createElement("p", { className: "flex items-center justify-center gap-1.5 text-sm text-neutral-100" },
+                React.createElement("span", { className: "hero-eyebrow-badge mb-3" },
+                    React.createElement(Star, { size: 12 }),
+                    " America Turns 250 ",
+                    React.createElement(Star, { size: 12 })),
+                React.createElement("h1", { className: "text-3xl sm:text-5xl font-serif text-white mb-3 drop-shadow" }, "Parade of Ships"),
+                React.createElement("p", { className: "flex items-center justify-center gap-1.5 text-sm text-neutral-100 mb-1" },
                     React.createElement(MapPin, { size: 14 }),
-                    " New York Harbor & the Hudson River"))),
+                    " New York Harbor & the Hudson River"),
+                React.createElement("p", { className: "text-xs text-amber-200 tracking-wide" }, "Sail4th 250 \u00B7 The Largest Tall Ship Gathering Since 1976"))),
         React.createElement("div", { className: "max-w-3xl mx-auto px-4 sm:px-6 py-10" },
+            React.createElement("div", { className: "hook-callout" },
+                React.createElement("p", null,
+                    React.createElement("strong", null, "Forty-eight tall ships. Thirty nations. Fifty warships. A sky full of fighter jets and WWII warbirds."),
+                    " On the Fourth of July, 2026, New York Harbor became a floating time machine \u2014 square-riggers that still send sailors aloft by hand sailing past guided-missile destroyers, while the Blue Angels tore through the sky above them both. This is that day, ship by ship, sailor by sailor.")),
+            React.createElement("div", { className: "stat-strip" },
+                React.createElement("div", { className: "stat-tile" },
+                    React.createElement(Anchor, { size: 18, className: "section-star" }),
+                    React.createElement("span", { className: "stat-number" }, "48+"),
+                    React.createElement("span", { className: "stat-label" }, "Tall Ships")),
+                React.createElement("div", { className: "stat-tile" },
+                    React.createElement(Globe, { size: 18, className: "section-star" }),
+                    React.createElement("span", { className: "stat-number" }, "30"),
+                    React.createElement("span", { className: "stat-label" }, "Nations")),
+                React.createElement("div", { className: "stat-tile" },
+                    React.createElement(Wrench, { size: 18, className: "section-star" }),
+                    React.createElement("span", { className: "stat-number" }, "50+"),
+                    React.createElement("span", { className: "stat-label" }, "Warships")),
+                React.createElement("div", { className: "stat-tile" },
+                    React.createElement(Plane, { size: 18, className: "section-star" }),
+                    React.createElement("span", { className: "stat-number" }, "120+"),
+                    React.createElement("span", { className: "stat-label" }, "Aircraft"))),
             React.createElement("button", { onClick: () => setOpen((v) => !v), className: "w-full flex items-center justify-between gap-3 mb-6" },
-                React.createElement("h2", { className: "text-xl sm:text-2xl font-serif text-white text-left" }, "What This Collection Is"),
+                React.createElement("h2", { className: "flex items-center gap-2 text-xl sm:text-2xl font-serif text-white text-left" },
+                    React.createElement(Star, { size: 18, className: "section-star" }),
+                    " The Story Behind Every Photo"),
                 React.createElement(ChevronDown, { size: 20, className: "text-neutral-400 transition-transform " + (open ? "rotate-180" : "") })),
             open && (React.createElement("div", { className: "space-y-8" },
                 React.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-5 gap-4 items-center" },
@@ -360,7 +663,7 @@ function Intro() {
                         React.createElement("h3", { className: "flex items-center gap-2 font-serif text-lg text-amber-300 mb-2" },
                             React.createElement(Sun, { size: 16 }),
                             " A Harbor Full of History"),
-                        React.createElement("p", { className: "text-sm text-neutral-200 leading-relaxed" }, "Sail4th 250 ran from July 3rd through 8th, 2026, as the maritime centerpiece of America's 250th anniversary. Its signature event, the Parade of Sail, sent roughly four dozen tall ships \u2014 both towering square-riggers and smaller schooners from about thirty nations \u2014 up the Hudson from the Verrazzano-Narrows Bridge to the George Washington Bridge at six-minute intervals, a procession that took over two hours to pass any one point on the shore. It was consciously built in the tradition of the 1976 Bicentennial and the 1986 Statue of Liberty Centennial tall-ship parades before it."))),
+                        React.createElement("p", { className: "text-sm text-neutral-200 leading-relaxed" }, "Sail4th 250 ran from July 3rd through 8th, 2026, as the maritime centerpiece of America's 250th anniversary. Its signature event, the Parade of Sail, sent roughly four dozen tall ships \u2014 both towering square-riggers and smaller schooners from about thirty nations \u2014 up the Hudson from the Verrazzano-Narrows Bridge to the George Washington Bridge at six-minute intervals, a procession that took over two hours to pass any one point on the shore. It carried forward a tradition that began in 1964, when President Kennedy helped launch Operation Sail \u2014 through the 1976 Bicentennial, the largest tall-ship gathering on record until this one, and the 1986 Statue of Liberty Centennial. The Coast Guard's own tall ship, Eagle, has served as host vessel for every one of these gatherings since the very first."))),
                 React.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-5 gap-4 items-center" },
                     React.createElement("div", { className: "sm:col-span-2 rounded-lg overflow-hidden border border-neutral-700 sm:order-2" },
                         React.createElement("img", { src: "images/america250-1.jpg", alt: "USS Farragut, a guided-missile destroyer, dressed in bunting on the Hudson River", className: "w-full h-40 sm:h-full object-cover" })),
