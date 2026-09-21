@@ -803,7 +803,16 @@ const GALLERY_DATA = [
     },
 ];
 const CATEGORIES = ["All", "Tall Ships", "Warships", "Aerial Review", "Fireboats & Harbor Vessels"];
-const US_GROUP_NAMES = ["USS Farragut (DDG-99)", "USCGC Eagle (USA)"];
+const US_GROUP_NAMES = [
+    "USS Farragut (DDG-99)",
+    "USCGC Eagle (USA)",
+    "Blue Angels",
+    "Marine Corps KC-130 Hercules",
+    "Air Force Tanker & Fighter Escort",
+    "B-29 Superfortress \"FIFI\"",
+    "FDNY Fireboat Three Forty Three",
+    "Maryland Topsail Schooner",
+];
 function useSpeech() {
     const [speaking, setSpeaking] = useState(false);
     const speak = (text) => {
@@ -858,6 +867,7 @@ function Intro() {
                 React.createElement("p", null,
                     React.createElement("strong", null, "Forty-eight tall ships. Thirty nations. Fifty warships. A sky full of fighter jets and WWII warbirds."),
                     " On the Fourth of July, 2026, New York Harbor became a floating time machine \u2014 square-riggers that still send sailors aloft by hand sailing past guided-missile destroyers, while the Blue Angels tore through the sky above them both. This is that day, ship by ship, sailor by sailor.")),
+            React.createElement("p", { className: "photo-credit" }, "Fellow Contributing Photographer: Mindy DeVries"),
             React.createElement("div", { className: "stat-strip" },
                 React.createElement("div", { className: "stat-tile" },
                     React.createElement(Anchor, { size: 18, className: "section-star" }),
@@ -1004,7 +1014,9 @@ function Gallery() {
                     "Flying America's Colors"),
                 React.createElement("div", { className: "space-y-8" }, usGroups.map(({ name, items }) => (React.createElement("div", { key: name },
                     React.createElement("div", { className: "ship-group-heading us-ship-heading" },
-                        React.createElement(Anchor, { size: 14, className: "us-ship-icon shrink-0" }),
+                        items[0].category === "Aerial Review"
+                            ? React.createElement(Plane, { size: 14, className: "us-ship-icon shrink-0" })
+                            : React.createElement(Anchor, { size: 14, className: "us-ship-icon shrink-0" }),
                         React.createElement("h3", null, name),
                         React.createElement("span", { className: "ship-group-count" },
                             items.length,

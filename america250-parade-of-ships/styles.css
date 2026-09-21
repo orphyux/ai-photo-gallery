@@ -292,6 +292,14 @@ a { color: inherit; }
   line-height: 1.6;
 }
 
+.photo-credit {
+  color: #a3a3a3;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+  margin: -0.75rem 0 1.75rem;
+}
+
 .section-star {
   color: #fcd34d;
   filter: drop-shadow(0 0 4px rgba(252,211,77,0.5));

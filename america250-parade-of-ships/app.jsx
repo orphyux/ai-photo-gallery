@@ -718,7 +718,16 @@ const GALLERY_DATA = [
   },
 ];
 const CATEGORIES = ["All", "Tall Ships", "Warships", "Aerial Review", "Fireboats & Harbor Vessels"];
-const US_GROUP_NAMES = ["USS Farragut (DDG-99)", "USCGC Eagle (USA)"];
+const US_GROUP_NAMES = [
+  "USS Farragut (DDG-99)",
+  "USCGC Eagle (USA)",
+  "Blue Angels",
+  "Marine Corps KC-130 Hercules",
+  "Air Force Tanker & Fighter Escort",
+  "B-29 Superfortress \"FIFI\"",
+  "FDNY Fireboat Three Forty Three",
+  "Maryland Topsail Schooner",
+];
 
 function useSpeech() {
   const [speaking, setSpeaking] = useState(false);
@@ -794,6 +803,8 @@ function Intro() {
             through the sky above them both. This is that day, ship by ship, sailor by sailor.
           </p>
         </div>
+
+        <p className="photo-credit">Fellow Contributing Photographer: Mindy DeVries</p>
 
         <div className="stat-strip">
           <div className="stat-tile">
@@ -1039,7 +1050,9 @@ function Gallery() {
                   {usGroups.map(({ name, items }) => (
                     <div key={name}>
                       <div className="ship-group-heading us-ship-heading">
-                        <Anchor size={14} className="us-ship-icon shrink-0" />
+                        {items[0].category === "Aerial Review"
+                          ? <Plane size={14} className="us-ship-icon shrink-0" />
+                          : <Anchor size={14} className="us-ship-icon shrink-0" />}
                         <h3>{name}</h3>
                         <span className="ship-group-count">{items.length} photo{items.length === 1 ? "" : "s"}</span>
                       </div>
