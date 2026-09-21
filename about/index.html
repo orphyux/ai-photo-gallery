@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About the Artist — Jennifer L. DeVries</title>
+<meta name="description" content="Jennifer L. DeVries — queer artist, bassist, cybersecurity technical program manager, wife, mom, and grandmother, on the eye behind these galleries." />
+
+<!-- Social share preview tags -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="About the Artist — Jennifer L. DeVries" />
+<meta property="og:description" content="A warm hello from the person behind the lens — where art, music, and a little AI magic meet." />
+<meta property="og:image" content="https://jenniferldevries.com/about/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+  /* Dependency-free: plain HTML + CSS, no JavaScript, no CDN scripts.
+     Decorative flowers and music notes are hand-drawn inline SVG so the
+     page never depends on an external image request. */
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #4a3b45;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.75;
+    background: linear-gradient(180deg, #fff7f0 0%, #fdf1f6 35%, #f3f0fb 70%, #eef6f2 100%);
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+  a { color: #c2588f; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Pride-flag ribbon — soft palette, but a touch bolder than before */
+  .pride-ribbon {
+    height: 9px;
+    width: 100%;
+    background: linear-gradient(90deg,
+      #e4787c 0%, #f0ae7e 16.6%, #f5d868 33.3%,
+      #a7cdb0 50%, #8fb8d6 66.6%, #b79bd0 83.3%, #e4787c 100%);
+    opacity: 0.95;
+  }
+
+  /* ---------- soft decorative background ---------- */
+  .bg-deco {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .bg-deco svg { position: absolute; opacity: 0.55; }
+  .bg-deco .d1 { top: -40px; left: -60px; width: 260px; }
+  .bg-deco .d2 { top: 8%; right: -70px; width: 220px; }
+  .bg-deco .d3 { bottom: 6%; left: -80px; width: 280px; }
+  .bg-deco .d4 { bottom: -60px; right: -50px; width: 300px; }
+  .bg-deco .d5 { top: 40%; left: 46%; width: 140px; opacity: 0.28; }
+  .bg-deco .d6 { top: 20%; left: 20%; width: 320px; opacity: 0.35; filter: blur(30px); }
+
+  .wrap { position: relative; z-index: 1; max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  .backlink {
+    position: relative; z-index: 1;
+    display: block;
+    padding: 1.5rem 1.5rem 0;
+    font-size: 0.85rem;
+    color: #a3728f;
+    max-width: 44rem;
+    margin: 0 auto;
+  }
+  .backlink a { color: #a3728f; font-weight: 600; }
+  .backlink a:hover { color: #c2588f; }
+
+  header {
+    position: relative; z-index: 1;
+    text-align: center;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+  header p.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    color: #d98fb3;
+    font-weight: 700;
+    margin: 0 0 0.85rem;
+  }
+  header h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin: 0 0 0.6rem;
+    color: #7a4064;
+  }
+  header p.subname {
+    color: #a3728f;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    margin: 0;
+    font-style: italic;
+  }
+  header .divider {
+    margin: 1.75rem auto 0;
+    width: 140px;
+  }
+
+  main { position: relative; z-index: 1; padding: 1rem 0 4rem; }
+
+  .card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(194, 88, 143, 0.15);
+    border-radius: 1.25rem;
+    padding: 2rem 2.1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px -18px rgba(122, 64, 100, 0.35);
+  }
+
+  section h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #7a4064;
+    margin: 0 0 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  section h2 .note {
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  p {
+    color: #5c4a56;
+    font-size: 1.03rem;
+    margin: 0 0 1.1rem;
+  }
+  p:last-child { margin-bottom: 0; }
+  p.lede {
+    color: #7a4064;
+    font-size: 1.15rem;
+  }
+
+  ul.touchpoints {
+    list-style: none;
+    margin: 0 0 1.1rem;
+    padding: 0;
+  }
+  ul.touchpoints li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: #5c4a56;
+  }
+  ul.touchpoints li::before {
+    content: "✿";
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    color: #d98fb3;
+    font-size: 0.9em;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(194, 88, 143, 0.18);
+    border-radius: 0.9rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.9rem 1.05rem;
+    border-bottom: 1px solid rgba(194, 88, 143, 0.15);
+    vertical-align: top;
+  }
+  thead th {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: linear-gradient(120deg, #d98fb3, #b7a3e0);
+    font-weight: 600;
+  }
+  thead th:first-child { border-top-left-radius: 0.9rem; }
+  thead th:last-child { border-top-right-radius: 0.9rem; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(odd) { background: rgba(217, 143, 179, 0.06); }
+  td { color: #5c4a56; }
+  td strong { color: #7a4064; }
+
+  ul.influences {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.4rem;
+  }
+  ul.influences li {
+    padding-left: 1rem;
+    border-left: 3px solid #f0c6db;
+  }
+  ul.influences li strong {
+    display: block;
+    color: #7a4064;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.08rem;
+    margin-bottom: 0.3rem;
+  }
+  ul.influences li span {
+    color: #5c4a56;
+    font-size: 0.98rem;
+  }
+
+  blockquote {
+    margin: 0;
+    text-align: center;
+    padding: 0.5rem 1rem 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: #a3568a;
+    line-height: 1.6;
+  }
+  blockquote .quote-deco { display: block; margin-bottom: 0.75rem; }
+
+  footer {
+    position: relative; z-index: 1;
+    text-align: center;
+    color: #b78ba9;
+    font-size: 0.8rem;
+    padding: 1rem 1.5rem 3rem;
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 2.25rem 1.25rem 2rem; }
+    header h1 { font-size: 1.95rem; }
+    .card { padding: 1.5rem 1.35rem; margin-bottom: 1.5rem; border-radius: 1rem; }
+    main { padding: 0.5rem 0 3rem; }
+    th, td { padding: 0.65rem 0.6rem; font-size: 0.82rem; }
+    .bg-deco .d1, .bg-deco .d2, .bg-deco .d3, .bg-deco .d4 { width: 160px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="pride-ribbon" aria-hidden="true"></div>
+
+<!-- Soft decorative background: flowers and floating music notes, all
+     inline so the page never depends on an external image. -->
+<div class="bg-deco" aria-hidden="true">
+  <svg class="d1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.9">
+      <circle cx="100" cy="70" r="22" fill="#f6c9df"/>
+      <circle cx="70" cy="90" r="22" fill="#f9d9c4"/>
+      <circle cx="130" cy="90" r="22" fill="#e3d6f7"/>
+      <circle cx="85" cy="115" r="22" fill="#cfe8d9"/>
+      <circle cx="115" cy="115" r="22" fill="#f6c9df"/>
+      <circle cx="100" cy="97" r="14" fill="#f4a94f"/>
+    </g>
+    <path d="M40 150 Q45 130 60 128" stroke="#bcd9c4" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M150 160 Q158 140 170 138" stroke="#bcd9c4" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <svg class="d2" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.85">
+      <path d="M60 40c18 40 18 70-6 100M60 40c26-14 52-4 58 24M60 40c-30 0-48 20-44 48" stroke="#d9a9d0" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="140" cy="150" r="18" fill="#f9d9c4"/>
+      <circle cx="118" cy="165" r="18" fill="#f6c9df"/>
+      <circle cx="162" cy="165" r="18" fill="#e3d6f7"/>
+      <circle cx="140" cy="167" r="11" fill="#f4a94f"/>
+    </g>
+  </svg>
+
+  <svg class="d3" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.85">
+      <circle cx="60" cy="60" r="20" fill="#e3d6f7"/>
+      <circle cx="32" cy="78" r="20" fill="#f6c9df"/>
+      <circle cx="88" cy="78" r="20" fill="#f9d9c4"/>
+      <circle cx="46" cy="100" r="20" fill="#cfe8d9"/>
+      <circle cx="74" cy="100" r="20" fill="#e3d6f7"/>
+      <circle cx="60" cy="82" r="12" fill="#f4a94f"/>
+    </g>
+    <!-- floating music notes -->
+    <g fill="#b7a3e0" opacity="0.9">
+      <circle cx="150" cy="130" r="7"/>
+      <rect x="155" y="90" width="3" height="42"/>
+      <path d="M158 90c10-4 18 0 18 8s-8 12-18 8" fill="none" stroke="#b7a3e0" stroke-width="3"/>
+    </g>
+    <g fill="#d98fb3" opacity="0.85">
+      <circle cx="195" cy="150" r="6"/>
+      <rect x="199" y="118" width="2.6" height="34"/>
+    </g>
+  </svg>
+
+  <svg class="d4" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.85">
+      <circle cx="150" cy="150" r="24" fill="#f9d9c4"/>
+      <circle cx="118" cy="170" r="24" fill="#f6c9df"/>
+      <circle cx="182" cy="170" r="24" fill="#cfe8d9"/>
+      <circle cx="130" cy="198" r="24" fill="#e3d6f7"/>
+      <circle cx="170" cy="198" r="24" fill="#f6c9df"/>
+      <circle cx="150" cy="178" r="15" fill="#f4a94f"/>
+    </g>
+    <g fill="#b7a3e0" opacity="0.85">
+      <circle cx="55" cy="70" r="7"/>
+      <rect x="60" y="30" width="3" height="42"/>
+      <path d="M63 30c10-4 18 0 18 8s-8 12-18 8" fill="none" stroke="#b7a3e0" stroke-width="3"/>
+    </g>
+  </svg>
+
+  <svg class="d5" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#d98fb3">
+      <circle cx="30" cy="120" r="6"/>
+      <rect x="34" y="86" width="2.6" height="36"/>
+      <circle cx="90" cy="40" r="6"/>
+      <rect x="94" y="6" width="2.6" height="36"/>
+      <path d="M97 6c9-4 16 0 16 7s-7 11-16 7" fill="none" stroke="#d98fb3" stroke-width="2.6"/>
+    </g>
+  </svg>
+
+  <!-- soft yellow glow, tucked behind the content -->
+  <svg class="d6" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="100" fill="#fbe9ae"/>
+  </svg>
+</div>
+
+<p class="backlink"><a href="/">&larr; Back to Galleries</a></p>
+
+<header>
+  <p class="eyebrow">About the Artist</p>
+  <h1>The Eye Behind the Lens</h1>
+  <p class="subname">Jennifer L. DeVries</p>
+  <svg class="divider" viewBox="0 0 140 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="prideStroke" x1="0" y1="0" x2="140" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#e4787c"/>
+        <stop offset="22%" stop-color="#f0ae7e"/>
+        <stop offset="42%" stop-color="#f5d868"/>
+        <stop offset="60%" stop-color="#a7cdb0"/>
+        <stop offset="80%" stop-color="#8fb8d6"/>
+        <stop offset="100%" stop-color="#b79bd0"/>
+      </linearGradient>
+    </defs>
+    <path d="M5 10 Q35 -2 70 10 Q105 22 135 10" stroke="url(#prideStroke)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="70" cy="10" r="4" fill="#f5d868"/>
+  </svg>
+</header>
+
+<main class="wrap">
+
+  <div class="card">
+    <p class="lede">Hi, I'm so glad you're here! I'm a queer artist, bassist, cybersecurity technical program manager, wife, mom, and grandmother, living and creating in New Jersey — and this little corner of the internet is where I get to share the way I see the world.</p>
+    <p>My life has never fit neatly into one box, and honestly, I love that about it. By day, I design and protect complex systems in cybersecurity; on stage and in rehearsal, I lock into the groove holding down the low end on bass; at home, my life is grounded by my wife, our children, and the joy of watching our family grow across generations. All of that — the technical, the musical, the deeply personal — shows up in every photo I take.</p>
+  </div>
+
+  <div class="card">
+    <section>
+      <h2><span class="note">🌸</span> Rhythm, Structure, and the Everyday</h2>
+      <p>Whether I'm designing secure system architecture, locking into a drum pocket, or framing a shot, I'm drawn to rhythm, tension, and structure. Photography lets me bring that same instinct out into the world around me.</p>
+      <p>My lens loves the quiet architecture of everyday life — weathered facades, sharp angles, a shadow that lands just right, the geometry most of us walk past without ever looking up. I hope these galleries invite you to slow down and notice those same small, beautiful things.</p>
+    </section>
+  </div>
+
+  <div class="card">
+    <section>
+      <h2><span class="note">✨</span> Where Art Meets AI</h2>
+      <p>We're living through a wonderfully strange and exciting moment, where AI and new digital tools are reshaping what's possible in visual art almost by the day. I work in tech, so I lean into that with curiosity rather than hesitation — but I also believe that genuine human perspective matters more now than ever.</p>
+      <p>No algorithm has:</p>
+      <ul class="touchpoints">
+        <li>Stood on an ordinary street corner at dusk, waiting for the light to hit the concrete just right.</li>
+        <li>Navigated decades in the tech industry as an out lesbian woman.</li>
+        <li>Felt the physical thump of a low bass note moving through a stage floor.</li>
+        <li>Lived the deep, grounded love and lineage of a family spanning generations.</li>
+      </ul>
+      <p>So think of this gallery as a warm little conversation between real, physical observation and modern digital craft. I don't use technology to replace what I see or to invent scenes out of thin air — I use it as a thoughtful creative partner, one that helps me sharpen and share an authentic point of view that's still very much anchored by a human eye and heart. I'd love for you to wander through and see that cross-section for yourself.</p>
+    </section>
+  </div>
+
+  <div class="card">
+    <section>
+      <h2><span class="note">🎶</span> My Creative Toolkit</h2>
+      <p>Creative work rarely happens in just one lane. The mediums I move between — shaping low frequencies, chasing ambient light, building thoughtful digital spaces — are really all the same instinct wearing different outfits: finding structure, balance, and groove wherever I look.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Creative Domain</th>
+              <th>Instruments &amp; Mediums</th>
+              <th>What It Brings to the Work</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Visual &amp; Digital</strong></td>
+              <td>Prime lenses, deliberate architectural framing, Google Cloud Platform, generative AI &amp; digital processing</td>
+              <td>Turns real-world geometry into balanced compositions, using modern tools to support — never replace — the photographer's eye.</td>
+            </tr>
+            <tr>
+              <td><strong>Sonic &amp; Rhythm</strong></td>
+              <td>4- &amp; 5-string electric basses, analog preamps, modulation &amp; dynamic shaping pedals</td>
+              <td>Trains an ear for pacing and dynamic weight — the sonic version of negative space and grounding in a photograph.</td>
+            </tr>
+            <tr>
+              <td><strong>Systems &amp; Architecture</strong></td>
+              <td>Cybersecurity frameworks, technical program workflows, logic modeling</td>
+              <td>Sharpens an eye for structural integrity and the hidden foundations quietly holding up the visible world.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <div class="card">
+    <section>
+      <h2><span class="note">🌼</span> Influences &amp; Touchstones</h2>
+      <ul class="influences">
+        <li><strong>Everyday Urban Geometry</strong><span>The brutalist concrete, industrial brickwork, and accidental shadows of the Northeast corridor — utilitarian spaces that turn out to hold unexpected warmth in the right light.</span></li>
+        <li><strong>The Low-End Groove</strong><span>Classic rock energy, post-punk minimalism, and melodic basslines, where a little restraint and space matter just as much as the notes played.</span></li>
+        <li><strong>Queer Visibility &amp; Lineage</strong><span>The strength and perspective that come from showing up — creatively, technically, and as family — openly, unapologetically, and with love.</span></li>
+        <li><strong>Human-Centered Technology</strong><span>A belief that technology should always serve human storytelling — a collaborative amplifier for a real, lived point of view, never a replacement for it.</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <blockquote>
+    <svg class="quote-deco" width="60" height="16" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto;">
+      <circle cx="10" cy="10" r="4" fill="#f0c6db"/>
+      <circle cx="30" cy="6" r="4" fill="#cfe8d9"/>
+      <circle cx="50" cy="10" r="4" fill="#e3d6f7"/>
+    </svg>
+    &ldquo;The art isn't just the structure in the frame — it's the life brought to the moment of looking.&rdquo;
+  </blockquote>
+
+</main>
+
+<footer>
+  <svg width="60" height="6" viewBox="0 0 60 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block; margin:0 auto 0.9rem; opacity:0.7;">
+    <rect x="0" y="0" width="10" height="6" fill="#e4787c"/>
+    <rect x="10" y="0" width="10" height="6" fill="#f0ae7e"/>
+    <rect x="20" y="0" width="10" height="6" fill="#f5d868"/>
+    <rect x="30" y="0" width="10" height="6" fill="#a7cdb0"/>
+    <rect x="40" y="0" width="10" height="6" fill="#8fb8d6"/>
+    <rect x="50" y="0" width="10" height="6" fill="#b79bd0"/>
+  </svg>
+  Made with love (and a little AI) — © Jennifer L. DeVries
+</footer>
+
+</body>
+</html>
