@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holmdel Tiffany Windows</title>
+<meta name="description" content="A record of the 1893 memorial windows at Holmdel Community United Church of Christ, Holmdel, New Jersey: what is known, how we know it, and their condition today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Matches holmdelucc.org: white pages, deep teal bars, bright teal accent, Rubik headings over Public Sans text. */
+  --page: #ffffff;
+  --panel: #e2f0f1;
+  --soft: #f0f0f0;
+  --line: #d3e1e4;
+  --text: #222222;
+  --muted: #55666d;
+  --brand: #10455b;
+  --accent: #2aa1af;
+  --footer: #333333;
+  --warn: #9a3b1f;
+  --display: "Rubik", "Helvetica Neue", Arial, sans-serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--page); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--brand); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.2; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 500; }
+h2 { font-size: clamp(1.6rem, 4vw, 2rem); font-weight: 400; color: var(--brand); }
+h3 { font-size: 1.25rem; font-weight: 500; color: var(--brand); }
+p { margin: 0; }
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+.prose { max-width: 68ch; display: flex; flex-direction: column; gap: 1rem; }
+.eyebrow { font-family: var(--display); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+section .eyebrow { color: #1c7f8b; }
+.muted { color: var(--muted); }
+.small { font-size: .9rem; }
+
+.draft { background: var(--panel); border-bottom: 2px solid var(--accent); color: var(--text); font-size: .9rem; padding: 10px 0; }
+.draft strong { color: var(--brand); }
+
+nav.top { position: sticky; top: 0; z-index: 5; background: var(--brand); }
+nav.top .wrap { display: flex; flex-wrap: wrap; gap: 2px 20px; padding-top: 10px; padding-bottom: 10px; }
+nav.top a { color: #ffffff; text-decoration: none; font-family: var(--display); font-weight: 500; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; padding: 4px 0; border-bottom: 2px solid transparent; }
+nav.top a:hover { border-bottom-color: var(--accent); }
+nav.top a.go { background: #ffffff; color: var(--brand); border-radius: 3px; padding: 4px 10px; border-bottom: 0; }
+[data-view][hidden] { display: none; }
+section { scroll-margin-top: 60px; }
+
+header.hero { padding: 44px 0 36px; background: var(--brand); color: #ffffff; }
+header.hero .grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: end; }
+header.hero h1 { color: #f1f1f1; margin-top: 8px; }
+header.hero .eyebrow { color: #bfe6ea; }
+header.hero p.lede { font-size: 1.15rem; max-width: 60ch; margin-top: 14px; }
+header.hero figure { margin: 0; }
+header.hero figure img { border-radius: 6px; }
+header.hero figcaption { color: #d5e6ea; }
+figcaption { font-size: .85rem; color: var(--muted); margin-top: 6px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 24px; }
+.fact { border-top: 3px solid var(--accent); padding-top: 8px; }
+.fact b { font-family: var(--display); font-weight: 500; font-size: 1.7rem; display: block; line-height: 1.1; }
+.fact span { font-size: .88rem; color: #d5e6ea; }
+
+section { padding: 44px 0; border-top: 1px solid var(--line); }
+section:nth-of-type(even) { background: #f7fafa; }
+section > .wrap > h2 { margin: 6px 0 18px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 24px; }
+.chip { font-family: var(--display); font-weight: 500; font-size: .85rem; color: var(--brand); background: #ffffff; border: 1px solid var(--brand); border-radius: 3px; padding: 6px 12px; cursor: pointer; }
+.chip:hover { background: var(--panel); }
+.chip[aria-pressed="true"] { background: var(--brand); color: #ffffff; }
+
+.index { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 36px; }
+.index a { display: block; background: #ffffff; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; color: var(--text); text-decoration: none; }
+.index a:hover { border-color: var(--accent); }
+.index .thumb { aspect-ratio: 3 / 4; background: var(--soft) center / cover no-repeat; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .8rem; text-align: center; padding: 8px; }
+.index .cap { padding: 8px 10px 10px; font-size: .88rem; line-height: 1.3; }
+.index .cap b { color: var(--brand); font-family: var(--display); font-weight: 600; font-size: 1.05rem; margin-right: 4px; }
+
+article.window { display: grid; grid-template-columns: 1fr; gap: 22px; padding: 30px 0; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+article.window[hidden] { display: none; }
+@media (min-width: 860px) { article.window { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 36px; } header.hero .grid { grid-template-columns: 6fr 5fr; } }
+.shots { display: flex; flex-direction: column; gap: 14px; }
+.shots img { border-radius: 4px; }
+.stage { position: relative; background: var(--soft); border-radius: 4px; overflow: hidden; }
+.dot { position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; border: 2px solid #ffffff; background: var(--brand); color: #ffffff; font: 600 .85rem var(--display); cursor: pointer; padding: 0; box-shadow: 0 0 0 3px rgba(16,69,91,.35); }
+.dot[aria-pressed="true"] { background: var(--accent); box-shadow: 0 0 0 4px rgba(42,161,175,.45); }
+.spots { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: .92rem; }
+.spots li { display: grid; grid-template-columns: 26px 1fr; gap: 8px; padding: 6px 8px; border-radius: 4px; }
+.spots li.on { background: var(--panel); outline: 1px solid var(--accent); }
+.spots .n { width: 22px; height: 22px; border-radius: 50%; background: var(--brand); color: #ffffff; font-weight: 600; font-size: .8rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
+.record { display: flex; flex-direction: column; gap: 16px; }
+.record .id { font-family: var(--display); color: #1c7f8b; font-size: .95rem; font-weight: 500; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { font-family: var(--display); font-size: .76rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; border: 1px solid; }
+.pill.doc { color: #ffffff; background: var(--brand); border-color: var(--brand); }
+.pill.att { color: var(--brand); background: var(--panel); border-color: var(--accent); }
+.pill.todo { color: var(--muted); background: #ffffff; border-color: var(--muted); }
+dl { margin: 0; display: grid; grid-template-columns: 1fr; gap: 14px; }
+dt { font-family: var(--display); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 2px; }
+dd { margin: 0; }
+dd ul { margin: 0; padding-left: 1.1rem; }
+.inscription { font-family: var(--display); font-size: 1.05rem; color: var(--brand); background: var(--panel); border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 0 4px 4px 0; }
+.inscription span { display: block; }
+.inscription span + span { margin-top: 6px; padding-top: 6px; border-top: 1px dashed #a9cfd4; }
+.note { color: var(--warn); font-size: .92rem; }
+
+.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: #ffffff; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .93rem; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { font-family: var(--display); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: #ffffff; background: var(--brand); font-weight: 500; }
+tr:last-child td { border-bottom: 0; }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+.card { background: #ffffff; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.card.hold { border-style: dashed; border-color: var(--accent); background: var(--panel); }
+.tasks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.tasks li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: .95rem; }
+.tasks li::before { content: ""; width: 16px; height: 16px; border: 2px solid var(--accent); border-radius: 3px; margin-top: 4px; }
+.tasks b { display: block; font-weight: 600; }
+.tasks span { color: var(--muted); }
+.tasks span.when { color: var(--brand); font-weight: 600; }
+ol.sources { padding-left: 1.4rem; margin: 0; display: flex; flex-direction: column; gap: 10px; max-width: 78ch; font-size: .95rem; }
+ol.sources a { overflow-wrap: anywhere; }
+ul.plain { padding-left: 1.1rem; margin: 0; display: flex; flex-direction: column; gap: 6px; max-width: 70ch; }
+footer { background: var(--footer); padding: 28px 0 60px; color: #ffffff; font-size: .88rem; }
+
+/* ---- tour redesign ---- */
+:root { --night: #082531; --night2: #0e3646; --glass: #f0b24a; }
+nav.top .wrap { align-items: center; }
+nav.top a.brand { font-size: .95rem; text-transform: none; letter-spacing: 0; font-weight: 600; margin-right: auto; }
+nav.top a.tab { padding: 6px 10px; border-radius: 3px; border-bottom: 0; }
+nav.top a.tab[aria-current="page"] { background: #ffffff; color: var(--brand); }
+header.hero.big { padding: 0; background: linear-gradient(100deg, rgba(8,37,49,.94) 0%, rgba(8,37,49,.82) 46%, rgba(8,37,49,.25) 100%), url(images/wall-two.jpg) right 30% / cover no-repeat var(--night); }
+header.hero.big .wrap { padding-top: clamp(56px, 12vw, 130px); padding-bottom: clamp(48px, 9vw, 100px); }
+header.hero.big h1 { font-size: clamp(2.5rem, 8.5vw, 5.6rem); font-weight: 600; letter-spacing: -.02em; line-height: 1; color: #ffffff; max-width: 13ch; }
+header.hero.big h1 br + * , header.hero.big h1 { text-wrap: balance; }
+header.hero.big .lede { max-width: 52ch; font-size: clamp(1.05rem, 2.2vw, 1.25rem); margin-top: 22px; }
+header.hero.big .eyebrow { color: var(--glass); }
+header.hero.slim { padding: 40px 0 30px; }
+header.hero.slim h1 { font-size: clamp(1.9rem, 5vw, 3rem); max-width: 20ch; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { font-family: var(--display); font-weight: 500; font-size: 1.02rem; border-radius: 6px; padding: 11px 20px; text-decoration: none; cursor: pointer; border: 2px solid transparent; display: inline-block; line-height: 1.2; }
+.btn.solid { background: var(--glass); color: #1c1407; }
+.btn.solid:hover { background: #ffc763; }
+.btn.ghost { background: transparent; color: #ffffff; border-color: rgba(255,255,255,.7); }
+.btn.ghost:hover { background: rgba(255,255,255,.12); }
+.subnav { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 20px; }
+.subnav a { color: #ffffff; text-decoration: none; font-family: var(--display); font-size: .82rem; font-weight: 500; border: 1px solid rgba(255,255,255,.5); border-radius: 3px; padding: 4px 10px; }
+.subnav a:hover { background: rgba(255,255,255,.14); }
+
+section.night { background: var(--night); color: #e9f1f3; border-top: 0; }
+section.night h2 { color: #ffffff; }
+section.night .eyebrow { color: var(--glass); }
+.tourbox { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; margin-top: 8px; }
+@media (min-width: 820px) { .tourbox { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; } }
+.tourimg { display: flex; justify-content: center; }
+.tourimg .stage { display: inline-block; background: #04161d; border-radius: 6px; box-shadow: 0 0 0 1px rgba(240,178,74,.35), 0 0 70px rgba(240,178,74,.22); }
+.tourimg img { max-height: 74vh; width: auto; max-width: 100%; border-radius: 6px; }
+.tourbox.in .tourimg .stage, .tourbox.in .tourtext { animation: rise .5s ease both; }
+.tourbox.in .tourtext { animation-delay: .08s; }
+@keyframes rise { from { opacity: .0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .tourbox.in .tourimg .stage, .tourbox.in .tourtext { animation: none; } }
+.tourtext { display: flex; flex-direction: column; gap: 14px; }
+.tourtext .kick { font-family: var(--display); font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; color: var(--glass); font-weight: 600; }
+.tourtext h3 { color: #ffffff; font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 600; letter-spacing: -.01em; line-height: 1.08; }
+.tourtext #t-text { font-size: 1.1rem; line-height: 1.6; max-width: 46ch; }
+.tourtext .call { min-height: 1.6em; font-family: var(--display); color: var(--glass); font-weight: 500; }
+.tourtext a.more { color: #bfe6ea; font-weight: 600; }
+.tournav { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+.tournav #t-count { font-family: var(--display); font-variant-numeric: tabular-nums; color: #bfe6ea; min-width: 5.5ch; text-align: center; }
+.tdot { position: absolute; width: 32px; height: 32px; margin: -16px 0 0 -16px; border-radius: 50%; border: 2px solid #1c1407; background: var(--glass); color: #1c1407; font: 600 .9rem var(--display); cursor: pointer; padding: 0; box-shadow: 0 0 0 4px rgba(240,178,74,.35); }
+.tdot[aria-pressed="true"] { background: #ffffff; }
+.rail { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 30px 0 0; }
+.rail button { width: 38px; height: 38px; border-radius: 50%; border: 2px solid rgba(255,255,255,.45); background: transparent; color: #ffffff; font: 500 .9rem var(--display); cursor: pointer; }
+.rail button:hover { border-color: var(--glass); }
+.rail button[aria-current="step"] { background: var(--glass); border-color: var(--glass); color: #1c1407; font-weight: 600; }
+.hint { font-size: .85rem; color: #9fc3cb; margin-top: 12px; }
+
+.timeline { list-style: none; margin: 26px 0 0; padding: 0 0 14px; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; }
+.timeline li { flex: 0 0 min(300px, 78vw); scroll-snap-align: start; background: #ffffff; border: 1px solid var(--line); border-top: 5px solid var(--brand); border-radius: 6px; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; }
+.timeline li:nth-child(3), .timeline li:nth-child(10) { border-top-color: var(--glass); }
+.timeline .yr { font-family: var(--display); font-weight: 600; font-size: 2.6rem; line-height: 1; letter-spacing: -.02em; color: var(--brand); font-variant-numeric: tabular-nums; }
+.timeline p { font-size: .95rem; }
+.lincoln { margin-top: 26px; background: var(--brand); color: #ffffff; border-radius: 6px; padding: 22px 24px; max-width: 78ch; }
+.lincoln .eyebrow { color: var(--glass); margin-bottom: 6px; }
+.lincoln a { color: #bfe6ea; }
+.links { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 14px; }
+.links a { display: flex; flex-direction: column; gap: 4px; text-decoration: none; background: #ffffff; border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 4px; padding: 14px 16px; }
+.links a:hover { border-color: var(--brand); border-left-color: var(--glass); }
+.links b { font-family: var(--display); font-weight: 600; color: var(--brand); }
+.links span { font-size: .9rem; color: var(--muted); }
+section.band { background: var(--night2); color: #ffffff; border-top: 0; padding: 60px 0; }
+section.band h2 { color: #ffffff; font-size: clamp(1.7rem, 4.5vw, 2.8rem); font-weight: 600; max-width: 24ch; letter-spacing: -.01em; }
+
+.legend { margin: 22px 0 10px; font-size: .88rem; color: #bfe6ea; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.key { width: 14px; height: 14px; border-radius: 3px; border: 2px solid rgba(255,255,255,.45); display: inline-block; margin-left: 10px; }
+.key.on { background: var(--glass); border-color: var(--glass); margin-left: 0; }
+.patent { list-style: none; margin: 0 0 30px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.patent li { font-family: var(--display); font-weight: 500; font-size: .95rem; padding: 10px 12px; border-radius: 4px; border: 2px solid rgba(255,255,255,.3); color: #cfe3e8; }
+.patent li.on { background: var(--glass); border-color: var(--glass); color: #1c1407; font-weight: 600; box-shadow: 0 0 28px rgba(240,178,74,.35); }
+section.night .card { background: var(--night2); border-color: rgba(255,255,255,.14); border-top-color: var(--glass); color: #e9f1f3; }
+section.night .card h3 { color: #ffffff; font-size: 1.4rem; }
+section.night .card a, section.night .prose a { color: #bfe6ea; }
+.card .role { font-family: var(--display); font-size: .74rem; letter-spacing: .09em; text-transform: uppercase; color: var(--glass); font-weight: 600; }
+section.night h3.sub { color: #ffffff; margin-top: 34px; margin-bottom: 10px; font-size: 1.5rem; }
+.fine { font-size: .9rem; color: #a9c7ce; }
+.direct { margin-top: 30px; border: 2px solid var(--glass); border-radius: 6px; padding: 22px 24px; max-width: 80ch; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 0 40px rgba(240,178,74,.18); }
+.direct h3 { color: #ffffff; font-size: 1.6rem; }
+.direct a { color: #bfe6ea; }
+</style>
+</head>
+<body>
+
+<div class="draft"><div class="wrap"><strong>Draft for review.</strong> Not yet approved by the congregation for publication.</div></div>
+
+<nav class="top" aria-label="Site"><div class="wrap">
+  <a class="brand" href="#home">Holmdel Tiffany Windows</a>
+  <a class="tab" data-tab="tour" href="#home">The tour</a>
+  <a class="tab" data-tab="records" href="#archive">The records</a>
+  <a class="tab" data-tab="save" href="#save">Saving the windows</a>
+</div></nav>
+
+<div data-view="tour" id="home">
+<header class="hero big"><div class="wrap">
+  <p class="eyebrow">Holmdel Community United Church of Christ · Holmdel, New Jersey</p>
+  <h1>Older than the county.<br>Lit by Tiffany.</h1>
+  <p class="lede">The people who founded Monmouth County founded this congregation, in 1668, fifteen years before the county existed. In 1893 its people filled their meeting house with Tiffany glass and wrote their founders' names into it. Take the tour, then help keep the light on.</p>
+  <p class="cta"><a class="btn solid" href="#tour">Start the tour</a><a class="btn ghost" href="#founders">Meet the founders</a><a class="btn ghost" href="#save">Help save the windows</a></p>
+</div></header>
+
+<section id="tour" class="night"><div class="wrap">
+  <p class="eyebrow">The tour</p>
+  <h2>Walk the sanctuary, window by window</h2>
+  <div class="tourbox in" id="t-stage">
+    <div class="tourimg"><div class="stage"><img id="t-img" src="images/wall-three.jpg" alt=""><div id="t-dots"></div></div></div>
+    <div class="tourtext">
+      <p class="kick" id="t-kick"></p>
+      <h3 id="t-title"></h3>
+      <p id="t-text"></p>
+      <p class="call" id="t-call" aria-live="polite"></p>
+      <p><a class="more" id="t-more" href="#archive"></a></p>
+      <div class="tournav"><button type="button" class="btn ghost" id="t-prev">Back</button><span id="t-count"></span><button type="button" class="btn solid" id="t-next">Next stop</button></div>
+    </div>
+  </div>
+  <ol class="rail" id="t-rail" aria-label="Tour stops"></ol>
+  <p class="hint">Use the buttons, the numbered stops, or the left and right arrow keys.</p>
+</div></section>
+
+<section id="roots"><div class="wrap">
+  <p class="eyebrow">Roots</p>
+  <h2>Here before Monmouth County was</h2>
+  <div class="prose"><p>Scroll sideways through three and a half centuries on one piece of ground.</p></div>
+  <ol class="timeline">
+      <li><span class="yr">1665</span><h3>A charter for conscience</h3><p>On 8 April 1665 the Monmouth Patent granted twelve men the land that became this county, with freedom of religion written in a century before the Bill of Rights. Two of the twelve are this church's people: John Bowne, believed to have been its first preacher, and Obadiah Holmes, whose family names the town. <a href="#s39">[39]</a><a href="#s3">[3]</a></p></li>
+      <li><span class="yr">1668</span><h3>New Jersey's first Baptists</h3><p>Settlers from Long Island and New England organised the first Baptist society in New Jersey here in Monmouth. <a href="#s3">[3]</a></p></li>
+      <li><span class="yr">1683</span><h3>The county is born</h3><p>Monmouth County was established on 7 March 1683. The congregation was already fifteen years old. <a href="#s40">[40]</a></p></li>
+      <li><span class="yr">1688</span><h3>A church is constituted</h3><p>The Baptist Church of Middletown was formally constituted, one of the earliest Baptist churches in the colonies. This was its Upper Meeting. <a href="#s3">[3]</a></p></li>
+      <li><span class="yr">1705</span><h3>John Bray gives the land</h3><p>John and Susanna Bray conveyed about four and one third acres for a Baptist meeting house. The church still stands on it. <a href="#s3">[3]</a></p></li>
+      <li><span class="yr">1781</span><h3>Revolution on the road outside</h3><p>British raiders marched on the road to Bray's Meeting House. Two soldiers of the Revolution, Lt. John Whitlock and Col. Asher Holmes, lie in the churchyard. <a href="#s36">[36]</a><a href="#s3">[3]</a></p></li>
+      <li><span class="yr">1809</span><h3>The building you see</h3><p>The present meeting house was dedicated on 29 October 1809. <a href="#s3">[3]</a></p></li>
+      <li><span class="yr">1815</span><h3>A first Sunday school</h3><p>Ann B. Taylor opened the first Baptist Sunday school in New Jersey on her farm near the church. Her name is on Window A. <a href="#s3">[3]</a></p></li>
+      <li><span class="yr">1857</span><h3>A township named Holmdel</h3><p>Holmdel Township was set off and named for the Holmes family. <a href="#s31">[31]</a></p></li>
+      <li><span class="yr">1893</span><h3>Tiffany's windows</h3><p>The church reopened on 30 July 1893 with memorial windows that appear in Tiffany's own published lists. <a href="#s1">[1]</a></p></li>
+      <li><span class="yr">1990</span><h3>On the National Register</h3><p>The meeting house was entered on the National Register of Historic Places, three years after the state register. <a href="#s4">[4]</a></p></li>
+  </ol>
+  <div class="lincoln">
+    <p class="eyebrow">A president's ancestors</p>
+    <p>John Bowne, patentee of 1665 and the congregation's first preacher, married Lydia Holmes. Through their daughter Sarah Salter and granddaughter Hannah Salter Lincoln, they are ancestors of Abraham Lincoln. The oldest stone in the churchyard, dated 1757, is Sarah Holmes Salter's <a href="#s3">[3]</a>.</p>
+  </div>
+</div></section>
+
+<section id="founders" class="night"><div class="wrap">
+  <p class="eyebrow">The founders</p>
+  <h2>The people who founded Monmouth County founded this church</h2>
+  <div class="prose">
+    <p>Monmouth County began as the Monmouth Patent of 1665, a grant to twelve men <a href="#s39">[39]</a>. Three years later, eighteen men formed the first Baptist society in New Jersey <a href="#s3">[3]</a>. Put the two lists side by side and four names appear on both <a href="#s45">[45]</a>.</p>
+  </div>
+  <p class="legend"><span class="key on"></span> Patentee and founding Baptist <span class="key"></span> Patentee</p>
+  <ul class="patent" aria-label="The twelve Monmouth patentees">
+    <li class="on">John Bowne</li><li class="on">Richard Stout</li><li class="on">James Grover</li><li class="on">Obadiah Holmes</li>
+    <li>William Goulding</li><li>Samuel Spicer</li><li>Richard Gibbons</li><li>John Tilton</li><li>Nathaniel Sylvester</li><li>William Reape</li><li>Walter Clark</li><li>Nicholas Davis</li>
+  </ul>
+  <div class="cols founders">
+    <div class="card"><p class="role">Patentee · first preacher</p><h3>John Bowne</h3><p>One of the twelve, and believed to have been the Baptist society's first preacher. The historian John Stillwell called him "perhaps, the most conspicuous figure in the early history of Monmouth County" <a href="#s3">[3]</a>. Family histories and Wikipedia agree that he was Speaker of the East Jersey Assembly in the early 1680s, including 1683, the year the county was created <a href="#s47">[47]</a>. That is likely, and not yet checked against the Assembly's own records.</p></div>
+    <div class="card"><p class="role">Patentee · founding member</p><h3>Richard Stout</h3><p>One of the twelve, he helped lay out Middletown's first lots and served from 1669 to 1671 in the assembly that governed the Monmouth towns. He and his son John are among the eighteen founding Baptists <a href="#s45">[45]</a><a href="#s48">[48]</a>. Family tradition says the society was organised in the Stouts' kitchen. His wife Penelope is remembered as the First Lady of Monmouth <a href="#s48">[48]</a>.</p></div>
+    <div class="card"><p class="role">Patentee · founding member</p><h3>James Grover</h3><p>One of the twelve and Middletown's first town clerk. He and his son James are both on the list of founding Baptists <a href="#s45">[45]</a><a href="#s49">[49]</a>.</p></div>
+    <div class="card"><p class="role">Patentee · the town's namesake family</p><h3>Obadiah Holmes</h3><p>A Baptist minister whipped in Boston for his beliefs, and one of the twelve <a href="#s46">[46]</a>. He stayed in Rhode Island; his sons settled here. Jonathan Holmes held office in Middletown as deputy, justice and constable, and in 1667 he and his brother bought 1,600 acres <a href="#s3">[3]</a>. Holmdel is named for the family <a href="#s31">[31]</a>.</p></div>
+    <div class="card"><p class="role">Second preacher · assemblyman</p><h3>James Ashton</h3><p>The society's second preacher and its first ordained one. He was a deputy to the General Assembly in 1669 and a grantee of Middletown and Shrewsbury in 1672 <a href="#s3">[3]</a>.</p></div>
+    <div class="card"><p class="role">Giver of the ground</p><h3>John Bray</h3><p>In 1705 he and his wife Susanna gave the land this church stands on. It stayed in Baptist hands until 1968 <a href="#s3">[3]</a>.</p></div>
+  </div>
+  <div class="direct">
+    <p class="eyebrow">The most direct tie</p>
+    <h3>One man at both beginnings</h3>
+    <p>East Jersey's four counties, Monmouth among them, were formalised on 7 March 1683 <a href="#s50">[50]</a>. John Bowne held the 1665 patent, is believed to have preached to the first Baptists, and by several accounts was Speaker of the Assembly in 1683 <a href="#s3">[3]</a><a href="#s47">[47]</a>. If the Assembly's records bear that out, the congregation's first preacher presided when Monmouth County was made.</p>
+    <p class="fine">How sure this is: the patent and the county's date rest on strong sources. The Speaker claim rests on family histories and Wikipedia. Richard Stout, James Grover and Obadiah Holmes are tied to the 1665 grant and the first towns, not to the act of 1683. Maxine Lurie's article "The Case of the Founding of Monmouth County" is the scholarly account to read next <a href="#s51">[51]</a>.</p>
+  </div>
+  <h3 class="sub">From the founders to the glass</h3>
+  <div class="prose">
+    <p>The 1893 windows carry these families forward. The Holmes window names the patentee's descendants. The two Bray windows mark the gift of 1705. A Whitlock was among the eighteen founders, and Lt. John Whitlock of the Revolution lies in the churchyard <a href="#s45">[45]</a><a href="#s3">[3]</a>. A Mount was among the eighteen too, and Achsah Mount was the mother of the two Ely deacons <a href="#s45">[45]</a><a href="#s31">[31]</a>. Whether those later families descend from the founders of the same name has not been traced.</p>
+    <p class="fine">Two points of care. This congregation and Old First Church in Middletown were one church with two meeting houses until 1836, so they share this founding <a href="#s4">[4]</a>. And the county was formally created by the East Jersey Assembly in 1683 <a href="#s40">[40]</a>; "founders" here means the patentees and first settlers of 1665. The list of eighteen may name Obadiah Holmes the son, not the father.</p>
+  </div>
+</div></section>
+
+<section id="tiffany"><div class="wrap">
+  <p class="eyebrow">The maker</p>
+  <h2>Why a Tiffany window is different</h2>
+  <div class="cols">
+    <div class="card"><h3>He changed the glass itself</h3><p>Stained glass had barely changed since the Middle Ages: flat coloured panes with details painted on. Louis Comfort Tiffany and his rival John La Farge put the colour, streaks and texture inside the glass <a href="#s41">[41]</a>.</p></div>
+    <div class="card"><h3>He ran the biggest studio in America</h3><p>By the 1880s Tiffany's company was the largest producer of stained-glass windows in the country <a href="#s44">[44]</a>. Holmdel appears in its published lists of 1897 and 1910 <a href="#s1">[1]</a>.</p></div>
+    <div class="card"><h3>Not everyone approved</h3><p>Makers in the Gothic tradition rejected opalescent glass outright <a href="#s42">[42]</a>. That argument is part of why windows like these were later removed elsewhere, and why the ones that remain matter.</p></div>
+  </div>
+  <h3 style="margin-top:30px">Go deeper on Tiffany</h3>
+  <div class="links">
+    <a href="https://www.metmuseum.org/essays/louis-comfort-tiffany-1848-1933"><b>The Metropolitan Museum of Art</b><span>Essay on Tiffany's life and work, with objects from the collection</span></a>
+    <a href="https://www.morsemuseum.org/louis-comfort-tiffany"><b>The Morse Museum</b><span>The largest collection of Tiffany's work, with a full biography</span></a>
+    <a href="https://libanswers.cmog.org/faq/143909"><b>Corning Museum of Glass</b><span>The library's guide to researching Tiffany windows</span></a>
+    <a href="https://cambridge2000.com/tiffany/html/site/30.21.1.html"><b>The Tiffany Census</b><span>Holmdel's entry in the database of Tiffany windows</span></a>
+    <a href="https://www.theneustadt.org/visit/tiffany-glass-archive"><b>The Neustadt</b><span>An archive of the glass Tiffany's chemists made</span></a>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>These windows have lasted 133 years. The next hundred are up to us.</h2>
+  <p class="cta"><a class="btn solid" href="#save">Saving the windows</a><a class="btn ghost" href="#archive">Read the full records</a></p>
+</div></section>
+</div>
+
+<div data-view="records" id="archive" hidden>
+<header class="hero slim"><div class="wrap">
+  <p class="eyebrow">The records</p>
+  <h1>What is known, and how we know it</h1>
+  <p class="lede">A record for every window, the people named on them, the chandeliers, the ceiling, other Tiffany sites in the county, and every source.</p>
+  <p class="subnav"><a href="#story">The story</a><a href="#windows">The windows</a><a href="#people">The people</a><a href="#lighting">The chandeliers</a><a href="#ceiling">The ceiling</a><a href="#county">Tiffany in the county</a><a href="#sources">Sources</a></p>
+</div></header>
+<section id="story"><div class="wrap">
+  <p class="eyebrow">The story</p>
+  <h2>A Baptist meeting house, remade in the 1890s</h2>
+  <div class="prose">
+    <p>Baptists built the first church on this site about 1705, on land conveyed by a deed dated 17 December 1705. The present building was dedicated on 29 October 1809 as the Upper Meeting House of the Baptist Church of Middletown, and it grew in stages: a narthex and steeple in 1850, an extension at the back in 1866 <a href="#s3">[3]</a>.</p>
+    <p>Between 1887 and 1894 the congregation gave the plain meeting-house interior a Victorian character <a href="#s3">[3]</a>. The windows on this page belong to that work. A report in the Red Bank Register of 2 August 1893 is cited by the Tiffany Census as showing they were in place when the building reopened on 30 July 1893 <a href="#s1">[1]</a>.</p>
+    <p>They are what the trade called ornamental windows: pattern and colour, with no figures or scenes. Each has a cross at its centre and, along the bottom, panels naming the pastors, deacons and families the congregation wanted to remember. The church's National Register nomination describes them as opalescent glass (milky, streaked glass that carries its colour inside it) with memorial panels bordered in yellow jewels and rows of blue rondels, which are the round discs of glass <a href="#s3">[3]</a>.</p>
+    <p>The windows were not the only change. The old plaster ceiling was covered with a new one of pressed metal, hung a few inches below it, with a stamped field of panels and a curved, ribbed cove <a href="#s3">[3]</a>. <a href="#ceiling">The ceiling</a> section has the details. From it hang chandeliers of a kind sold to churches in the 1880s and 1890s. Each has a ring lined with ribbed mirror glass that throws the light down onto the pews. Chandeliers like these were made for oil, kerosene or gas and often wired for electricity later <a href="#s11">[11]</a>. No record found so far says who made Holmdel's or when they were hung, so for now they are part of the story by their look alone. <a href="#lighting">The chandeliers</a> section sets out what is known.</p>
+    <p>The Baptist congregation later merged with Holmdel's Dutch Reformed congregation to form today's Holmdel Community United Church of Christ <a href="#s4">[4]</a>.</p>
+    <p>The building's importance is already on record. It was entered on the New Jersey Register of Historic Places on 3 December 1987 and on the National Register of Historic Places on 7 December 1990, under the name Upper Meeting House of the Baptist Church of Middletown <a href="#s4">[4]</a>. Those dates come from Wikipedia and await written confirmation from the State Historic Preservation Office.</p>
+    <p>One point of history is unsettled. An online inventory of New Jersey churches, no longer reachable, said large stained-glass windows were added in 1866. The evidence above places the present windows in 1893, so that may describe earlier glass that these replaced. Church records should settle it.</p>
+    <p class="muted small">Still to add, in the congregation's own words: why these windows matter to the people who worship here now, and what prompted the effort to save them.</p>
+  </div>
+</div></section>
+<section id="windows"><div class="wrap">
+  <p class="eyebrow">The windows</p>
+  <h2>One record for each window</h2>
+  <div class="prose">
+    <p>Window letters follow the Tiffany Census entry for this church (items 30.21.1.1.a to i), so that records here and there can be matched <a href="#s1">[1]</a>. Numbered markers on a photo point to details described beside it.</p>
+  </div>
+  <div class="chips" role="group" aria-label="Show windows">
+    <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" type="button" data-f="door" aria-pressed="false">Side-door wall</button>
+    <button class="chip" type="button" data-f="opp" aria-pressed="false">Opposite wall</button>
+    <button class="chip" type="button" data-f="small" aria-pressed="false">Smaller windows and exterior</button>
+    <button class="chip" type="button" data-f="todo" aria-pressed="false">Not yet photographed</button>
+  </div>
+  <div class="index" id="index"></div>
+  <div id="records"></div>
+</div></section>
+<section id="people"><div class="wrap">
+  <p class="eyebrow">The people in the glass</p>
+  <h2>Why these names matter</h2>
+  <div class="prose">
+    <p>Read together, the dedication panels are a roll of the people who made this congregation and this town. Wikipedia describes the church as the first Baptist congregation in New Jersey, founded in 1688 <a href="#s4">[4]</a>.</p>
+    <p><b>The founder.</b> John Bray gave the land the church stands on in 1705, and his meeting house gave the crossroads its first name <a href="#s3">[3]</a><a href="#s34">[34]</a>.</p>
+    <p><b>A first for New Jersey.</b> Ann B. Taylor opened the first Baptist Sunday school in the state in 1815, on her farm near the church <a href="#s3">[3]</a>.</p>
+    <p><b>The town's namesake.</b> Holmdel is named for the Holmes family <a href="#s31">[31]</a>.</p>
+    <p><b>The county's leaders.</b> The Elys on two windows are sons of John J. Ely, sheriff, assemblyman and director of the county freeholders, who is buried in the churchyard <a href="#s32">[32]</a>. One son married a Taylor and another a Longstreet <a href="#s31">[31]</a>.</p>
+    <p><b>The farm families.</b> The Longstreets' farm is now Historic Longstreet Farm, a county park. It stayed in the family until 1967 and has been restored to its appearance in the 1890s, the same years these windows went in <a href="#s33">[33]</a>.</p>
+    <p><b>The pastors.</b> Rev. William D. Hires was the Holmdel congregation's pastor from 1836 and the first minister of the Baptist church in Marlboro. He died in July 1892, so his panel was a fresh memorial when the church reopened a year later <a href="#s31">[31]</a><a href="#s35">[35]</a>. Rev. Charles E. Wilson served for sixteen years and died in 1869 <a href="#s37">[37]</a>.</p>
+    <p>For funders, this is the second half of the case. The glass is documented as Tiffany's. The names on it are the families who settled Holmdel, gave it its name, farmed it and governed the county, in the church built on land given in 1705.</p>
+  </div>
+  <h3 style="margin-top:28px">Finding living relatives</h3>
+  <div class="prose" style="margin-top:10px">
+    <p>This site does not name living descendants. Tracing them is worth doing privately, because families give to windows that carry their name. Places to start: the church's own membership rolls, the Monmouth County Historical Association's library, the Holmes family papers at the New Jersey Historical Society <a href="#s38">[38]</a>, the Holmdel Historical Society, and the Ely, Taylor, Holmes and Longstreet genealogies in the 1885 county history <a href="#s31">[31]</a>. Anyone found should be approached by the church, and named publicly only with their agreement.</p>
+  </div>
+  <h3 style="margin-top:28px">Still unknown</h3>
+  <ul class="plain" style="margin-top:10px">
+    <li>Why Ann B. Taylor's panel says 1816 when the National Register nomination dates her Sunday school to 1815. The church's minutes may settle it.</li>
+    <li>Which William M. Ely was the deacon, and when he served.</li>
+    <li>Which members of the Holmes and Longstreet families the windows were given for, and by whom.</li>
+    <li>Who paid for each window. The 1893 newspaper report and the church's books may say.</li>
+    <li>The names of the wives who appear only as "And Wife".</li>
+  </ul>
+</div></section>
+<section id="lighting"><div class="wrap">
+  <p class="eyebrow">Also in the sanctuary</p>
+  <h2>The chandeliers</h2>
+  <article class="window" style="border-top:0;padding-top:8px">
+    <div class="shots">
+      <figure style="margin:0"><img src="images/chandelier.jpg" alt="A chandelier seen from below: a ring lined with ribbed mirror glass, a crown of metal leaves, hanging cut-glass prisms and frosted globes" loading="lazy"><figcaption>One of the sanctuary chandeliers, from below. Part of a second shows at the left edge.</figcaption></figure>
+    </div>
+    <div class="record">
+      <div><p class="id">Lighting · one photograph so far</p><h3>Reflector chandelier</h3></div>
+      <div class="pills"><span class="pill todo">Maker not yet known</span></div>
+      <dl>
+        <div><dt>What it is</dt><dd>A reflector chandelier, a type made for churches and halls in the late 1800s. A reflector is a mirrored surface above the lights that throws their glow down onto the room.</dd></div>
+        <div><dt>What the photo shows</dt><dd><ul>
+          <li>The underside of the large ring is lined with wedge-shaped panels of ribbed, silvered glass, with a faceted cone of the same glass at the centre.</li>
+          <li>A crown of metal leaves stands around the top of the ring.</li>
+          <li>Cut-glass prisms hang from the ring's edge and from each light.</li>
+          <li>At least six frosted globes sit on short arms below the reflector, above scrolled metalwork.</li>
+        </ul></dd></div>
+        <div><dt>How many</dt><dd>More than one. The count is to confirm.</dd></div>
+        <div><dt>Date</dt><dd>Not yet known. The form fits the interior renovation of 1887 to 1894 that also brought the windows <a href="#s3">[3]</a>, but no record found so far says so.</dd></div>
+        <div><dt>Maker</dt><dd>Not yet known. Two makers of this kind of fixture have turned up in research, described below. The resemblance is to the type only. Both are leads to check, not attributions.</dd></div>
+        <div><dt>Where the idea came from</dt><dd>In April 1860 Isaac P. Frink of Newark, New Jersey, patented a reflector for gas lights: a body of bright sheet metal lined with corrugated glass to strengthen the light. His patent describes it for lighting shop windows, not churches <a href="#s10">[10]</a>. The I. P. Frink name later became closely tied to mirrored reflector fixtures, which dealers date to the 1870s to 1890s <a href="#s9">[9]</a>.</dd></div>
+        <div><dt>A second maker</dt><dd>Thomas F. Bailey founded a reflector company in the early 1880s. It advertised its "compound, silver-plated corrugated glass reflectors" for churches, opera houses and halls, and made chandeliers for oil, gas and kerosene and, by the 1890s, for electricity. In 1920 it became the Bailey Reflector and Sign Co. <a href="#s11">[11]</a>.</dd></div>
+        <div><dt>Closest comparison found</dt><dd>A chandelier of about 1880 in the Heinz History Center, Pittsburgh, linked to Bailey's company. The museum describes a large twelve-sided ring with a pressed-tin cornice of acanthus leaves and twelve panes of mirrored glass beneath, over fourteen kerosene burners. It hung in a Masonic hall, is believed to have moved to a church, and was electrified at some point <a href="#s11">[11]</a>. Holmdel's chandelier shares the mirrored ring and the crown of leaves. It differs in its hanging prisms and frosted globes. Counting the mirror panels in Holmdel's ring would make the comparison firmer.</dd></div>
+        <div><dt>Original fuel</dt><dd>Not yet known. Fixtures of this type were made for oil, kerosene or gas, and many were wired for electricity later <a href="#s11">[11]</a>. The cups under Holmdel's globes are consistent with a conversion. A close look is needed to confirm.</dd></div>
+        <div><dt>In the records</dt><dd>An online search in November 2026 found nothing about these chandeliers themselves: no maker, no date, and no account of when the church was first lit by electricity. The church's National Register nomination does not mention the lighting or say when the building was electrified. It does describe the pressed-tin ceiling the chandeliers hang from <a href="#s3">[3]</a>.</dd></div>
+        <div><dt>Why it matters</dt><dd>Windows, tin ceiling and lighting that survive together from one 1890s renovation make a stronger case to funders than the windows alone.</dd></div>
+      </dl>
+    </div>
+  </article>
+</div></section>
+<section id="ceiling"><div class="wrap">
+  <p class="eyebrow">Also in the sanctuary</p>
+  <h2>The pressed-metal ceiling</h2>
+  <article class="window" style="border-top:0;padding-top:8px">
+    <div class="shots">
+      <figure style="margin:0"><img src="images/ceiling.jpg" alt="The edge of the sanctuary ceiling: a white curved band of ribbed metal rising from the wall to a blue and gold leaf-pattern border and a field of square panels" loading="lazy"><figcaption>Where the ceiling meets the wall, above the Holmes window.</figcaption></figure>
+    </div>
+    <div class="record">
+      <div><p class="id">Ceiling · seen in the background of four photographs</p><h3>"Tin" ceiling with a ribbed cove</h3></div>
+      <div class="pills"><span class="pill todo">Maker not yet known</span></div>
+      <dl>
+        <div><dt>What it is</dt><dd>A ceiling of pressed metal panels. The National Register nomination calls it pressed tin <a href="#s3">[3]</a>. The name is a habit of speech: most ceilings of this kind were stamped sheet steel, and their makers did not call them tin <a href="#s12">[12]</a>. What Holmdel's is made of has not been tested.</dd></div>
+        <div><dt>What the photos show</dt><dd><ul>
+          <li>A flat field of square panels, each with a raised frame inside a frame, painted in gold and pale tones.</li>
+          <li>A border of scrolling leaves in cream on blue-grey, edged with gold mouldings.</li>
+          <li>A tall white cove, curving from the wall up to the ceiling, made of narrow ribbed strips.</li>
+          <li>A gold beaded moulding where the cove meets the wall.</li>
+        </ul></dd></div>
+        <div><dt>How it is built</dt><dd>The nomination describes sections of pressed metal that butt together and hang from carrying rods held by wooden hangers. The rods pass through an older ceiling of lime, sand and horsehair plaster on lath about three inches above, and are hidden in the stamped ornament. The cove is concave metal sheeting, ribbed for decoration and strength. All of it hangs from the hand-hewn, pegged roof trusses of the 1809 meeting house <a href="#s3">[3]</a>.</dd></div>
+        <div><dt>Date</dt><dd>Not recorded. The nomination places the Victorian interior between 1887 and 1894 and does not date the ceiling itself <a href="#s3">[3]</a>. That fits the wider history: pressed steel panels were first patented and sold in 1888, and steel became the industry standard in the 1890s <a href="#s12">[12]</a>.</dd></div>
+        <div><dt>Maker</dt><dd>Not yet known. Ceilings like this were ordered from trade catalogues, and the pattern can sometimes be matched to one <a href="#s12">[12]</a>.</dd></div>
+        <div><dt>Why churches chose them</dt><dd>Makers sold metal ceilings as durable, fireproof, quicker and cheaper than plaster, and able to cover plaster that was failing <a href="#s12">[12]</a>. Holmdel's hangs just below its old plaster ceiling, which is still there <a href="#s3">[3]</a>.</dd></div>
+        <div><dt>A neighbour did the same</dt><dd>The old Holmdel Dutch Reformed Church across Main Street, the other half of today's congregation's history, was given a tin ceiling in a renovation of 1897 <a href="#s13">[13]</a>.</dd></div>
+        <div><dt>Colours</dt><dd>The present paint scheme is not dated. Panels of this kind usually left the factory primed in white lead paint and were painted on site, often in one or two colours, with richer schemes and gilding in some buildings <a href="#s12">[12]</a>. Whether today's colours follow the original is a question for paint analysis.</dd></div>
+        <div><dt>Condition notes</dt><dd>November 2026, from the background of photographs: the paint looks even and no staining, rust or sagging is visible in the areas shown. Only the edges of the ceiling appear in these photos.</dd></div>
+        <div><dt>Care</dt><dd>The National Park Service advises keeping water out above all, repainting only when needed so detail is not buried, and repairing in preference to replacing. Paint on any ceiling of this age should be assumed to contain lead until tested, so scraping or sanding is work for trained people <a href="#s12">[12]</a>.</dd></div>
+      </dl>
+    </div>
+  </article>
+</div></section>
+<section id="county"><div class="wrap">
+  <p class="eyebrow">Tiffany in Monmouth County</p>
+  <h2>Where else in the county</h2>
+  <div class="prose">
+    <p>A first pass, taken from the New Jersey listing of the Tiffany Census <a href="#s2">[2]</a>. Other sources have been added where they say more than the census does. Holmdel is the only place in the county where the census itself confirms a set of Tiffany church windows still in place. This survey is in progress and corrections are welcome.</p>
+  </div>
+  <div class="tablebox" style="margin-top:20px"><table>
+    <thead><tr><th>Place</th><th>Town</th><th>Recorded in the census</th><th>Still in place?</th></tr></thead>
+    <tbody>
+      <tr><td>Holmdel Community United Church of Christ</td><td>Holmdel</td><td>Eight memorial windows and further ornamental windows, 1893</td><td>Yes</td></tr>
+      <tr><td>Asbury Park Public Library</td><td>Asbury Park</td><td>One item</td><td>Yes, per the census</td></tr>
+      <tr><td>Church of the Presidents (St. James Episcopal Chapel)</td><td>Long Branch</td><td>Talbot Memorial window, ornamental, and memorial tablets</td><td>Census status unknown. The building's stained glass went into storage during restoration, and a 2017 state grant covered putting it back <a href="#s14">[14]</a></td></tr>
+      <tr><td>First Presbyterian Church</td><td>Matawan</td><td>Ornamental windows, from Tiffany's 1910 list</td><td>No. The building burned on 25 December 1955</td></tr>
+      <tr><td>First Presbyterian Church</td><td>Red Bank</td><td>War Memorial window, Daniel in the Lions' Den (1920), and Washburn Memorial window, Cherub Heads (1927)</td><td>Building gone; fate of the windows unknown</td></tr>
+      <tr><td>First Presbyterian Church</td><td>Rumson</td><td>Ornamental windows</td><td>Census status unknown, but the New Jersey Historic Trust describes three authenticated Tiffany windows in the building <a href="#s15">[15]</a></td></tr>
+      <tr><td>Elberon Memorial Church</td><td>Long Branch (Elberon)</td><td>Not found in the census listing</td><td>The church's own website says its rose window is by Tiffany and that his studio made other windows <a href="#s16">[16]</a>. A claim to check</td></tr>
+    </tbody>
+  </table></div>
+  <div class="prose" style="margin-top:20px">
+    <p class="muted small">Not yet checked: the Asbury Park and Red Bank entries in detail, local claims of Tiffany windows that the census does not list, county and town historical societies, and the state historic preservation office files. The census listing was read in one pass and may be incomplete.</p>
+  </div>
+</div></section>
+<section id="sources"><div class="wrap">
+  <p class="eyebrow">Sources and method</p>
+  <h2>How we know</h2>
+  <ol class="sources">
+    <li id="s1" value="1">Tiffany Census, "Holmdel Community United Church of Christ, Holmdel, New Jersey", site 30.21.1. <a href="https://cambridge2000.com/tiffany/html/site/30.21.1.html">cambridge2000.com/tiffany/html/site/30.21.1.html</a>. It cites Tiffany Glass &amp; Decorating Company, <i>A List of Windows</i> (1897), p. 50; Tiffany Studios, <i>A Partial List of Windows</i> (1910), p. 83; Alastair Duncan, <i>Tiffany Windows</i> (1980), p. 217; and the Red Bank Register, 2 August 1893, p. 1.</li>
+    <li id="s2" value="2">Tiffany Census, New Jersey site listing. <a href="https://www.cambridge2000.com/tiffany/html/site/NewJersey.html">cambridge2000.com/tiffany/html/site/NewJersey.html</a>.</li>
+    <li id="s3" value="3">National Register of Historic Places nomination, "Upper Meeting House of the Baptist Church of Middletown", prepared by Marilyn K. Duff for the Holmdel Community Church UCC Nomination Committee, December 1986. <a href="https://npgallery.nps.gov/GetAsset/32aa253a-a743-49db-b5e9-ca9420f81a07">npgallery.nps.gov</a>.</li>
+    <li id="s4" value="4">Wikipedia, "Upper Meeting House of the Baptist Church of Middletown". <a href="https://en.wikipedia.org/wiki/Upper_Meeting_House_of_the_Baptist_Church_of_Middletown">en.wikipedia.org</a>. Used for the merger of the two congregations and the register listing dates; church and state sources should replace it.</li>
+    <li id="s5" value="5">Inscriptions read from photographs of the windows supplied in November 2026.</li>
+    <li id="s6" value="6">New Jersey Historic Trust, Preserve New Jersey Historic Preservation Fund, 2026 Grant Guidelines. <a href="https://nj.gov/dca/njht/documents/programs/preservenj/2026%20Grant%20Guidelines.pdf">nj.gov/dca/njht</a>.</li>
+    <li id="s7" value="7">Monmouth County Historical Commission, 2027 Historic Preservation Grant Program. <a href="https://www.visitmonmouth.com/page.aspx?ID=1828">visitmonmouth.com</a>.</li>
+    <li id="s8" value="8">National Fund for Sacred Places, "Apply". <a href="https://fundforsacredplaces.org/apply/">fundforsacredplaces.org/apply</a>. Grant range as given by the New Jersey Historic Trust's funding page.</li>
+    <li id="s9" value="9">Antique dealers' listings of I. P. Frink mirrored reflector fixtures, for example <a href="https://www.1stdibs.com/furniture/lighting/chandeliers-pendant-lights/i-p-frink-mirrored-reflector-gas-lamp-newly-wired/id-f_4551313">1stdibs.com</a>. Used only to describe the type and its period. A dealer listing is a weak source and should be replaced by a lighting historian's or museum's account.</li>
+    <li id="s10" value="10">United States Patent 27,898, Isaac P. Frink, "Reflector for Gas-Lights", April 1860. <a href="https://patents.google.com/patent/US27898">patents.google.com/patent/US27898</a>.</li>
+    <li id="s11" value="11">Heinz History Center, Pittsburgh, online collection, "Chandelier", object 2003.122.1, about 1880, with label text on the Bailey Reflector Company. <a href="https://heinzhistorycenter.emuseum.com/objects/30597/chandelier">heinzhistorycenter.emuseum.com</a>.</li>
+    <li id="s12" value="12">Kaaren R. Staveteig, <i>Historic Decorative Metal Ceilings and Walls: Use, Repair, and Replacement</i>, Preservation Brief 49, National Park Service. <a href="https://www.nps.gov/orgs/1739/upload/preservation-brief-49-metal-ceilings-walls.pdf">nps.gov</a>.</li>
+    <li id="s13" value="13">National Register of Historic Places nomination, "Holmdel Dutch Reformed Church", 41 Main Street, listed 22 October 1980. <a href="https://npgallery.nps.gov/GetAsset/16bcaaf8-27d7-4ea6-8019-c16ee612c742">npgallery.nps.gov</a>.</li>
+    <li id="s14" value="14">New Jersey Historic Trust, funded sites, "Church of the Presidents". <a href="https://www.nj.gov/dca/njht/funded/sitedetails/church_of_the_presidents.shtml">nj.gov/dca/njht</a>.</li>
+    <li id="s15" value="15">New Jersey Historic Trust, funded sites, "First Presbyterian Church, Rumson". <a href="https://www.nj.gov/dca/njht/funded/sitedetails/first_presbyterian_church_rumson.shtml">nj.gov/dca/njht</a>. Tiffany Census, site 30.38.1. <a href="https://cambridge2000.com/tiffany/html/site/30.38.1.html">cambridge2000.com</a>.</li>
+    <li id="s16" value="16">Elberon Memorial Church, "Stained Glass". <a href="https://www.elberonmemorialchurch.com/stained-glass">elberonmemorialchurch.com</a>.</li>
+    <li id="s17" value="17">Preservation New Jersey, "Church of the Presidents", 10 Most Endangered list entry (1996) with updates. <a href="https://preservationnj.org/10-most/church-of-the-presidents/">preservationnj.org</a>.</li>
+    <li id="s18" value="18">Office of Rep. Frank Pallone, press release, 20 November 2004. <a href="https://pallone.house.gov/press-release/pallone-congress-approves-100000-restoration-church-presidents">pallone.house.gov</a>.</li>
+    <li id="s19" value="19">Patch, "Long Branch's Church Of The 7 Presidents Is Being Renovated, Intends To Reopen To Public". <a href="https://patch.com/new-jersey/longbranch/long-branchs-church-7-presidents-being-renovated-intends-reopen-public">patch.com</a>.</li>
+    <li id="s20" value="20">Tiffany Census, "Asbury Park Public Library", site 30.1.1, citing the Asbury Park Journal, 1901. <a href="https://cambridge2000.com/tiffany/html/site/30.1.1.html">cambridge2000.com</a>.</li>
+    <li id="s21" value="21">New Jersey Historic Trust, funded sites: <a href="https://nj.gov/dca/njht/funded/sitedetails/christ_episcopal_church_shrewsbury.shtml">Christ Episcopal Church, Shrewsbury</a>; <a href="https://www.nj.gov/dca/njht/funded/sitedetails/st_george_by_the_river.shtml">St. George's by-the-River</a>; <a href="https://nj.gov/dca/njht/funded/sitedetails/trinity_episcopal_church_asbury_park.shtml">Trinity Episcopal Church, Asbury Park</a>.</li>
+    <li id="s22" value="22">Visit Pennsylvania, "Stunning Stained Glass: Follow the Tiffany Glass Trail in PA". <a href="https://www.visitpa.com/blog/post/stunning-stained-glass-follow-tiffany-glass-trail-pa/">visitpa.com</a>.</li>
+    <li id="s23" value="23">Monmouth County Historical Commission, History Regrant Program. <a href="https://www.visitmonmouth.com/page.aspx?ID=4719">visitmonmouth.com</a>.</li>
+    <li id="s24" value="24">National Fund for Sacred Places, "Church of the Covenant", 2020 cohort. <a href="https://www.fundforsacredplaces.org/participants/church-of-the-covenant/">fundforsacredplaces.org</a>. Beacon Hill Times on the separate nonprofit and its fundraiser. <a href="https://beaconhilltimes.com/?p=8471">beaconhilltimes.com</a>.</li>
+    <li id="s25" value="25">Monmouth County, "'A Weekend in Old Monmouth' annual tour", press release, 17 April 2026. <a href="https://www.visitmonmouth.com/PressDetail.aspx?ID=4051">visitmonmouth.com</a>.</li>
+    <li id="s26" value="26">New Jersey Historic Trust, heritage tourism resources. <a href="https://www.nj.gov/dca/njht/touring/resources/">nj.gov/dca/njht/touring/resources</a>. Journey Through Jersey, guidelines for inclusion. <a href="https://journeythroughjersey.com/resources">journeythroughjersey.com/resources</a>.</li>
+    <li id="s27" value="27">New Jersey Historic Trust, Discover NJ History License Plate Fund, awarded projects (2021). <a href="https://www.nj.gov/dca/njht/documents/programs/discover/DNJHLP%20Awarded%20Projects%202021.pdf">nj.gov/dca/njht</a>.</li>
+    <li id="s28" value="28">Tour and event prices: St. Luke's United Methodist Church, Dubuque, <a href="https://www.stlukesdbq.org/windows">stlukesdbq.org/windows</a>; Atlas Obscura on St. John's, Franklin, <a href="https://www.atlasobscura.com/articles/posts/america-s-hidden-tiffany-treasure-in-franklin-pa">atlasobscura.com</a>; Hudson Mohawk Industrial Gateway, Troy, <a href="https://hudsonmohawkgateway.org/store/ticket-tiffanys-stained-glass-walking-tour">hudsonmohawkgateway.org</a>; Episcopal Diocese of Rochester, Corning event, <a href="https://episcopalrochester.org/events/wine-whiskey-and-windows-fundraiser/">episcopalrochester.org</a>.</li>
+    <li id="s29" value="29">Vicksburg Post, "'Lights to the World': Holy Trinity campaign restores stained glass windows", 29 September 2024. <a href="https://vicksburgpost.com/?p=699569">vicksburgpost.com</a>.</li>
+    <li id="s30" value="30">The History Girl, "Historic Christmastime Holmdel House Tour", November 2016. <a href="https://www.thehistorygirl.com/2016/11/christmastime-holmdel-nj-house-tour.html">thehistorygirl.com</a>.</li>
+    <li id="s31" value="31">Franklin Ellis, <i>History of Monmouth County, New Jersey</i> (Philadelphia, 1885), read through the published index to it, which points to pages 813 to 826 for Holmdel and its Baptist church. <a href="https://tile.loc.gov/storage-services/public/gdcmassbookdig/historyofmonmout00ellis/historyofmonmout00ellis_bw.pdf">Library of Congress</a>. The index was read from scanned text with some garbled page numbers. The pages themselves have not yet been read.</li>
+    <li id="s32" value="32">Wikipedia, "John J. Ely". <a href="https://en.wikipedia.org/wiki/John_J._Ely">en.wikipedia.org</a>.</li>
+    <li id="s33" value="33">Monmouth County Park System, "Longstreet Farm History". <a href="https://www.monmouthcountyparks.com/page.aspx?Id=2566">monmouthcountyparks.com</a>.</li>
+    <li id="s34" value="34">WikiTree, "John Bray (abt. 1663 - aft. 1716)", citing the deed of 17 December 1705. <a href="https://www.wikitree.com/wiki/Bray-1479">wikitree.com</a>. A family-history site; the deed itself should be cited once seen.</li>
+    <li id="s35" value="35">Florida Baptist Historical Society, "Biographies H", citing the Florida Baptist Convention Annual, 1893. <a href="https://floridabaptisthistory.org/2020/11/23/biographies-h/">floridabaptisthistory.org</a>.</li>
+    <li id="s36" value="36">Monmouth County Historical Association, "The Battle of the 1500 at Middletown". <a href="https://www.monmouthhistory.org/250/the-battle-of-the-1500-at-middletown">monmouthhistory.org</a>.</li>
+    <li id="s37" value="37">Find a Grave, memorial for Rev. William VanDolah Wilson (1811 to 1908), quoting his obituary. <a href="https://www.findagrave.com/memorial/21684140/william_vandolah-wilson">findagrave.com</a>. Seen only as a search excerpt.</li>
+    <li id="s38" value="38">New Jersey Historical Society, Manuscript Group 282, Holmes Family (Middletown, NJ) Papers, 1680 to 1905. <a href="https://jerseyhistory.org/?p=2109">jerseyhistory.org</a>.</li>
+    <li id="s39" value="39">Monmouth Timeline, "The Monmouth Patent". <a href="https://monmouthtimeline.org/timeline/the-monmouth-patent/">monmouthtimeline.org</a>.</li>
+    <li id="s40" value="40">Wikipedia, "Monmouth County, New Jersey". <a href="https://en.wikipedia.org/wiki/Monmouth_County,_New_Jersey">en.wikipedia.org</a>.</li>
+    <li id="s41" value="41">The Metropolitan Museum of Art, "Louis Comfort Tiffany (1848-1933)". <a href="https://www.metmuseum.org/essays/louis-comfort-tiffany-1848-1933">metmuseum.org</a>.</li>
+    <li id="s42" value="42">The Charles Hosmer Morse Museum of American Art, "Louis Comfort Tiffany". <a href="https://www.morsemuseum.org/louis-comfort-tiffany">morsemuseum.org</a>.</li>
+    <li id="s43" value="43">Corning Museum of Glass, Rakow Research Library, guide to researching Tiffany windows. <a href="https://libanswers.cmog.org/faq/143909">libanswers.cmog.org</a>.</li>
+    <li id="s44" value="44">Alice Cooney Frelinghuysen, <i>Louis Comfort Tiffany at The Metropolitan Museum of Art</i> (1999), publisher's description. <a href="https://www.metmuseum.org/en/met-publications/louis-comfort-tiffany-at-the-metropolitan-museum-of-art">metmuseum.org</a>.</li>
+    <li id="s45" value="45">David Benedict, <i>A General History of the Baptist Denomination in America</i>, New Jersey chapter, giving Morgan Edwards's list of the eighteen founding members at Middletown. <a href="https://www.reformedreader.org/history/benedict/baptistdenomination/newjersey.htm">reformedreader.org</a>.</li>
+    <li id="s46" value="46">Thomas Armitage, <i>A History of the Baptists</i> (1887), chapter on New Jersey. <a href="http://www.fbinstitute.com/armitage/ch07.html">fbinstitute.com</a>. William Cathcart, <i>The Baptist Encyclopedia</i> (1881), "The Baptists of New Jersey". <a href="https://www.baptisthistoryhomepage.com/new.jersey.history.tbe.html">baptisthistoryhomepage.com</a>.</li>
+    <li id="s47" value="47">Wikipedia, "Andrew Bowne", for his brother John Bowne's service as Speaker. <a href="https://en.wikipedia.org/wiki/Andrew_Bowne">en.wikipedia.org</a>. Geni, "Capt. John Bowne". <a href="https://www.geni.com/people/Capt-John-Bowne/6000000005299747001">geni.com</a>. Family-history sources, to be replaced by the Assembly's records.</li>
+    <li id="s48" value="48">Wikipedia, "Penelope Stout". <a href="https://en.wikipedia.org/wiki/Penelope_Stout">en.wikipedia.org</a>. Family-history accounts of Richard Stout, including the kitchen tradition. <a href="https://sites.rootsweb.com/~flgssvc/penelopestout-final.html">rootsweb.com</a>; <a href="https://old.findagrave.com/memorial/45166321/richard-stout">findagrave.com</a>. Tradition, not record.</li>
+    <li id="s49" value="49">Find a Grave, "James Grover Sr. (1620-1685)". <a href="https://www.findagrave.com/memorial/123076932/james-grover">findagrave.com</a>. A family-history source.</li>
+    <li id="s50" value="50">Joseph R. Klett, <i>Using the Records of the East and West Jersey Proprietors</i>, New Jersey State Archives. <a href="https://www.nj.gov/state/archives/pdf/proprietors.pdf">nj.gov/state/archives</a>.</li>
+    <li id="s51" value="51">Maxine N. Lurie, "The Case of the Founding of Monmouth County", <i>New Jersey History</i>. <a href="https://njh.libraries.rutgers.edu/index.php/njh/article/download/1105/2553/5713">njh.libraries.rutgers.edu</a>. Not yet read for this record.</li>
+  </ol>
+  <h3 style="margin-top:30px">How attribution labels are used</h3>
+  <ul class="plain" style="margin-top:10px">
+    <li><b>Documented:</b> a primary record names the maker, such as the maker's own published list of commissions.</li>
+    <li><b>Attributed:</b> a published source includes the window on other grounds. The source is named.</li>
+    <li>No signature has been looked for or found yet. The census records none.</li>
+  </ul>
+  <h3 style="margin-top:30px">Still to check</h3>
+  <ul class="plain" style="margin-top:10px">
+    <li>The 1897 and 1910 Tiffany lists themselves. The page numbers above come from the census; the original pages have not been seen for this record. The census notes that both lists say only "ornamental windows" and give no memorial names.</li>
+    <li>The Red Bank Register report of 2 August 1893: what it says about the windows and whether it names the maker.</li>
+    <li>The congregation's own minutes, treasurer's books and 1893 reopening programme.</li>
+    <li>The 1968 church history, <i>What God Hath Joined Together</i>, for anything on the windows and the families.</li>
+    <li>When the church was first lit by electricity, and whether it ever had gas. Nothing found online says.</li>
+    <li>An online inventory of New Jersey churches, no longer reachable, said large stained-glass windows were added in 1866. That conflicts with the 1893 date above and may refer to earlier glass. It needs checking against church records.</li>
+    <li>The form in source 3 lists both "1893 church remodeled" and "1909 church rebuilt". The second may be an error and needs checking.</li>
+  </ul>
+</div></section>
+</div>
+
+<div data-view="save" id="save" hidden>
+<header class="hero slim"><div class="wrap">
+  <p class="eyebrow">Saving the windows</p>
+  <h1>The condition today, and the plan to fix it</h1>
+  <p class="lede">What can be seen of the damage, how to help, who to work with, how a county Tiffany trail could raise money, and what needs doing next.</p>
+  <p class="subnav"><a href="#case">The case</a><a href="#condition">Condition</a><a href="#help">How to help</a><a href="#together">Working together</a><a href="#trail">Tiffany trail</a><a href="#tasks">Tasks</a><a href="#ask">Ask church leaders</a><a href="#funding">Funding</a></p>
+</div></header>
+<section id="case"><div class="wrap">
+  <p class="eyebrow">The case for support</p>
+  <h2>Why these windows are worth saving</h2>
+  <div class="cols">
+    <div class="card"><h3>The founding claim</h3><p>John Bowne held the 1665 Monmouth Patent, the grant that became Monmouth County. He is believed to have been this congregation's first preacher <a href="#s3">[3]</a>. By several accounts he was also Speaker of the East Jersey Assembly in 1683, the year the county was formalised on 7 March <a href="#s47">[47]</a><a href="#s50">[50]</a>. If that holds, the congregation's first preacher presided when Monmouth County was made.</p></div>
+    <div class="card"><h3>How to use it</h3><p><b>Safe to say now:</b> "Men who received the 1665 Monmouth Patent, the grant that became Monmouth County, were among the founders of this congregation."</p><p><b>Hold until checked:</b> that Bowne was Speaker when the counties act passed. It rests on family histories and Wikipedia, not yet on the Assembly's records.</p></div>
+    <div class="card"><h3>Why funders will care</h3><p>It turns a request to repair church windows into a request to protect a piece of the county's founding story: a congregation older than the county, on land given in 1705, with its founders' families named in Tiffany glass. It also gives county and state heritage bodies a reason to be partners.</p></div>
+  </div>
+  <div class="prose" style="margin-top:20px">
+    <p class="muted small">Keep in mind that Old First Church in Middletown shares this founding, since the two were one congregation until 1836. That makes it a natural ally. The full account is in <a href="#founders">The founders</a> on the tour page.</p>
+  </div>
+</div></section>
+
+<section id="condition"><div class="wrap">
+  <p class="eyebrow">Condition and need</p>
+  <h2>What can be seen today</h2>
+  <div class="prose">
+    <p>These notes describe what is visible in photographs supplied in November 2026. They were made by a volunteer working from photos, and they are observations, not a professional assessment. A stained-glass conservator's survey is the next step for anything listed here.</p>
+  </div>
+  <div class="tablebox" style="margin-top:20px"><table>
+    <thead><tr><th>Where</th><th>Observed</th><th>Seen in</th></tr></thead>
+    <tbody>
+      <tr><td>Three-light window, outside</td><td>Clear protective glazing in white metal frames covers the whole window. Paint on the wooden sill and lower surround is cracked and flaking. Several blue rondels show yellowish surface deposits.</td><td><a href="#w-x">Outside views</a></td></tr>
+      <tr><td>Upper rectangular windows, outside</td><td>The outer protective layer is cloudy, which hides the glass. On the lower window, lines of lead cross several border pieces at an angle, outside the regular pattern. Paint is missing in places on the frame.</td><td><a href="#w-i">Smaller windows</a></td></tr>
+      <tr><td>Door transom, outside</td><td>No outer protective layer is visible in the photo. A line runs across the blue border piece at lower right. Rust-coloured spots sit at several lead joints, there are white marks on one green corner square, and the glazing putty along the bottom edge is broken.</td><td><a href="#w-i">Smaller windows</a></td></tr>
+      <tr><td>Six large windows, inside</td><td>No missing glass is visible in these photos. All were taken from the pews at an angle, so bowing, cracks and the state of the leading cannot be judged. Opening vent panels with pull cords are present in each window.</td><td><a href="#w-a">Windows A, D, E, F, G, H</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="prose" style="margin-top:20px">
+    <p class="muted small">Photographs that would let this section say more: each window straight on, the same view with the sanctuary lights off, a view from the side to show any bowing, and close-ups of anything that looks cracked or loose with a ruler or coin for scale.</p>
+  </div>
+</div></section>
+<section id="help"><div class="wrap">
+  <p class="eyebrow">How to help</p>
+  <h2>Ways to support the windows</h2>
+  <div class="cols">
+    <div class="card hold"><h3>To be supplied</h3><p>Giving details, a contact for the project, and any fund name will go here once the congregation provides them. Nothing has been filled in on its behalf.</p></div>
+    <div class="card"><h3>Share what you know</h3><p>Old photographs of the sanctuary, family papers about the Taylor, Ely, Holmes, Longstreet, Bray, Hires or Wilson families, and church programmes from the 1890s would all help complete these records.</p></div>
+  </div>
+</div></section>
+<section id="together"><div class="wrap">
+  <p class="eyebrow">Working together</p>
+  <h2>Could the county's Tiffany sites raise money together?</h2>
+  <div class="prose">
+    <p>No county-wide effort to save Tiffany glass turned up in an online search covering the last seventy years. What did turn up is a record of each site raising money on its own, which shows who the natural partners are and what has worked.</p>
+  </div>
+  <h3 style="margin-top:28px">What has been raised in the county before</h3>
+  <div class="tablebox" style="margin-top:14px"><table>
+    <thead><tr><th>Site</th><th>Who raised it</th><th>What is on record</th></tr></thead>
+    <tbody>
+      <tr><td>Church of the Presidents, Long Branch</td><td>Long Branch Historical Museum Association, a nonprofit that took on the building in 1953 when it faced demolition</td><td>Fundraising since 1999. State Historic Trust grants of $342,410 (2004), $400,779 (2008) and $150,000 (2017), the last covering reinstallation of stained glass from storage <a href="#s14">[14]</a>. Also a county Historical Commission grant for the bell and belfry <a href="#s17">[17]</a>, and $100,000 approved by Congress in 2004 <a href="#s18">[18]</a>. Reopening as a museum was expected in 2027 <a href="#s19">[19]</a>.</td></tr>
+      <tr><td>First Presbyterian Church, Rumson</td><td>The congregation</td><td>State Historic Trust grants of $15,274 (2004) and $83,333 (2006), for a preservation plan and exterior repair. The record does not say the windows were worked on <a href="#s15">[15]</a>.</td></tr>
+      <tr><td>Asbury Park Public Library</td><td>Local subscribers, in 1901</td><td>Older than seventy years, but telling: Tiffany Studios quoted $1,500 for the Longfellow window, only $600 had been raised, and the design was simplified to fit <a href="#s20">[20]</a>.</td></tr>
+      <tr><td>Other historic churches in the county</td><td>Their congregations</td><td>Christ Church, Shrewsbury, St. George's-by-the-River, Rumson, and Trinity Church, Asbury Park, have all received State Historic Trust grants, most before 2018 <a href="#s21">[21]</a>. None of that is recorded as Tiffany work.</td></tr>
+    </tbody>
+  </table></div>
+  <h3 style="margin-top:34px">Three ways a joint effort could work</h3>
+  <div class="cols" style="margin-top:14px">
+    <div class="card"><h3>1. A shared campaign, separate funds</h3><p>Each site keeps its own fund and its own donors. Together they share a name, a web page, a map and a calendar of open days. This needs no new organisation and can start with a conversation.</p></div>
+    <div class="card"><h3>2. A Tiffany trail</h3><p>A self-guided route linking the sites, with a joint tour day each year. Pennsylvania's tourism office promotes a Tiffany glass trail of this kind <a href="#s22">[22]</a>. A trail is a heritage tourism project. The state Historic Trust offers heritage tourism grants <a href="#s6">[6]</a>, and the county's history regrant programme funds special projects by nonprofits <a href="#s23">[23]</a>. Whether a trail would qualify is a question for each.</p></div>
+    <div class="card"><h3>3. One fund under a nonprofit</h3><p>An existing nonprofit, or a new one, holds a single fund and makes grants to the sites. In Boston, the Church of the Covenant set up a separate nonprofit for its Tiffany windows and raised $796,806 to match a $250,000 national grant <a href="#s24">[24]</a>. This is the most work, and needs legal and accounting advice first.</p></div>
+  </div>
+  <div class="prose" style="margin-top:20px">
+    <p>The partners are different kinds of owner: two active congregations, a museum nonprofit, a public library, and possibly a third church. That mix helps. A museum and a library can apply for public grants that an active church may not be able to, and a campaign about the county's heritage reaches people who would not give to a single congregation.</p>
+    <p class="muted small">A caution: the partners' needs differ in size and urgency, so agree at the start how any shared money would be divided. Option 1 avoids the question.</p>
+  </div>
+
+  <h3 id="trail" style="margin-top:38px;scroll-margin-top:70px">A plan for a Monmouth County Tiffany trail</h3>
+  <div class="prose" style="margin-top:12px">
+    <p>Pennsylvania's Tiffany Glass Trail is a list of thirteen places published by the state tourism office: churches, museums, libraries, colleges and a hotel. The office names no organiser and no fees. Each place handles its own visitors, some by appointment <a href="#s22">[22]</a>. So the trail itself is publicity. The money is made by what each site does with the visitors it brings.</p>
+    <p>That sets a realistic expectation. Tours and events at places like these bring in thousands of dollars a year, not the cost of restoring a set of windows. What a trail does is build the list of people who care, show funders that the public uses the building, and give major donors a reason to visit.</p>
+  </div>
+
+  <h3 style="margin-top:30px">How the money comes in</h3>
+  <div class="tablebox" style="margin-top:14px"><table>
+    <thead><tr><th>Source</th><th>What others charge or receive</th><th>Notes for Holmdel</th></tr></thead>
+    <tbody>
+      <tr><td>Drop-in visits</td><td>A suggested $5 a person, with all proceeds to the window fund, at a Tiffany church in Iowa <a href="#s28">[28]</a></td><td>A donation box and a QR code by the door. Needs volunteers and set open hours.</td></tr>
+      <tr><td>Guided tours by appointment</td><td>$5 a person at St. John's, Franklin, Pennsylvania, booked a week ahead <a href="#s28">[28]</a></td><td>Suits coach groups, clubs and school visits.</td></tr>
+      <tr><td>A ticketed tour day across several sites</td><td>$30 a person for an annual guided Tiffany tour in Troy, New York <a href="#s28">[28]</a></td><td>The natural joint event for the county's sites. As an illustration only, 150 tickets at $30 is $4,500.</td></tr>
+      <tr><td>An evening event</td><td>$35 a person for a wine, music and Tiffany windows evening in Corning, New York <a href="#s28">[28]</a></td><td>Works with the chandeliers lit. Local businesses can sponsor it.</td></tr>
+      <tr><td>Sponsoring a window</td><td>Families in Vicksburg, Mississippi, paid for individual windows in memory of ancestors <a href="#s29">[29]</a></td><td>Each Holmdel window already carries family names. Descendants are the first people to ask.</td></tr>
+      <tr><td>Small grants for the trail itself</td><td>$5,000 to a county historical society for a heritage trail map, from the state's Discover NJ History licence plate fund <a href="#s27">[27]</a></td><td>A nonprofit partner would apply. Pays for the map, brochure and signs, not for glass.</td></tr>
+      <tr><td>Large grants for the windows</td><td>See <a href="#funding">Funding sources</a> below</td><td>Visitor numbers and partners from the trail strengthen these applications.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin-top:30px">Who to contact, in order</h3>
+  <div class="tablebox" style="margin-top:14px"><table>
+    <thead><tr><th>Who</th><th>Why</th><th>What to ask</th></tr></thead>
+    <tbody>
+      <tr><td>The other Tiffany sites: Long Branch Historical Museum Association, First Presbyterian Church in Rumson, Asbury Park Public Library, Elberon Memorial Church</td><td>There is no trail without them</td><td>What do you have, can the public see it, and would you join a shared map and one joint open day?</td></tr>
+      <tr><td>Monmouth County Historical Commission</td><td>It runs A Weekend in Old Monmouth, a free self-guided tour each May with a printed guide and online map. The 2026 tour had 59 sites <a href="#s25">[25]</a></td><td>How does a site join, and could the Tiffany sites be flagged as a themed route? The county's grant page lists Meg Sharp Walton as the Commission's contact <a href="#s7">[7]</a>.</td></tr>
+      <tr><td>New Jersey Historic Trust, 609-984-0473</td><td>It runs the state's heritage tourism website, Journey Through Jersey, and heritage tourism grants <a href="#s26">[26]</a></td><td>Could a county Tiffany trail be listed, and which grant fits a trail map? Listed sites must be open to the public at regular hours <a href="#s26">[26]</a>.</td></tr>
+      <tr><td>Monmouth County's tourism office</td><td>Its website has a history and heritage section for visitors <a href="#s26">[26]</a></td><td>Would it publish the trail, as Pennsylvania's tourism office did?</td></tr>
+      <tr><td>Holmdel Historical Society</td><td>The church sanctuary was a stop on its ticketed Holmdel house tour in 2016 <a href="#s30">[30]</a></td><td>How did ticketing and volunteers work, and would it co-host a tour day?</td></tr>
+      <tr><td>Partners for Sacred Places</td><td>It runs the National Fund for Sacred Places and trains congregations in fundraising <a href="#s8">[8]</a></td><td>Does a county trail strengthen a National Fund application?</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin-top:30px">A first year</h3>
+  <div class="cols" style="margin-top:14px">
+    <div class="card"><h3>Winter 2026 to 2027</h3><p>Leadership agrees. Call the partner sites and the Historical Commission. Agree a name and that each site keeps its own money. Set up the church's window fund so gifts can be received.</p></div>
+    <div class="card"><h3>Spring 2027</h3><p>Publish a one-page map and web page. Open on the first weekend of May alongside A Weekend in Old Monmouth if the Commission agrees. Entry is free that weekend, so use it to collect names and emails and to put out a donation box.</p></div>
+    <div class="card"><h3>Autumn 2027</h3><p>Hold the first ticketed tour day across the sites, with an evening event at one of them. Ask local businesses to sponsor. Write to the families named on the windows.</p></div>
+    <div class="card"><h3>After the first year</h3><p>Count visitors, gifts and names collected. Use those numbers in grant applications. Decide then whether the trail needs its own nonprofit.</p></div>
+  </div>
+  <div class="prose" style="margin-top:20px">
+    <p class="muted small">Before taking money: the church treasurer should confirm how gifts to a window fund are recorded and receipted, and whether ticket sales and events need any permit or insurance. Those are questions for the treasurer, the insurer and the town.</p>
+  </div>
+</div></section>
+<section id="tasks"><div class="wrap">
+  <p class="eyebrow">Recommended tasks</p>
+  <h2>What to do next to save the windows</h2>
+  <div class="prose">
+    <p>A working list for the project team, drawn from the research so far. The first group comes first because every funder will ask for it.</p>
+  </div>
+  <div class="cols" style="margin-top:22px">
+    <div class="card"><h3>1. Lay the groundwork</h3><ul class="tasks">
+      <li><div><b>Commission a conservator's condition survey with a cost estimate</b><span>A stained-glass conservator should examine every window. Funders expect a professional assessment that identifies the urgent repairs <a href="#s8">[8]</a>.</span></div></li>
+      <li><div><b>Confirm the church's historic register listing</b><span>State capital grants require individual listing on the New Jersey or National Register, or contributing status in a listed district <a href="#s6">[6]</a>. Wikipedia gives 3 December 1987 for the New Jersey Register and 7 December 1990 for the National Register, reference 87002573 <a href="#s4">[4]</a>. Get written confirmation from the State Historic Preservation Office.</span></div></li>
+      <li><div><b>Find out whether a conservator's report, appraisal or inventory already exists</b><span>Check the church office and trustees' files before paying for new work.</span></div></li>
+      <li><div><b>Get leadership's agreement</b><span>For the project itself, for a public website, and for how much condition detail to publish.</span></div></li>
+    </ul></div>
+    <div class="card"><h3>2. Pursue funding</h3><ul class="tasks">
+      <li><div><b>Apply to the National Fund for Sacred Places</b><span><span class="when">Opens 12 January 2027, due 3 March 2027.</span> The best fit found so far. Read the eligibility guidelines and self-assessment first <a href="#s8">[8]</a>.</span></div></li>
+      <li><div><b>Call the New Jersey Historic Trust, 609-984-0473</b><span>Ask whether stained-glass work at an active church would be considered, and when the 2027 round opens. The 2026 round closed on 16 April <a href="#s6">[6]</a>.</span></div></li>
+      <li><div><b>Ask whether a separate nonprofit could apply</b><span>Does the church have, or want, a friends group or foundation? This is a question for the church's attorney and each funder.</span></div></li>
+      <li><div><b>Start raising the match</b><span>Every programme listed below requires the congregation to raise part of the cost.</span></div></li>
+      <li><div><b>Contact the other Tiffany sites in the county</b><span>The Long Branch Historical Museum Association, First Presbyterian Church in Rumson, the Asbury Park Public Library and Elberon Memorial Church. Ask what they have, what it needs, and whether they would join a shared campaign or trail.</span></div></li>
+      <li><div><b>Ask the Long Branch museum association how it raised its money</b><span>It has twenty-five years of experience with state, county and federal funding for a building with Tiffany glass.</span></div></li>
+      <li><div><b>Ask the Historical Commission about A Weekend in Old Monmouth</b><span><span class="when">Held the first weekend of May.</span> Ask how a site joins and whether the Tiffany sites could be a themed route.</span></div></li>
+      <li><div><b>Set up a window fund and a way to give</b><span>With the treasurer: a named fund, a donation box, an online giving link and a QR code.</span></div></li>
+      <li><div><b>Plan a first ticketed tour day for autumn 2027</b><span>Across the partner sites, with an evening event at one of them.</span></div></li>
+      <li><div><b>Ask a county history body to convene a first meeting</b><span>The Monmouth County Historical Commission or the Monmouth County Historical Association could bring the sites together and may know of others.</span></div></li>
+      <li><div><b>Look for descendants of the families named on the windows</b><span>Taylor, Ely, Holmes, Longstreet, Bray, Hires and Wilson. They may want to help, and may hold papers or photographs.</span></div></li>
+    </ul></div>
+    <div class="card"><h3>3. Complete the record</h3><ul class="tasks">
+      <li><div><b>Photograph the two Bray windows</b><span>And record where in the building they are.</span></div></li>
+      <li><div><b>Re-photograph each window for condition</b><span>Straight on; again with the sanctuary lights off; from the side to show any bowing; close-ups of anything cracked or loose with a ruler or coin for scale. Do not touch or clean the glass.</span></div></li>
+      <li><div><b>Settle the locations</b><span>Which side wall faces east, which window the outside three-light photo shows, and where window F sits.</span></div></li>
+      <li><div><b>Count and photograph the chandeliers</b><span>Each one from the side, from directly below, and at the ceiling canopy.</span></div></li>
+      <li><div><b>Look for a maker's mark on the chandeliers</b><span>A stamped plate or patent date on the ring or the ceiling canopy. Use binoculars or a zoom lens from the balcony. Do not touch or climb to them.</span></div></li>
+      <li><div><b>Photograph the ceiling</b><span>The whole ceiling from the balcony, one field panel straight on, the leaf border, the cove, and any stains, rust or sagging. Measure a panel from below if it can be done safely.</span></div></li>
+      <li><div><b>Ask the trustees about the ceiling's history</b><span>When it was last painted, whether the paint has been tested for lead, and whether the roof above has leaked.</span></div></li>
+      <li><div><b>Count the mirror panels in each chandelier ring</b><span>The museum example linked to the Bailey company has twelve. A matching count would strengthen the comparison.</span></div></li>
+      <li><div><b>Ask a lighting specialist about the chandeliers</b><span>Send photos to the Heinz History Center's curators or a historic lighting restorer, and look for Frink and Bailey trade catalogues of the 1880s and 1890s.</span></div></li>
+      <li><div><b>Look for a signature</b><span>Check the lower corners of each window, inside, and photograph anything found.</span></div></li>
+    </ul></div>
+    <div class="card"><h3>4. Strengthen the evidence</h3><ul class="tasks">
+      <li><div><b>Confirm John Bowne as Speaker in 1683</b><span>Find the East Jersey Assembly's records for the session that created the counties on 7 March 1683. Ask the New Jersey State Archives in Trenton or the Monmouth County Historical Association library.</span></div></li>
+      <li><div><b>Read Maxine Lurie's article on the founding of Monmouth County</b><span>In the journal <i>New Jersey History</i>. It is the scholarly account of how the county was created <a href="#s51">[51]</a>.</span></div></li>
+      <li><div><b>Have a genealogist check the Lincoln line and the founders' lists</b><span>Before either is used in an appeal or a press release.</span></div></li>
+      <li><div><b>Talk to Old First Church in Middletown</b><span>It shares the 1668 founding and may hold records this church does not.</span></div></li>
+      <li><div><b>Get copies of the original Tiffany list pages</b><span>The 1897 list, page 50, and the 1910 list, page 83 <a href="#s1">[1]</a>.</span></div></li>
+      <li><div><b>Find the Red Bank Register report of 2 August 1893</b><span>Page 1. See what it says about the windows and whether it names the maker.</span></div></li>
+      <li><div><b>Search the church's own records</b><span>Minutes, treasurer's books and the 1893 reopening programme, for an invoice or contract. Note anything about new lighting too.</span></div></li>
+      <li><div><b>Read the 1968 church history</b><span><i>What God Hath Joined Together</i>, for the windows and the families.</span></div></li>
+      <li><div><b>Try to match the ceiling pattern to a maker's catalogue</b><span>The Building Technology Heritage Library has metal-ceiling trade catalogues online from 1884 onward.</span></div></li>
+      <li><div><b>Finish the Monmouth County survey</b><span>Check each census entry, local claims the census does not list, and historical society files.</span></div></li>
+    </ul></div>
+  </div>
+  <h3 id="ask" style="margin-top:34px;scroll-margin-top:70px">What to ask church leaders for</h3>
+  <div class="prose" style="margin-top:10px">
+    <p>Documents and facts that only the church holds. Copies or phone photos are enough to start. Each one fills a gap in these records or is something a funder will ask for.</p>
+  </div>
+  <div class="cols" style="margin-top:18px">
+    <div class="card"><h3>About the windows</h3><ul class="tasks">
+      <li><div><b>Any invoice, contract or letter from Tiffany</b><span>The strongest proof there could be. Look in treasurer's books and trustees' files for 1892 to 1894.</span></div></li>
+      <li><div><b>Minutes and treasurer's records, 1887 to 1894</b><span>Decisions about the renovation, who gave each window, and what was paid.</span></div></li>
+      <li><div><b>The 1893 reopening programme or order of service</b><span>And any newspaper clippings kept from that time.</span></div></li>
+      <li><div><b>Any existing window inventory, appraisal or conservator's report</b><span>With its date and author.</span></div></li>
+      <li><div><b>Records of past repairs</b><span>Who worked on the windows, when, and when the outside protective glazing was added.</span></div></li>
+      <li><div><b>Old photographs of the sanctuary</b><span>Any showing the windows, chandeliers or ceiling, with dates if known.</span></div></li>
+      <li><div><b>Where the two Bray windows are</b><span>And which way each side wall faces.</span></div></li>
+    </ul></div>
+    <div class="card"><h3>About the building</h3><ul class="tasks">
+      <li><div><b>The National and State Register listing letters</b><span>And the church's copy of the 1986 nomination, with its 24 photographs.</span></div></li>
+      <li><div><b>Any building conditions assessment or preservation plan</b><span>The National Fund for Sacred Places expects one.</span></div></li>
+      <li><div><b>Roof and leak history</b><span>Repairs, dates, and any water damage near the windows or ceiling.</span></div></li>
+      <li><div><b>When electricity came in, and whether there was ever gas</b><span>For the chandelier record.</span></div></li>
+      <li><div><b>When the ceiling was last painted</b><span>And whether the paint has been tested for lead.</span></div></li>
+      <li><div><b>How many chandeliers there are</b><span>And any record of their purchase, rewiring or repair.</span></div></li>
+      <li><div><b>The insurance schedule for the windows</b><span>To know they are covered. Keep the figures private.</span></div></li>
+    </ul></div>
+    <div class="card"><h3>About the church as an applicant</h3><ul class="tasks">
+      <li><div><b>Proof of tax-exempt status</b><span>The church's own letter or the denomination's group exemption.</span></div></li>
+      <li><div><b>New Jersey charitable registration number, or the exemption letter</b><span>The state Historic Trust asks for one or the other.</span></div></li>
+      <li><div><b>Who can sign applications and contracts</b><span>Names and titles of the officers.</span></div></li>
+      <li><div><b>Recent budgets and financial statements</b><span>Funders ask for two or three years.</span></div></li>
+      <li><div><b>Membership and attendance figures</b><span>Funders look for a healthy congregation.</span></div></li>
+      <li><div><b>Who uses the building besides the congregation</b><span>Groups, concerts, meetings, tours, with rough numbers. This is the community-use evidence funders weigh most.</span></div></li>
+      <li><div><b>Whether a separate nonprofit or friends group exists</b><span>Or whether leadership would consider one.</span></div></li>
+      <li><div><b>Past capital campaigns and grants</b><span>What was raised, from whom, and whether any grant came with conditions on the building.</span></div></li>
+    </ul></div>
+    <div class="card"><h3>History and people</h3><ul class="tasks">
+      <li><div><b>A copy of the 1968 church history</b><span><i>What God Hath Joined Together</i>.</span></div></li>
+      <li><div><b>Membership rolls and deacons' lists</b><span>To identify the Taylors, Elys, Holmeses, Longstreets and Brays named on the glass.</span></div></li>
+      <li><div><b>The list of pastors with dates</b><span>To settle whether Rev. Wilson's first year reads 1853 or 1858.</span></div></li>
+      <li><div><b>When the Baptist and Reformed congregations merged</b><span>With a church source to cite.</span></div></li>
+      <li><div><b>Known descendants of the window families</b><span>And any who are still members.</span></div></li>
+      <li><div><b>The church's own words on why the windows matter</b><span>A paragraph from the pastor or a long-time member for the story.</span></div></li>
+    </ul></div>
+    <div class="card"><h3>Decisions and permissions</h3><ul class="tasks">
+      <li><div><b>Approval for the project and a public website</b><span>And who the named contact should be.</span></div></li>
+      <li><div><b>How much condition detail to publish</b><span>And agreement to keep valuations off the site.</span></div></li>
+      <li><div><b>Permission to photograph every window</b><span>Including from the balcony and outside, at a quiet time.</span></div></li>
+      <li><div><b>Agreement to a window fund</b><span>How gifts will be received, recorded and receipted.</span></div></li>
+      <li><div><b>Giving details for the How to help section</b><span>Address, online link and contact.</span></div></li>
+      <li><div><b>Whether the church will open for visitors</b><span>Regular hours, tour days, and who would volunteer.</span></div></li>
+      <li><div><b>Permission to approach the other Tiffany sites</b><span>In the church's name.</span></div></li>
+    </ul></div>
+  </div>
+
+  <h3 id="funding" style="margin-top:34px;scroll-margin-top:70px">Funding sources checked so far</h3>
+  <div class="tablebox" style="margin-top:14px"><table>
+    <thead><tr><th>Source</th><th>What it offers</th><th>Where the church stands</th></tr></thead>
+    <tbody>
+      <tr><td>National Fund for Sacred Places <a href="#s8">[8]</a></td><td>Capital grants of $50,000 to $500,000 for congregations of any faith, with training and planning help</td><td>Best fit. Next cycle opens 12 January 2027 and closes 3 March 2027.</td></tr>
+      <tr><td>New Jersey Historic Trust, Preserve New Jersey fund <a href="#s6">[6]</a></td><td>Planning grants of $5,000 to $75,000 and capital grants up to $750,000, all matched</td><td>Uncertain. Houses of worship are not barred outright, but the Trust points applicants to recent court rulings and reviews each request. No 2027 date posted yet.</td></tr>
+      <tr><td>Monmouth County Historical Commission <a href="#s7">[7]</a></td><td>Matching grants of $500 to $12,000</td><td>Closed to active houses of worship.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="prose" style="margin-top:16px">
+    <p class="muted small">Checked in November 2026. Programme rules and dates change, and eligibility questions for a church are legal ones. Confirm each point with the funder before relying on it.</p>
+  </div>
+</div></section>
+</div>
+
+<footer><div class="wrap">Photographs taken at Holmdel Community United Church of Christ. People have been cropped out of the interior views. Records last updated November 2026.</div></footer>
+
+<script>
+(function () {
+  var DOC = '<span class="pill doc">Documented</span>';
+  var W = [
+    { id: "a", group: "door", name: "Taylor Memorial Window", lights: 3,
+      img: "a-full", alt: "Three-light pointed window with a central cross and three inscribed panels along the bottom",
+      extra: [["a-inscription", "The three dedication panels."]],
+      where: "Side wall with the side door, at the balcony end. Which compass direction this wall faces is to confirm.",
+      inscr: ["Ann B. Taylor / S. S. Supt. 1816", "In Memoriam", "Deacon / J. C. Taylor"],
+      who: "Ann B. Taylor is listed among the members of the church in 1836, the year the Holmdel congregation became separate from Middletown [31]. Her panel reads S. S. Supt. 1816, for Sunday School Superintendent. The National Register nomination credits her with opening the first Baptist Sunday school in New Jersey, in 1815, on her farm near the church [3]. The one-year difference from the panel is not yet explained. Deacon J. C. Taylor is James C. Taylor, a deacon by 1860, who also sat on the building committee of the Marlborough Baptist Church in 1865 [31].",
+      spots: [[23, 92, "Left panel: Ann B. Taylor, S. S. Supt. 1816."], [49, 92, "Centre panel: In Memoriam."], [76, 92, "Right panel: Deacon J. C. Taylor."], [49, 45, "The cross at the centre of the middle light, set in a field of amber glass."]] },
+    { id: "e", group: "door", name: "Holmes Memorial Window", lights: 4,
+      img: "e-full", alt: "Four-light pointed window with two central crosses above rows of blue rondels",
+      extra: [["e-inscription", "The dedication panels. The bottom edge is cropped."]],
+      where: "Side wall with the side door, centre. The larger of the two window sizes.",
+      inscr: ["(first panel: no lettering)", "Holmes", "Memorial", "(fourth panel: no lettering)"],
+      who: "The family Holmdel is named for. The 1885 county history calls the township's name a memorial to the Holmes family [31]. The Monmouth Holmeses descend from two brothers, Jonathan and Obadiah Holmes, who settled here with their brother-in-law John Bowne [38]. Eleanor, Hannah and Sarah Holmes were church members in 1836, and Chrineyonce S. Holmes was a trustee in 1884 [31]. No individuals are named on the glass.",
+      spots: [[40, 96, "Second panel: Holmes."], [58, 96, "Third panel: Memorial."], [52, 57, "Two crosses side by side in the centre lights. The three-light windows have one."], [50, 85, "Rows of blue rondels, the round discs of glass."]] },
+    { id: "h", group: "door", name: "Hires and Wilson Memorial Window", lights: 3,
+      img: "h-full", alt: "Three-light pointed window; the bottom panels name two pastors and the middle panel is plain blue glass",
+      extra: [["h-inscription", "The dedication panels."]],
+      where: "Side wall with the side door, at the front of the sanctuary, next to the door.",
+      inscr: ["Rev. W. D. Hires / 1836 — 1846", "(centre panel: plain blue glass, no lettering)", "Rev. C. E. Wilson / 1853 — 1869 / And Wife"],
+      who: "Rev. William Dare Hires (1812 to 1892) became pastor of the Upper Congregation at Holmdel in 1836 and was the first minister of the Marlborough Baptist Church the same year. He later served the Freehold and Upper Freehold Baptist churches and was a vice-president of the Monmouth County Bible Society [31]. He died at DeLand, Florida, on 22 July 1892, a year before the windows were unveiled [35]. Two of his sons are buried in the churchyard [3]. Rev. C. E. Wilson became pastor in 1853 [31]. A grave record names him Charles Ent Wilson, 1804 to 1869, and his brother's obituary says he died after serving the Holmdel church for sixteen years [37].",
+      note: "In the photo the third digit of Wilson's first year is hard to read and could be taken for 1858. The 1885 county history gives 1853 as the year he became pastor, which settles it [31].",
+      spots: [[25, 95, "Left panel: Rev. W. D. Hires, 1836 — 1846."], [51, 95, "Centre panel: plain streaked blue glass with no lettering. Whether it was always blank is not known."], [76, 95, "Right panel: Rev. C. E. Wilson, 1853 — 1869, And Wife."], [50, 48, "The central cross."]] },
+    { id: "g", group: "opp", name: "Taylor and Ely Memorial Window", lights: 3,
+      img: "g-full", alt: "Three-light pointed window seen at an angle from the pews",
+      extra: [["g-inscription", "The dedication panels, photographed at an angle."], ["g-context", "The window beside the Ely and Longstreet window, towards the front of the sanctuary."]],
+      where: "Wall opposite the side door, at the front of the sanctuary.",
+      inscr: ["Deacon / J. G. Taylor / And Wife", "In Memoriam", "Deacon / H. D. Ely"],
+      who: "Deacon J. G. Taylor is John G. Taylor, a deacon of the church who died in 1864. Deacon H. D. Ely is Henry D. Ely, born in 1820, a son of Sheriff John J. Ely and Achsah Mount, and a deacon by 1860. He married Mary Taylor, which joins the two families named on this window [31].",
+      note: "The left panel is only partly legible in this photo. The initials follow the census transcription.",
+      spots: [[27, 88, "Left panel: Deacon J. G. Taylor, And Wife (partly legible here)."], [50, 88, "Centre panel: In Memoriam."], [74, 88, "Right panel: Deacon H. D. Ely."]] },
+    { id: "d", group: "opp", name: "Ely and Longstreet Memorial Window", lights: 4,
+      img: "d-full", alt: "Four-light pointed window seen from below at an angle, with four panels along the bottom",
+      extra: [["d-inscription", "The dedication panels."]],
+      where: "Wall opposite the side door, centre.",
+      inscr: ["Deacon / W. M. Ely / And Wife", "Longstreet", "Memorial", "(fourth panel: no lettering)"],
+      who: "William M. Ely appears in the 1885 county history as a son of John J. Ely and Achsah Mount, who had two sons of that name, born in 1806 and 1810 [31]. No record of his service as deacon has been found yet beyond the glass. His father was sheriff of Monmouth County, a member of the General Assembly and director of the county's freeholders. He moved to Holmdel in 1829 and is buried in the churchyard [32]. The Longstreets were one of Holmdel's leading farm families. Dinah, Hagar and Mary Longstreet were church members in 1836, and Elizabeth Longstreet married Thomas Ely, another of the sheriff's sons [31]. The family farm is now Historic Longstreet Farm, a county park beside Holmdel Park [33].",
+      spots: [[18, 83, "First panel: Deacon W. M. Ely, And Wife."], [32, 85, "Second panel: Longstreet."], [50, 87, "Third panel: Memorial."], [71, 89, "Fourth panel: no lettering."]] },
+    { id: "f", group: "opp", name: "Taylor Memorial Window", lights: 3,
+      img: "f-full", alt: "Three-light pointed window photographed from close below, glowing amber with blue rondels",
+      extra: [["f-inscription", "The dedication panels."]],
+      where: "Wall opposite the side door, at the balcony end. Position to confirm.",
+      inscr: ["(left panel: no lettering)", "In Memoriam", "Deacon / J. J. Taylor / And Wife"],
+      who: "Deacon J. J. Taylor is James J. Taylor, a deacon in 1884, who married Lucy Morford [31]. He was a serving deacon nine years before the windows went in, so this panel may honour a living giver and not someone who had died. Church records should show which. This is a different Taylor window from window A.",
+      note: "In the lettering style used, J and I look alike. The initials follow the census transcription.",
+      spots: [[24, 93, "Left panel: no lettering."], [49, 93, "Centre panel: In Memoriam."], [76, 93, "Right panel: Deacon J. J. Taylor, And Wife."], [50, 38, "The central cross inside a pointed oval."]] },
+    { id: "b", group: "todo", name: "Bray Memorial Window", lights: 3, img: null,
+      where: "Not yet located for this record.",
+      inscr: ["In Memoriam / Rev. John Bray"],
+      who: "John Bray (about 1663 to after 1716), a Baptist preacher and landowner. The place was known as Bray's Meeting House before 1700, and the name was still in use in 1781, when a militiaman described British raiders taking the road to it [34][36]. Inscription as transcribed by the census; not yet seen for this record [1]." },
+    { id: "c", group: "todo", name: "Bray Memorial Window (donor panel)", lights: 3, img: null,
+      where: "Not yet located for this record.",
+      inscr: ["Donor / Of Grounds / 1705"],
+      who: "The census links this window to John Bray by deduction, since the glass does not name him [1]. On 17 December 1705 he and his wife Susanna conveyed about four and one third acres to Obadiah Bowne and Jarat Wall, and the next day declared it held in trust for the Baptist society [3]. A family-history site names the first trustee as Obadiah Holmes [34]; the deed should settle it. The church still stands on that land." }
+  ];
+
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+  function cite(s) { return esc(s).replace(/\[(\d+)\]/g, '<a href="#s$1">[$1]</a>'); }
+  function lines(a) { return a.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join(""); }
+
+  var idx = "", out = "";
+  W.forEach(function (w) {
+    var L = w.id.toUpperCase();
+    idx += '<a href="#w-' + w.id + '" data-g="' + w.group + '"><div class="thumb"' + (w.img ? ' style="background-image:url(images/' + w.img + '.jpg)"' : "") + ">" + (w.img ? "" : "Not yet photographed") + '</div><div class="cap"><b>' + L + "</b>" + esc(w.name) + "</div></a>";
+    var shots = "";
+    if (w.img) {
+      var dots = "", list = "";
+      (w.spots || []).forEach(function (s, i) {
+        dots += '<button type="button" class="dot" aria-pressed="false" data-w="' + w.id + '" data-i="' + i + '" style="left:' + s[0] + "%;top:" + s[1] + '%" aria-label="Detail ' + (i + 1) + '">' + (i + 1) + "</button>";
+        list += '<li id="sp-' + w.id + "-" + i + '"><span class="n">' + (i + 1) + "</span><span>" + esc(s[2]) + "</span></li>";
+      });
+      shots = '<figure style="margin:0"><div class="stage"><img src="images/' + w.img + '.jpg" alt="' + esc(w.alt) + '" loading="lazy">' + dots + '</div></figure><ul class="spots">' + list + "</ul>";
+      (w.extra || []).forEach(function (e) {
+        shots += '<figure style="margin:0"><img src="images/' + e[0] + '.jpg" alt="" loading="lazy"><figcaption>' + esc(e[1]) + "</figcaption></figure>";
+      });
+    } else {
+      shots = '<div class="card hold"><p>No photograph yet. A full view and a close-up of the dedication panels are needed.</p></div>';
+    }
+    out += '<article class="window" id="w-' + w.id + '" data-g="' + w.group + '"><div class="shots">' + shots + '</div><div class="record">' +
+      '<div><p class="id">Window ' + L + " · Census item 30.21.1.1." + w.id + "</p><h3>" + esc(w.name) + "</h3></div>" +
+      '<div class="pills">' + DOC + (w.img ? "" : '<span class="pill todo">Not yet photographed</span>') + "</div><dl>" +
+      "<div><dt>Location</dt><dd>" + esc(w.where) + "</dd></div>" +
+      "<div><dt>Subject</dt><dd>Ornamental window of " + w.lights + " lights (the tall vertical openings). Geometric pattern in opalescent glass, with no figures [3].</dd></div>".replace(/\[3\]/, '<a href="#s3">[3]</a>') +
+      '<div><dt>Dedication, as inscribed</dt><dd><div class="inscription">' + lines(w.inscr) + "</div></dd></div>" +
+      "<div><dt>Who it remembers</dt><dd>" + cite(w.who) + "</dd></div>" +
+      (w.note ? '<div><dt>Reading note</dt><dd class="note">' + cite(w.note) + "</dd></div>" : "") +
+      '<div><dt>History and attribution</dt><dd>Tiffany Glass &amp; Decorating Company, New York. The church appears in the firm\'s 1897 list of windows and in Tiffany Studios\' 1910 list, both as "ornamental windows", according to the Tiffany Census. In place when the building reopened on 30 July 1893 <a href="#s1">[1]</a>. Designer not known. No signature recorded.</dd></div>' +
+      "<div><dt>Condition notes</dt><dd>" + (w.img ? 'November 2026, from one photograph taken at an angle: no missing glass visible. Not enough to judge cracks, bowing or leading. See <a href="#condition">Condition and need</a>.' : "Not yet observed.") + "</dd></div>" +
+      "</dl></div></article>";
+  });
+
+  // Smaller windows and exterior views
+  idx += '<a href="#w-i" data-g="small"><div class="thumb" style="background-image:url(images/ext-transom.jpg)"></div><div class="cap"><b>I</b>Smaller ornamental windows</div></a>';
+  idx += '<a href="#w-x" data-g="small"><div class="thumb" style="background-image:url(images/ext-lancet.jpg)"></div><div class="cap"><b>&middot;</b>Outside views</div></a>';
+  out += '<article class="window" id="w-i" data-g="small"><div class="shots">' +
+    '<figure style="margin:0"><img src="images/ext-transom.jpg" alt="Rectangular transom window above a white door, with a border of blue rondels" loading="lazy"><figcaption>Transom over a side door, from outside.</figcaption></figure>' +
+    '<figure style="margin:0"><img src="images/ext-upper-1.jpg" alt="Rectangular window behind cloudy protective glazing, with pointed-arch tracery pattern and three rows of rondels" loading="lazy"><figcaption>Upper rectangular window, from outside, behind cloudy protective glazing.</figcaption></figure>' +
+    '<figure style="margin:0"><img src="images/ext-upper-2.jpg" alt="A second rectangular upper window high on the shingled wall" loading="lazy"><figcaption>A second upper window of the same design.</figcaption></figure>' +
+    '</div><div class="record"><div><p class="id">Group I · Census item 30.21.1.1.i</p><h3>Smaller ornamental windows</h3></div>' +
+    '<div class="pills"><span class="pill att">Attributed</span></div><dl>' +
+    "<div><dt>Location</dt><dd>A transom over a side door and rectangular windows high on the outside wall. The National Register form says smaller rectangular windows in the narthex (the entrance hall) repeat the sanctuary design <a href=\"#s3\">[3]</a>. Which of those these photos show is to confirm.</dd></div>" +
+    "<div><dt>Subject</dt><dd>The same vocabulary as the large windows: interlaced pointed arches, streaked opalescent glass, and blue rondels.</dd></div>" +
+    "<div><dt>Dedication</dt><dd>None visible.</dd></div>" +
+    '<div><dt>History and attribution</dt><dd>The Tiffany Census lists further "ornamental windows" at the church as a single item with no count, and gives their date as deduced from the dated memorial windows <a href="#s1">[1]</a>. Labelled Attributed until a record ties these specific windows to the commission.</dd></div>' +
+    '<div><dt>Condition notes</dt><dd>November 2026, from photographs. See <a href="#condition">Condition and need</a>.</dd></div>' +
+    "</dl></div></article>";
+  out += '<article class="window" id="w-x" data-g="small"><div class="shots">' +
+    '<figure style="margin:0"><img src="images/ext-lancet.jpg" alt="A three-light window from outside, in a blue-painted pointed surround, behind clear glazing in white frames" loading="lazy"><figcaption>One of the three-light windows from outside.</figcaption></figure>' +
+    '<figure style="margin:0"><img src="images/ext-lancet-detail.jpg" alt="Close view from outside of the lower corner: rondels, a dedication panel seen from behind, and the painted sill" loading="lazy"><figcaption>Lower corner of the same window, with the back of a dedication panel.</figcaption></figure>' +
+    '<figure style="margin:0"><img src="images/wall-three.jpg" alt="Three pointed windows in a row along the sanctuary wall" loading="lazy"><figcaption>Inside: windows A, E and H in a row along the side-door wall.</figcaption></figure>' +
+    '</div><div class="record"><div><p class="id">Outside views</p><h3>How the windows look from the street</h3></div><dl>' +
+    "<div><dt>What these show</dt><dd>From outside, the glass reads grey-blue and green, because opalescent glass is made to be seen with light coming through it. The outside views matter most for condition: the protective glazing, the frames and the sills.</dd></div>" +
+    "<div><dt>To confirm</dt><dd>Which of the three-light windows (A, F, G or H) this outside view shows.</dd></div>" +
+    '<div><dt>Condition notes</dt><dd>See <a href="#condition">Condition and need</a>.</dd></div>' +
+    "</dl></div></article>";
+
+  document.getElementById("index").innerHTML = idx;
+  document.getElementById("records").innerHTML = out;
+
+  document.addEventListener("click", function (ev) {
+    var t = ev.target;
+    if (t.classList && t.classList.contains("dot")) {
+      var on = t.getAttribute("aria-pressed") === "true";
+      var art = document.getElementById("w-" + t.getAttribute("data-w"));
+      art.querySelectorAll(".dot").forEach(function (d) { d.setAttribute("aria-pressed", "false"); });
+      art.querySelectorAll(".spots li").forEach(function (li) { li.classList.remove("on"); });
+      if (!on) {
+        t.setAttribute("aria-pressed", "true");
+        document.getElementById("sp-" + t.getAttribute("data-w") + "-" + t.getAttribute("data-i")).classList.add("on");
+      }
+    }
+    if (t.classList && t.classList.contains("chip")) {
+      var f = t.getAttribute("data-f");
+      document.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c === t ? "true" : "false"); });
+      document.querySelectorAll("#records article, #index a").forEach(function (el) {
+        el.hidden = !(f === "all" || el.getAttribute("data-g") === f);
+      });
+    }
+  });
+
+  // ---- guided tour ----
+  var STOPS = [{"img": "wall-three", "alt": "Three tall pointed windows in a row along the sanctuary wall", "kick": "Stop 1 \u00b7 Step inside", "title": "A room lit by 1893", "text": "You are standing in a meeting house dedicated in 1809. In the summer of 1893 the congregation reopened it with new windows from Tiffany's studio in New York. Eight of them carry the names of the people who built this church and this town.", "spots": [], "more": "story", "moreText": "Read the full story"}, {"img": "a-full", "alt": "Three-light window with a central cross and three inscribed panels", "kick": "Stop 2 \u00b7 Window A", "title": "The woman who started a Sunday school", "text": "Ann B. Taylor opened the first Baptist Sunday school in New Jersey in 1815, on her farm near this church. Her panel calls her S. S. Supt. Beside her is Deacon James C. Taylor.", "spots": [[23, 92, "Ann B. Taylor, S. S. Supt. 1816"], [49, 45, "A cross set in amber glass sits at the centre of every window"], [76, 92, "Deacon J. C. Taylor"]], "more": "w-a", "moreText": "Window A record"}, {"img": "e-full", "alt": "Four-light window with two central crosses above rows of blue rondels", "kick": "Stop 3 \u00b7 Window E", "title": "The family the town is named for", "text": "Holmdel takes its name from the Holmes family. Obadiah Holmes, whipped in Boston for his Baptist beliefs, was one of the twelve men granted the Monmouth Patent in 1665. His descendants worshipped here, and through the Bowne and Holmes line this congregation counts among the ancestors of Abraham Lincoln.", "spots": [[40, 96, "Holmes"], [58, 96, "Memorial"], [50, 85, "Rondels: round discs of blue glass"]], "more": "w-e", "moreText": "Window E record"}, {"img": "h-full", "alt": "Three-light window whose bottom panels name two pastors", "kick": "Stop 4 \u00b7 Window H", "title": "Two pastors, thirty-three years", "text": "Rev. William D. Hires led the congregation from 1836, its first year as a separate church. He died in July 1892, so his panel was a fresh memorial when the church reopened. Rev. Charles E. Wilson served from 1853 until his death in 1869.", "spots": [[25, 95, "Rev. W. D. Hires, 1836 to 1846"], [51, 95, "A blank panel of streaked blue glass"], [76, 95, "Rev. C. E. Wilson, 1853 to 1869, And Wife"]], "more": "w-h", "moreText": "Window H record"}, {"img": "g-full", "alt": "Three-light window seen at an angle from the pews", "kick": "Stop 5 \u00b7 Window G", "title": "Two families joined", "text": "Deacon John G. Taylor died in 1864. Deacon Henry D. Ely was the son of a county sheriff. Henry married Mary Taylor, so this window carries both sides of one family.", "spots": [[27, 88, "Deacon J. G. Taylor, And Wife"], [74, 88, "Deacon H. D. Ely"]], "more": "w-g", "moreText": "Window G record"}, {"img": "d-full", "alt": "Four-light window seen from below with four panels along the bottom", "kick": "Stop 6 \u00b7 Window D", "title": "The sheriff's son and the farm next door", "text": "William M. Ely's father, John J. Ely, was sheriff of Monmouth County and sat in the state Assembly. He is buried in the churchyard outside. The Longstreets farmed nearby, and their farm is now Historic Longstreet Farm, a county park.", "spots": [[18, 83, "Deacon W. M. Ely, And Wife"], [32, 85, "Longstreet"], [50, 87, "Memorial"]], "more": "w-d", "moreText": "Window D record"}, {"img": "f-full", "alt": "Three-light window photographed from close below, glowing amber", "kick": "Stop 7 \u00b7 Window F", "title": "A deacon who may have seen his own window", "text": "James J. Taylor was a serving deacon in 1884, nine years before the windows went in. His panel may honour a living giver. Stand close and the glass shows why Tiffany called it opalescent: the colour is inside the glass.", "spots": [[76, 93, "Deacon J. J. Taylor, And Wife"], [50, 38, "The cross inside a pointed oval"]], "more": "w-f", "moreText": "Window F record"}, {"img": "chandelier", "alt": "A chandelier seen from below with a ring of ribbed mirror glass and hanging prisms", "kick": "Stop 8 \u00b7 Look up", "title": "Light thrown down by mirrors", "text": "The chandeliers are reflector fixtures, made for churches and halls in the late 1800s. A ring of ribbed mirror glass throws the light down onto the pews. Their maker is not yet known.", "spots": [], "more": "lighting", "moreText": "Chandelier record"}, {"img": "ceiling", "alt": "The edge of the ceiling: a white ribbed cove, a blue and gold leaf border and square panels", "kick": "Stop 9 \u00b7 Higher still", "title": "A ceiling of pressed metal", "text": "Stamped metal panels hang a few inches below the old horsehair-plaster ceiling, which is still up there. Windows, chandeliers and ceiling all belong to one renovation, and all three survive.", "spots": [], "more": "ceiling", "moreText": "Ceiling record"}, {"img": "ext-lancet", "alt": "A three-light window from outside behind protective glazing, in a blue-painted surround", "kick": "Stop 10 \u00b7 Step outside", "title": "What 133 winters do", "text": "From the street the glass looks grey, because it was made to be seen with light coming through it. Out here is where the damage starts: weather, failing paint, clouded protective glazing. Keeping these windows will take skilled work and money.", "spots": [], "more": "save", "moreText": "See how to help save them"}];
+  var cur = 0;
+  function showStop(i) {
+    cur = (i + STOPS.length) % STOPS.length;
+    var s = STOPS[cur], img = document.getElementById("t-img");
+    img.src = "images/" + s.img + ".jpg"; img.alt = s.alt;
+    document.getElementById("t-kick").textContent = s.kick;
+    document.getElementById("t-title").textContent = s.title;
+    document.getElementById("t-text").textContent = s.text;
+    var more = document.getElementById("t-more"); more.textContent = s.moreText; more.setAttribute("href", "#" + s.more);
+    document.getElementById("t-count").textContent = (cur + 1) + " of " + STOPS.length;
+    var dots = "";
+    s.spots.forEach(function (sp, k) { dots += '<button type="button" class="tdot" data-k="' + k + '" style="left:' + sp[0] + "%;top:" + sp[1] + '%" aria-label="Detail ' + (k + 1) + '">' + (k + 1) + "</button>"; });
+    document.getElementById("t-dots").innerHTML = dots;
+    var call = document.getElementById("t-call");
+    call.textContent = s.spots.length ? "Tap a numbered marker on the window." : "";
+    document.querySelectorAll("#t-rail button").forEach(function (b, k) { if (k === cur) { b.setAttribute("aria-current", "step"); } else { b.removeAttribute("aria-current"); } });
+    var st = document.getElementById("t-stage"); st.classList.remove("in"); void st.offsetWidth; st.classList.add("in");
+  }
+  var rail = "";
+  STOPS.forEach(function (s, k) { rail += '<li><button type="button" data-go="' + k + '" aria-label="Stop ' + (k + 1) + ": " + esc(s.title) + '"><span>' + (k + 1) + "</span></button></li>"; });
+  document.getElementById("t-rail").innerHTML = rail;
+  document.addEventListener("click", function (ev) {
+    var t = ev.target.closest ? ev.target.closest("button, a") : null; if (!t) { return; }
+    if (t.hasAttribute("data-go")) { showStop(+t.getAttribute("data-go")); }
+    if (t.id === "t-prev") { showStop(cur - 1); }
+    if (t.id === "t-next") { showStop(cur + 1); }
+    if (t.classList.contains("tdot")) {
+      document.querySelectorAll(".tdot").forEach(function (d) { d.setAttribute("aria-pressed", d === t ? "true" : "false"); });
+      document.getElementById("t-call").textContent = STOPS[cur].spots[+t.getAttribute("data-k")][2];
+    }
+  });
+  document.addEventListener("keydown", function (ev) {
+    var v = document.getElementById("home"); if (!v || v.hidden) { return; }
+    if (ev.key === "ArrowRight") { showStop(cur + 1); } else if (ev.key === "ArrowLeft") { showStop(cur - 1); }
+  });
+  showStop(0);
+
+  function route() {
+    var id = location.hash.slice(1), el = id ? document.getElementById(id) : null;
+    var view = el ? el.closest("[data-view]") : null;
+    var name = view ? view.getAttribute("data-view") : "tour";
+    document.querySelectorAll("nav.top a.tab").forEach(function (a) { if (a.getAttribute("data-tab") === name) { a.setAttribute("aria-current", "page"); } else { a.removeAttribute("aria-current"); } });
+    document.querySelectorAll("[data-view]").forEach(function (v) { v.hidden = v.getAttribute("data-view") !== name; });
+    if (el && el !== view) { el.scrollIntoView(); } else { window.scrollTo(0, 0); }
+  }
+  window.addEventListener("hashchange", route);
+  route();
+})();
+</script>
+<noscript><div class="wrap" style="padding:20px"><p>The window records on this page need JavaScript to display.</p></div></noscript>
+</body>
+</html>
