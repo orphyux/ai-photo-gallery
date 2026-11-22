@@ -251,6 +251,28 @@ footer .fchurch { display: flex; flex-direction: column; gap: 4px; }
 footer .fname { font-family: var(--display); font-weight: 500; font-size: 1.05rem; }
 footer a { color: #ffffff; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
 footer .fnote { color: #bfe6ea; border-top: 1px solid rgba(255,255,255,.2); padding-top: 14px; }
+#help h3.sub2 { margin: 34px 0 14px; font-size: 1.35rem; }
+ol.steps { margin: 0; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 10px; max-width: 72ch; }
+ol.steps li::marker { color: var(--accent); font-family: var(--display); font-weight: 600; }
+.wanted .card ul.plain { font-size: .95rem; }
+form.upload { display: flex; flex-direction: column; gap: 16px; max-width: 720px; background: var(--soft); border: 1px solid var(--line); border-top: 4px solid var(--brand); border-radius: 6px; padding: 22px; }
+form.upload label { display: flex; flex-direction: column; gap: 6px; font-family: var(--display); font-weight: 500; color: var(--brand); font-size: .95rem; }
+form.upload input[type=text], form.upload input[type=email], form.upload select, form.upload textarea { font: 400 1rem var(--body); color: var(--text); background: #ffffff; border: 1px solid #b9cdd2; border-radius: 4px; padding: 10px 12px; }
+form.upload input[type=file] { font: 400 .9rem var(--body); color: var(--text); background: #ffffff; border: 1px dashed #9fbcc3; border-radius: 4px; padding: 10px; }
+form.upload input:focus-visible, form.upload select:focus-visible, form.upload textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+form.upload .frow, form.upload .frow3 { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { form.upload .frow { grid-template-columns: 1fr 1fr; } form.upload .frow3 { grid-template-columns: 1fr 1fr 1fr; } }
+form.upload label.check { flex-direction: row; align-items: flex-start; gap: 10px; font: 400 .95rem var(--body); color: var(--text); }
+form.upload label.check input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
+form.upload .hp { position: absolute; left: -9999px; }
+form.upload .fine2 { font-size: .85rem; color: var(--muted); }
+.btn.solid2 { background: var(--brand); color: #ffffff; font-weight: 600; }
+.btn.solid2:hover { background: #0c3a4d; }
+.btn.solid2[disabled] { opacity: .6; cursor: wait; }
+form.upload .frow > label, form.upload .frow3 > label { min-width: 0; }
+form.upload input[type=file] { width: 100%; min-width: 0; }
+form.upload .fstat { font-family: var(--display); font-weight: 500; color: var(--brand); min-height: 1.2em; }
+form.upload .fstat.err { color: var(--warn); }
 </style>
 </head>
 <body>
@@ -605,7 +627,7 @@ footer .fnote { color: #bfe6ea; border-top: 1px solid rgba(255,255,255,.2); padd
   <p class="eyebrow">Saving the windows</p>
   <h1>The condition today, and the plan to fix it</h1>
   <p class="lede">What can be seen of the damage, how to help, who to work with, how a county Tiffany trail could raise money, and what needs doing next.</p>
-  <p class="subnav"><a href="#case">The case</a><a href="#condition">Condition</a><a href="#help">How to help</a><a href="#together">Working together</a><a href="#trail">Tiffany trail</a><a href="#tasks">Tasks</a><a href="#ask">Ask church leaders</a><a href="#funding">Funding</a></p>
+  <p class="subnav"><a href="#case">The case</a><a href="#condition">Condition</a><a href="#help">Help us</a><a href="#together">Working together</a><a href="#trail">Tiffany trail</a><a href="#tasks">Tasks</a><a href="#ask">Ask church leaders</a><a href="#funding">Funding</a></p>
 </div></header>
 <section id="case"><div class="wrap">
   <p class="eyebrow">The case for support</p>
@@ -640,11 +662,102 @@ footer .fnote { color: #bfe6ea; border-top: 1px solid rgba(255,255,255,.2); padd
   </div>
 </div></section>
 <section id="help"><div class="wrap">
-  <p class="eyebrow">How to help</p>
-  <h2>Ways to support the windows</h2>
+  <p class="eyebrow">Help us</p>
+  <h2>Help us complete the record</h2>
+  <div class="prose">
+    <p>Much of what is known about these windows came from a handful of phone photos and old books. Better photographs and the church's own papers will tell us far more, and they are exactly what conservators and grant reviewers ask to see. If you worship here, visit, or have family ties to the people named in the glass, you can help.</p>
+  </div>
+
+  <h3 class="sub2">How to help, step by step</h3>
+  <ol class="steps">
+    <li><b>Pick something from the wanted list below.</b> Even one sharp photo of one inscription helps.</li>
+    <li><b>Take the photos with the tips below in mind.</b> A phone camera is fine.</li>
+    <li><b>Send them with the form on this page.</b> Up to three files at a time, 8 MB in total. Send as many times as you like.</li>
+    <li><b>Tell us what each photo shows</b> and whether we may credit you by name.</li>
+    <li><b>We check everything before it is published.</b> Church leadership approves what goes on this site, and living people are named only with their agreement.</li>
+  </ol>
+
+  <h3 class="sub2">What we are missing</h3>
+  <div class="cols wanted">
+    <div class="card"><h3>The memorial windows</h3><ul class="plain">
+      <li>Each window straight on, from its centre, not at an angle.</li>
+      <li>Every dedication panel, close enough to read each letter.</li>
+      <li>Any maker's signature or mark, along the bottom edge and in the corners. Nobody has looked yet.</li>
+      <li>Cracks, bulging, sagging lead, missing pieces and old repairs.</li>
+      <li>The outside of each window: frame, sill and the protective glazing.</li>
+      <li><b>The two Bray windows</b> ("In Memoriam, Rev. John Bray" and "Donor of Grounds 1705") have never been photographed for this record, and we have not yet confirmed where they are.</li>
+    </ul></div>
+    <div class="card"><h3>The pipe organ</h3><ul class="plain">
+      <li>The whole organ case and the display pipes.</li>
+      <li>The console: keyboards, stops and pedals.</li>
+      <li>Any builder's nameplate, label, date or opus number, inside or out.</li>
+      <li>Any plaque, dedication or paperwork on who built it and when.</li>
+    </ul></div>
+    <div class="card"><h3>The tin ceiling</h3><ul class="plain">
+      <li>The whole ceiling, from the centre aisle.</li>
+      <li>Straight-up close-ups of the square panels and the leaf border, so the pattern can be matched to a maker's catalogue.</li>
+      <li>The ribbed cove where it meets the walls.</li>
+      <li>Any stains, rust, sagging or loose sections.</li>
+    </ul></div>
+    <div class="card"><h3>Both historic cemeteries</h3><ul class="plain">
+      <li>Overall views of each cemetery and where it sits next to the church.</li>
+      <li>The oldest stones, including Sarah Holmes Salter's stone of 1757.</li>
+      <li>Graves tied to this story: Sheriff John J. Ely, the sons of Rev. William D. Hires, Lt. John Whitlock, Col. Asher Holmes, and any Taylor, Ely, Holmes, Longstreet or Bray stones.</li>
+      <li>A readable photo of each inscription.</li>
+    </ul></div>
+    <div class="card"><h3>Papers and old photos</h3><ul class="plain">
+      <li>Church minutes, treasurer's books and the 1893 reopening programme.</li>
+      <li>The Red Bank Register of 2 August 1893, page 1.</li>
+      <li><i>What God Hath Joined Together</i>, the 1968 church history.</li>
+      <li>The 1705 Bray deed, or a copy.</li>
+      <li>Old photographs of the sanctuary, and family papers for the names in the glass.</li>
+    </ul></div>
+    <div class="card"><h3>Photo tips</h3><ul class="plain">
+      <li>Windows: shoot on a bright, overcast day, with the sanctuary lights off.</li>
+      <li>Stand square to the window and fill the frame.</li>
+      <li>For damage, put a coin or ruler in the shot for scale.</li>
+      <li>Gravestones: low morning or late-afternoon light makes lettering readable. Please do not clean, scrape or chalk old stones.</li>
+      <li>Never climb or lean on anything to get a shot.</li>
+    </ul></div>
+  </div>
+
+  <h3 class="sub2" id="send">Send photos or documents</h3>
+  <form class="upload" name="hcucc-help-us" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" id="help-form">
+    <input type="hidden" name="form-name" value="hcucc-help-us">
+    <input type="hidden" name="subject" value="HCUCC Tiffany Windows: new photos or documents (%{submissionId})">
+    <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
+    <div class="frow">
+      <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+      <label>Email, so we can follow up<input type="email" name="email" required autocomplete="email"></label>
+    </div>
+    <label>What are you sending?
+      <select name="topic" required>
+        <option value="">Choose one</option>
+        <option>Memorial window photos</option>
+        <option>The Bray windows</option>
+        <option>Pipe organ</option>
+        <option>Tin ceiling</option>
+        <option>Cemetery photos</option>
+        <option>Church papers or old photographs</option>
+        <option>Something else</option>
+      </select></label>
+    <label>Tell us what the files show, and anything you know about them<textarea name="message" rows="5" required></textarea></label>
+    <div class="frow3">
+      <label>File 1<input type="file" name="file1" accept="image/*,application/pdf"></label>
+      <label>File 2<input type="file" name="file2" accept="image/*,application/pdf"></label>
+      <label>File 3<input type="file" name="file3" accept="image/*,application/pdf"></label>
+    </div>
+    <p class="fine2">Photos (JPEG, PNG, HEIC) or PDFs, up to 8 MB in total per send. For more, send again.</p>
+    <label>How should we credit you if we use them?<input type="text" name="credit" placeholder="For example: Photo by Jane Smith, or no credit"></label>
+    <label class="check"><input type="checkbox" name="permission" value="yes" required> I took these photos or have the right to share these files, and I agree they may be used on this site and in grant applications for the windows.</label>
+    <p><button type="submit" class="btn solid2">Send to the project</button></p>
+    <p class="fstat" id="help-status" role="status" aria-live="polite"></p>
+    <p class="fine2">Your email is used only to follow up about what you sent and is never published.</p>
+  </form>
+
+  <h3 class="sub2">Supporting the windows</h3>
   <div class="cols">
-    <div class="card hold"><h3>To be supplied</h3><p>Giving details, a contact for the project, and any fund name will go here once the congregation provides them. Nothing has been filled in on its behalf.</p></div>
-    <div class="card"><h3>Share what you know</h3><p>Old photographs of the sanctuary, family papers about the Taylor, Ely, Holmes, Longstreet, Bray, Hires or Wilson families, and church programmes from the 1890s would all help complete these records.</p></div>
+    <div class="card hold"><h3>Giving: to be supplied</h3><p>Giving details, a contact for the project, and any fund name will go here once the congregation provides them. Nothing has been filled in on its behalf.</p></div>
   </div>
 </div></section>
 <section id="together"><div class="wrap">
@@ -1151,6 +1264,22 @@ footer .fnote { color: #bfe6ea; border-top: 1px solid rgba(255,255,255,.2); padd
     document.querySelectorAll("[data-view]").forEach(function (v) { v.hidden = v.getAttribute("data-view") !== name; });
     if (el && el !== view) { el.scrollIntoView(); } else { window.scrollTo(0, 0); }
   }
+
+  // ---- help-us upload form (Netlify Forms, sent without leaving the page) ----
+  (function () {
+    var f = document.getElementById("help-form"); if (!f) { return; }
+    var st = document.getElementById("help-status");
+    f.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var total = 0; f.querySelectorAll("input[type=file]").forEach(function (i) { if (i.files[0]) { total += i.files[0].size; } });
+      if (total > 8 * 1024 * 1024) { st.className = "fstat err"; st.textContent = "Those files add up to more than 8 MB. Please send fewer at a time."; return; }
+      var b = f.querySelector("button[type=submit]"); b.disabled = true; st.className = "fstat"; st.textContent = "Sending\u2026";
+      fetch("/", { method: "POST", body: new FormData(f) })
+        .then(function (r) { if (!r.ok) { throw new Error(r.status); } f.reset(); st.textContent = "Thank you. Your files have reached the project. Send more any time."; })
+        .catch(function () { st.className = "fstat err"; st.textContent = "That did not go through. Please check your connection and try again."; })
+        .then(function () { b.disabled = false; });
+    });
+  })();
   linkCites(document);
   window.addEventListener("hashchange", route);
   route();
