@@ -672,7 +672,7 @@ form.upload .fstat.err { color: var(--warn); }
   <ol class="steps">
     <li><b>Pick something from the wanted list below.</b> Even one sharp photo of one inscription helps.</li>
     <li><b>Take the photos with the tips below in mind.</b> A phone camera is fine.</li>
-    <li><b>Send them with the form on this page.</b> Up to three files at a time, 8 MB in total. Send as many times as you like.</li>
+    <li><b>Keep them ready to send.</b> A way to send them to the project is coming soon, below.</li>
     <li><b>Tell us what each photo shows</b> and whether we may credit you by name.</li>
     <li><b>We check everything before it is published.</b> Church leadership approves what goes on this site, and living people are named only with their agreement.</li>
   </ol>
@@ -721,39 +721,8 @@ form.upload .fstat.err { color: var(--warn); }
     </ul></div>
   </div>
 
-  <h3 class="sub2" id="send">Send photos or documents</h3>
-  <form class="upload" name="hcucc-help-us" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" id="help-form">
-    <input type="hidden" name="form-name" value="hcucc-help-us">
-    <input type="hidden" name="subject" value="HCUCC Tiffany Windows: new photos or documents (%{submissionId})">
-    <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
-    <div class="frow">
-      <label>Your name<input type="text" name="name" required autocomplete="name"></label>
-      <label>Email, so we can follow up<input type="email" name="email" required autocomplete="email"></label>
-    </div>
-    <label>What are you sending?
-      <select name="topic" required>
-        <option value="">Choose one</option>
-        <option>Memorial window photos</option>
-        <option>The Bray windows</option>
-        <option>Pipe organ</option>
-        <option>Tin ceiling</option>
-        <option>Cemetery photos</option>
-        <option>Church papers or old photographs</option>
-        <option>Something else</option>
-      </select></label>
-    <label>Tell us what the files show, and anything you know about them<textarea name="message" rows="5" required></textarea></label>
-    <div class="frow3">
-      <label>File 1<input type="file" name="file1" accept="image/*,application/pdf"></label>
-      <label>File 2<input type="file" name="file2" accept="image/*,application/pdf"></label>
-      <label>File 3<input type="file" name="file3" accept="image/*,application/pdf"></label>
-    </div>
-    <p class="fine2">Photos (JPEG, PNG, HEIC) or PDFs, up to 8 MB in total per send. For more, send again.</p>
-    <label>How should we credit you if we use them?<input type="text" name="credit" placeholder="For example: Photo by Jane Smith, or no credit"></label>
-    <label class="check"><input type="checkbox" name="permission" value="yes" required> I took these photos or have the right to share these files, and I agree they may be used on this site and in grant applications for the windows.</label>
-    <p><button type="submit" class="btn solid2">Send to the project</button></p>
-    <p class="fstat" id="help-status" role="status" aria-live="polite"></p>
-    <p class="fine2">Your email is used only to follow up about what you sent and is never published.</p>
-  </form>
+  <h3 class="sub2" id="send">Sending photos or documents</h3>
+  <div class="card hold" style="max-width:720px"><p>A way to send photos and documents straight to the project is coming once church leadership approves it. Until then, please hold on to what you have, or share it with the church office.</p></div>
 
   <h3 class="sub2">Supporting the windows</h3>
   <div class="cols">
