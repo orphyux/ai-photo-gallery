@@ -182,6 +182,23 @@ section.night .eyebrow { color: var(--glass); }
 .rail button { width: 38px; height: 38px; border-radius: 50%; border: 2px solid rgba(255,255,255,.45); background: transparent; color: #ffffff; font: 500 .9rem var(--display); cursor: pointer; }
 .rail button:hover { border-color: var(--glass); }
 .rail button[aria-current="step"] { background: var(--glass); border-color: var(--glass); color: #1c1407; font-weight: 600; }
+.thist { margin-top: 26px; padding: 22px 24px; background: var(--night2); border: 1px solid rgba(255,255,255,.14); border-top: 3px solid var(--glass); border-radius: 6px; color: #e9f1f3; }
+.thist[hidden] { display: none; }
+.thist > .eyebrow { margin: 0 0 10px; }
+.thist h4 { color: #ffffff; font-family: var(--display); font-size: 1.15rem; font-weight: 600; margin: 18px 0 6px; }
+.thist h4:first-of-type { margin-top: 0; }
+.thist .prose { max-width: 72ch; }
+.thist a { color: #bfe6ea; }
+.thist dl { display: flex; flex-direction: column; gap: 12px; margin: 0; max-width: 72ch; }
+.thist dt { font-family: var(--display); color: var(--glass); font-weight: 600; font-size: .9rem; }
+.thist dd { margin: 2px 0 0; line-height: 1.6; }
+.thist .inscription { margin: 6px 0 12px; }
+.thist .fine { margin-top: 8px; }
+.thist .dig { margin-top: 20px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,.2); }
+.thist .dig ol { margin: 6px 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 8px; font-size: .92rem; color: #cfe3e7; max-width: 80ch; }
+.thist .dig li::marker { color: var(--glass); font-family: var(--display); }
+a.cite-ext { text-decoration: none; }
+a.cite-ext:hover { text-decoration: underline; }
 .hint { font-size: .85rem; color: #9fc3cb; margin-top: 12px; }
 
 .timeline { list-style: none; margin: 26px 0 0; padding: 0 0 14px; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; }
@@ -250,6 +267,7 @@ section.night h3.sub { color: #ffffff; margin-top: 34px; margin-bottom: 10px; fo
       <div class="tournav"><button type="button" class="btn ghost" id="t-prev">Back</button><span id="t-count"></span><button type="button" class="btn solid" id="t-next">Next stop</button></div>
     </div>
   </div>
+  <div class="thist" id="t-hist" aria-live="polite"></div>
   <ol class="rail" id="t-rail" aria-label="Tour stops"></ol>
   <p class="hint">Use the buttons, the numbered stops, or the left and right arrow keys.</p>
 </div></section>
@@ -936,7 +954,67 @@ section.night h3.sub { color: #ffffff; margin-top: 34px; margin-bottom: 10px; fo
   });
 
   // ---- guided tour ----
-  var STOPS = [{"img": "wall-three", "alt": "Three tall pointed windows in a row along the sanctuary wall", "kick": "Stop 1 \u00b7 Step inside", "title": "A room lit by 1893", "text": "You are standing in a meeting house dedicated in 1809. In the summer of 1893 the congregation reopened it with new windows from Tiffany's studio in New York. Eight of them carry the names of the people who built this church and this town.", "spots": [], "more": "story", "moreText": "Read the full story"}, {"img": "a-full", "alt": "Three-light window with a central cross and three inscribed panels", "kick": "Stop 2 \u00b7 Window A", "title": "The woman who started a Sunday school", "text": "Ann B. Taylor opened the first Baptist Sunday school in New Jersey in 1815, on her farm near this church. Her panel calls her S. S. Supt. Beside her is Deacon James C. Taylor.", "spots": [[23, 92, "Ann B. Taylor, S. S. Supt. 1816"], [49, 45, "A cross set in amber glass sits at the centre of every window"], [76, 92, "Deacon J. C. Taylor"]], "more": "w-a", "moreText": "Window A record"}, {"img": "e-full", "alt": "Four-light window with two central crosses above rows of blue rondels", "kick": "Stop 3 \u00b7 Window E", "title": "The family the town is named for", "text": "Holmdel takes its name from the Holmes family. Obadiah Holmes, whipped in Boston for his Baptist beliefs, was one of the twelve men granted the Monmouth Patent in 1665. His descendants worshipped here, and through the Bowne and Holmes line this congregation counts among the ancestors of Abraham Lincoln.", "spots": [[40, 96, "Holmes"], [58, 96, "Memorial"], [50, 85, "Rondels: round discs of blue glass"]], "more": "w-e", "moreText": "Window E record"}, {"img": "h-full", "alt": "Three-light window whose bottom panels name two pastors", "kick": "Stop 4 \u00b7 Window H", "title": "Two pastors, thirty-three years", "text": "Rev. William D. Hires led the congregation from 1836, its first year as a separate church. He died in July 1892, so his panel was a fresh memorial when the church reopened. Rev. Charles E. Wilson served from 1853 until his death in 1869.", "spots": [[25, 95, "Rev. W. D. Hires, 1836 to 1846"], [51, 95, "A blank panel of streaked blue glass"], [76, 95, "Rev. C. E. Wilson, 1853 to 1869, And Wife"]], "more": "w-h", "moreText": "Window H record"}, {"img": "g-full", "alt": "Three-light window seen at an angle from the pews", "kick": "Stop 5 \u00b7 Window G", "title": "Two families joined", "text": "Deacon John G. Taylor died in 1864. Deacon Henry D. Ely was the son of a county sheriff. Henry married Mary Taylor, so this window carries both sides of one family.", "spots": [[27, 88, "Deacon J. G. Taylor, And Wife"], [74, 88, "Deacon H. D. Ely"]], "more": "w-g", "moreText": "Window G record"}, {"img": "d-full", "alt": "Four-light window seen from below with four panels along the bottom", "kick": "Stop 6 \u00b7 Window D", "title": "The sheriff's son and the farm next door", "text": "William M. Ely's father, John J. Ely, was sheriff of Monmouth County and sat in the state Assembly. He is buried in the churchyard outside. The Longstreets farmed nearby, and their farm is now Historic Longstreet Farm, a county park.", "spots": [[18, 83, "Deacon W. M. Ely, And Wife"], [32, 85, "Longstreet"], [50, 87, "Memorial"]], "more": "w-d", "moreText": "Window D record"}, {"img": "f-full", "alt": "Three-light window photographed from close below, glowing amber", "kick": "Stop 7 \u00b7 Window F", "title": "A deacon who may have seen his own window", "text": "James J. Taylor was a serving deacon in 1884, nine years before the windows went in. His panel may honour a living giver. Stand close and the glass shows why Tiffany called it opalescent: the colour is inside the glass.", "spots": [[76, 93, "Deacon J. J. Taylor, And Wife"], [50, 38, "The cross inside a pointed oval"]], "more": "w-f", "moreText": "Window F record"}, {"img": "chandelier", "alt": "A chandelier seen from below with a ring of ribbed mirror glass and hanging prisms", "kick": "Stop 8 \u00b7 Look up", "title": "Light thrown down by mirrors", "text": "The chandeliers are reflector fixtures, made for churches and halls in the late 1800s. A ring of ribbed mirror glass throws the light down onto the pews. Their maker is not yet known.", "spots": [], "more": "lighting", "moreText": "Chandelier record"}, {"img": "ceiling", "alt": "The edge of the ceiling: a white ribbed cove, a blue and gold leaf border and square panels", "kick": "Stop 9 \u00b7 Higher still", "title": "A ceiling of pressed metal", "text": "Stamped metal panels hang a few inches below the old horsehair-plaster ceiling, which is still up there. Windows, chandeliers and ceiling all belong to one renovation, and all three survive.", "spots": [], "more": "ceiling", "moreText": "Ceiling record"}, {"img": "ext-lancet", "alt": "A three-light window from outside behind protective glazing, in a blue-painted surround", "kick": "Stop 10 \u00b7 Step outside", "title": "What 133 winters do", "text": "From the street the glass looks grey, because it was made to be seen with light coming through it. Out here is where the damage starts: weather, failing paint, clouded protective glazing. Keeping these windows will take skilled work and money.", "spots": [], "more": "save", "moreText": "See how to help save them"}];
+  var STOPS = [{"img": "wall-three", "alt": "Three tall pointed windows in a row along the sanctuary wall", "kick": "Stop 1 \u00b7 Step inside", "title": "A room lit by 1893", "text": "You are standing in a meeting house dedicated in 1809. In the summer of 1893 the congregation reopened it with new windows from Tiffany's studio in New York. Eight of them carry the names of the people who built this church and this town.", "spots": [], "more": "story", "moreText": "Read the full story", "hist": {"sec": "story"}}, {"img": "a-full", "alt": "Three-light window with a central cross and three inscribed panels", "kick": "Stop 2 \u00b7 Window A", "title": "The woman who started a Sunday school", "text": "Ann B. Taylor opened the first Baptist Sunday school in New Jersey in 1815, on her farm near this church. Her panel calls her S. S. Supt. Beside her is Deacon James C. Taylor.", "spots": [[23, 92, "Ann B. Taylor, S. S. Supt. 1816"], [49, 45, "A cross set in amber glass sits at the centre of every window"], [76, 92, "Deacon J. C. Taylor"]], "more": "w-a", "moreText": "Window A record", "hist": {"win": "a"}}, {"img": "e-full", "alt": "Four-light window with two central crosses above rows of blue rondels", "kick": "Stop 3 \u00b7 Window E", "title": "The family the town is named for", "text": "Holmdel takes its name from the Holmes family. Obadiah Holmes, whipped in Boston for his Baptist beliefs, was one of the twelve men granted the Monmouth Patent in 1665. His descendants worshipped here, and through the Bowne and Holmes line this congregation counts among the ancestors of Abraham Lincoln.", "spots": [[40, 96, "Holmes"], [58, 96, "Memorial"], [50, 85, "Rondels: round discs of blue glass"]], "more": "w-e", "moreText": "Window E record", "hist": {"win": "e"}}, {"img": "h-full", "alt": "Three-light window whose bottom panels name two pastors", "kick": "Stop 4 \u00b7 Window H", "title": "Two pastors, thirty-three years", "text": "Rev. William D. Hires led the congregation from 1836, its first year as a separate church. He died in July 1892, so his panel was a fresh memorial when the church reopened. Rev. Charles E. Wilson served from 1853 until his death in 1869.", "spots": [[25, 95, "Rev. W. D. Hires, 1836 to 1846"], [51, 95, "A blank panel of streaked blue glass"], [76, 95, "Rev. C. E. Wilson, 1853 to 1869, And Wife"]], "more": "w-h", "moreText": "Window H record", "hist": {"win": "h"}}, {"img": "g-full", "alt": "Three-light window seen at an angle from the pews", "kick": "Stop 5 \u00b7 Window G", "title": "Two families joined", "text": "Deacon John G. Taylor died in 1864. Deacon Henry D. Ely was the son of a county sheriff. Henry married Mary Taylor, so this window carries both sides of one family.", "spots": [[27, 88, "Deacon J. G. Taylor, And Wife"], [74, 88, "Deacon H. D. Ely"]], "more": "w-g", "moreText": "Window G record", "hist": {"win": "g"}}, {"img": "d-full", "alt": "Four-light window seen from below with four panels along the bottom", "kick": "Stop 6 \u00b7 Window D", "title": "The sheriff's son and the farm next door", "text": "William M. Ely's father, John J. Ely, was sheriff of Monmouth County and sat in the state Assembly. He is buried in the churchyard outside. The Longstreets farmed nearby, and their farm is now Historic Longstreet Farm, a county park.", "spots": [[18, 83, "Deacon W. M. Ely, And Wife"], [32, 85, "Longstreet"], [50, 87, "Memorial"]], "more": "w-d", "moreText": "Window D record", "hist": {"win": "d"}}, {"img": "f-full", "alt": "Three-light window photographed from close below, glowing amber", "kick": "Stop 7 \u00b7 Window F", "title": "A deacon who may have seen his own window", "text": "James J. Taylor was a serving deacon in 1884, nine years before the windows went in. His panel may honour a living giver. Stand close and the glass shows why Tiffany called it opalescent: the colour is inside the glass.", "spots": [[76, 93, "Deacon J. J. Taylor, And Wife"], [50, 38, "The cross inside a pointed oval"]], "more": "w-f", "moreText": "Window F record", "hist": {"win": "f"}}, {"img": "wall-two", "alt": "The sanctuary wall with two pointed windows and a small jewelled transom over a side door", "kick": "Stop 8 \u00b7 The Bray windows", "title": "The man who gave the ground", "text": "Two more windows remember John Bray. In 1705 he and his wife Susanna gave the land this church still stands on, and for a century the place was called Bray's Meeting House. One window names him; the other reads Donor Of Grounds 1705. Neither has been photographed for the record yet.", "spots": [], "more": "people", "moreText": "Why these names matter", "hist": {"win": ["b", "c"], "sec": "people", "secTitle": "Why these names matter"}}, {"img": "chandelier", "alt": "A chandelier seen from below with a ring of ribbed mirror glass and hanging prisms", "kick": "Stop 9 \u00b7 Look up", "title": "Light thrown down by mirrors", "text": "The chandeliers are reflector fixtures, made for churches and halls in the late 1800s. A ring of ribbed mirror glass throws the light down onto the pews. Their maker is not yet known.", "spots": [], "more": "lighting", "moreText": "Chandelier record", "hist": {"sec": "lighting", "dts": ["Date", "Maker", "Where the idea came from", "A second maker", "Closest comparison found", "Original fuel", "In the records", "Why it matters"]}}, {"img": "ceiling", "alt": "The edge of the ceiling: a white ribbed cove, a blue and gold leaf border and square panels", "kick": "Stop 10 \u00b7 Higher still", "title": "A ceiling of pressed metal", "text": "Stamped metal panels hang a few inches below the old horsehair-plaster ceiling, which is still up there. Windows, chandeliers and ceiling all belong to one renovation, and all three survive.", "spots": [], "more": "ceiling", "moreText": "Ceiling record", "hist": {"sec": "ceiling", "dts": ["How it is built", "Date", "Maker", "Why churches chose them", "A neighbour did the same", "Colours"]}}, {"img": "ext-lancet", "alt": "A three-light window from outside behind protective glazing, in a blue-painted surround", "kick": "Stop 11 \u00b7 Step outside", "title": "What 133 winters do", "text": "From the street the glass looks grey, because it was made to be seen with light coming through it. Out here is where the damage starts: weather, failing paint, clouded protective glazing. Keeping these windows will take skilled work and money.", "spots": [], "more": "save", "moreText": "See how to help save them"}];
+
+  function histHTML(s) {
+    var h = s.hist; if (!h) { return ""; }
+    var out = "";
+    var wins = h.win ? [].concat(h.win) : [];
+    wins.forEach(function (id) {
+      var w = W.filter(function (x) { return x.id === id; })[0]; if (!w) { return; }
+      out += "<h4>" + esc(w.name) + "</h4>";
+      out += '<div class="inscription">' + w.inscr.map(function (l) { return "<span>" + esc(l) + "</span>"; }).join("") + "</div>";
+      out += '<div class="prose"><p>' + cite(w.who) + "</p></div>";
+      if (w.note) { out += '<p class="fine">' + cite(w.note) + "</p>"; }
+    });
+    if (h.sec) {
+      var sec = document.getElementById(h.sec);
+      if (sec) {
+        if (h.dts) {
+          var dl = "";
+          sec.querySelectorAll("dl > div").forEach(function (d) {
+            var dt = d.querySelector("dt"); if (dt && h.dts.indexOf(dt.textContent.trim()) > -1) { dl += d.outerHTML; }
+          });
+          out += "<dl>" + dl + "</dl>";
+        } else {
+          var pr = sec.querySelector(".prose");
+          if (pr) {
+            var c = pr.cloneNode(true);
+            c.querySelectorAll("p.muted").forEach(function (n) { n.remove(); });
+            out += (h.secTitle ? "<h4>" + esc(h.secTitle) + "</h4>" : "") + '<div class="prose">' + c.innerHTML + "</div>";
+          }
+        }
+      }
+    }
+    return out ? '<p class="eyebrow">The history</p>' + out : "";
+  }
+
+  // ---- live citations: [n] goes straight to the source ----
+  var SRC = {};
+  document.querySelectorAll('#sources li[id^="s"]').forEach(function (li) {
+    var a = li.querySelector('a[href^="http"]');
+    var name = li.textContent.replace(/\s+/g, " ").trim(); var cut = name.indexOf(". http"); if (cut < 0) { cut = name.length; }
+    SRC[li.id.slice(1)] = { url: a ? a.getAttribute("href") : null, name: name.slice(0, Math.min(cut, 180)), li: li };
+  });
+  function linkCites(root) {
+    root.querySelectorAll('a[href^="#s"]').forEach(function (a) {
+      var m = /^#s(\d+)$/.exec(a.getAttribute("href")); if (!m) { return; }
+      var src = SRC[m[1]]; if (!src) { return; }
+      a.title = src.name;
+      if (src.url) { a.href = src.url; a.target = "_blank"; a.rel = "noopener"; a.className = (a.className + " cite-ext").trim(); a.setAttribute("data-src", m[1]); }
+    });
+  }
+  function digDeeper(box) {
+    var seen = {}, items = "";
+    box.querySelectorAll("a[data-src], a[href^='#s']").forEach(function (a) {
+      var n = a.getAttribute("data-src") || (/^#s(\d+)$/.exec(a.getAttribute("href")) || [])[1];
+      if (!n || seen[n] || !SRC[n]) { return; } seen[n] = 1;
+      var c = SRC[n].li.cloneNode(true); c.removeAttribute("id"); c.removeAttribute("value");
+      c.querySelectorAll("a[href^='http']").forEach(function (x) { x.target = "_blank"; x.rel = "noopener"; });
+      items += '<li value="' + n + '">' + c.innerHTML + "</li>";
+    });
+    if (items) { box.insertAdjacentHTML("beforeend", '<div class="dig"><p class="eyebrow">Dig deeper: the sources for this stop</p><ol>' + items + "</ol></div>"); }
+  }
   var cur = 0;
   function showStop(i) {
     cur = (i + STOPS.length) % STOPS.length;
@@ -946,6 +1024,7 @@ section.night h3.sub { color: #ffffff; margin-top: 34px; margin-bottom: 10px; fo
     document.getElementById("t-title").textContent = s.title;
     document.getElementById("t-text").textContent = s.text;
     var more = document.getElementById("t-more"); more.textContent = s.moreText; more.setAttribute("href", "#" + s.more);
+    var th = document.getElementById("t-hist"), hh = histHTML(s); th.innerHTML = hh; th.hidden = !hh; if (hh) { linkCites(th); digDeeper(th); }
     document.getElementById("t-count").textContent = (cur + 1) + " of " + STOPS.length;
     var dots = "";
     s.spots.forEach(function (sp, k) { dots += '<button type="button" class="tdot" data-k="' + k + '" style="left:' + sp[0] + "%;top:" + sp[1] + '%" aria-label="Detail ' + (k + 1) + '">' + (k + 1) + "</button>"; });
@@ -982,6 +1061,7 @@ section.night h3.sub { color: #ffffff; margin-top: 34px; margin-bottom: 10px; fo
     document.querySelectorAll("[data-view]").forEach(function (v) { v.hidden = v.getAttribute("data-view") !== name; });
     if (el && el !== view) { el.scrollIntoView(); } else { window.scrollTo(0, 0); }
   }
+  linkCites(document);
   window.addEventListener("hashchange", route);
   route();
 })();
