@@ -1,0 +1,3 @@
+/holmdel-tiffany-windows    /hcucc-tiffany-windows/   301
+/holmdel-tiffany-windows/*  /hcucc-tiffany-windows/:splat   301
+/holmdel-tiffany-windows-cover.jpg  /hcucc-tiffany-windows-cover.jpg  301
