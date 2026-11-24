@@ -43,8 +43,13 @@ section .eyebrow { color: #1c7f8b; }
 .muted { color: var(--muted); }
 .small { font-size: .9rem; }
 
-.draft { background: var(--panel); border-bottom: 2px solid var(--accent); color: var(--text); font-size: .9rem; padding: 10px 0; }
-.draft strong { color: var(--brand); }
+.draft { background: var(--warn); color: #fff; padding: 16px 0; border-bottom: 6px solid #f2c14e; text-align: center; }
+.draft .wrap { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.draft .draft-tag { background: #f2c14e; color: #3a1a0d; font-weight: 800; letter-spacing: .14em; font-size: 1rem; padding: 6px 14px; border-radius: 4px; }
+.draft .draft-msg { font-size: 1.15rem; font-weight: 600; line-height: 1.35; }
+.draft .draft-msg span { display: block; font-size: .92rem; font-weight: 400; opacity: .92; }
+.draft-badge { position: fixed; left: 12px; bottom: 12px; z-index: 50; background: var(--warn); color: #fff; font-weight: 800; letter-spacing: .12em; font-size: .8rem; padding: 8px 12px; border: 2px solid #f2c14e; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.3); pointer-events: none; }
+@media print { .draft-badge { position: static; display: inline-block; margin: 8px; } }
 
 nav.top { position: sticky; top: 0; z-index: 5; background: var(--brand); }
 nav.top .wrap { display: flex; flex-wrap: wrap; gap: 2px 20px; padding-top: 10px; padding-bottom: 10px; }
@@ -310,7 +315,8 @@ details.more-detail[open] > summary { margin-bottom: 12px; }
 </head>
 <body>
 
-<div class="draft"><div class="wrap"><strong>Draft for review.</strong> Not yet approved by the congregation for publication.</div></div>
+<div class="draft" role="note" aria-label="Draft notice"><div class="wrap"><span class="draft-tag">DRAFT</span><div class="draft-msg">Not yet approved for publication<span>This is a draft for review. The congregation has not yet approved it for publication.</span></div></div></div>
+<div class="draft-badge" aria-hidden="true">DRAFT · NOT APPROVED</div>
 
 <nav class="top" aria-label="Site"><div class="wrap">
   <a class="brand" href="#home">HCUCC Tiffany Windows</a>
