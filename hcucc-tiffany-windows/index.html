@@ -48,6 +48,7 @@ section .eyebrow { color: #1c7f8b; }
 .draft .draft-tag { background: #f2c14e; color: #3a1a0d; font-weight: 800; letter-spacing: .14em; font-size: 1rem; padding: 6px 14px; border-radius: 4px; }
 .draft .draft-msg { font-size: 1.15rem; font-weight: 600; line-height: 1.35; }
 .draft .draft-msg span { display: block; font-size: .92rem; font-weight: 400; opacity: .92; }
+.draft .draft-msg a { color: #fff; text-decoration: underline; font-weight: 600; }
 .draft-badge { position: fixed; left: 12px; bottom: 12px; z-index: 50; background: var(--warn); color: #fff; font-weight: 800; letter-spacing: .12em; font-size: .8rem; padding: 8px 12px; border: 2px solid #f2c14e; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.3); pointer-events: none; }
 @media print { .draft-badge { position: static; display: inline-block; margin: 8px; } }
 
@@ -315,7 +316,7 @@ details.more-detail[open] > summary { margin-bottom: 12px; }
 </head>
 <body>
 
-<div class="draft" role="note" aria-label="Draft notice"><div class="wrap"><span class="draft-tag">DRAFT</span><div class="draft-msg">Not yet approved for publication<span>This is a draft for review. The congregation has not yet approved it for publication.</span></div></div></div>
+<div class="draft" role="note" aria-label="Draft notice"><div class="wrap"><span class="draft-tag">DRAFT</span><div class="draft-msg">Not yet approved for publication<span>This is a draft for review. The congregation has not yet approved it for publication. Questions? Email <a href="mailto:jenniferl.devries@gmail.com">jenniferl.devries@gmail.com</a>.</span></div></div></div>
 <div class="draft-badge" aria-hidden="true">DRAFT · NOT APPROVED</div>
 
 <nav class="top" aria-label="Site"><div class="wrap">
